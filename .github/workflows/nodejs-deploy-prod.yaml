@@ -1,6 +1,9 @@
-name: Deploy To S3
+name: Deploy to Production
 
-on: [push]
+on: 
+  release:
+    types:
+      -published
 
 jobs:
   build:
