@@ -1,7 +1,8 @@
 name: Deploy to Production
 
 on: 
-  [release]
+  release:
+    types: [released]
 
 jobs:
   build:
