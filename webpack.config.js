@@ -54,14 +54,10 @@ module.exports = env => ({
       filename: '[path].gz[query]',
       algorithm: 'gzip',
       test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.7
     }),
     env.NODE_ENV === 'production' && new BrotliPlugin({
       asset: '[path].br[query]',
       test: /\.js$|\.css$|\.html$/,
-      threshold: 10240,
-      minRatio: 0.7
     }),
     // Copy static content plugin
     new CopyPlugin({

@@ -1,7 +1,6 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Frame from './frame'
-
-const Map = React.lazy(() => import('./map/map'));
+import MapLazy from './map/mapLazy'
 import Loading from './loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarked } from '@fortawesome/free-solid-svg-icons'
@@ -16,10 +15,7 @@ export default ({ includeMap }) => {
     return <Card className='map-card'>
         <Card.Body>
             <div>
-                {includeMap &&
-                    <Suspense fallback={<Loading className="mini-map full-height"/>}>
-                        <Map isMiniMap />
-                    </Suspense>}
+                {includeMap && <MapLazy isMiniMap loadingComponent={<Loading className="mini-map full-height" />} />}
                 <div className='map-card-content'>
                     <Card.Title>
                         My location map

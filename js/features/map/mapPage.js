@@ -1,14 +1,12 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import Loading from '../loading'
 import TopBar from './mapTopBar'
-const Map = React.lazy(() => import('./map'));
+import MapLazy from './mapLazy'
 
 const MapPage = () => {
     return <main >
         <TopBar />
-        <Suspense fallback={<Loading className="maxi-map" />}>
-            <Map />
-        </Suspense>
+        <MapLazy loadingComponent={<Loading className="maxi-map" />} />
     </main >
 };
 
