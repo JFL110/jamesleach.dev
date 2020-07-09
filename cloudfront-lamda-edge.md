@@ -22,13 +22,16 @@ exports.handler = (event, context, callback) => {
 
   // Check supported encodings
   const isBrotliSupported = headers['accept-encoding'] && headers['accept-encoding'][0].value.indexOf('br') > -1
-  const file = request.uri.substring(request.uri.lastIndexOf('/'));
-  if(file == "/bundle.js"){
-    // Update request path based on custom header
-    let newUri = request.uri + (isBrotliSupported ? brPathSuffix : gzipPathSuffix);
-    request.uri = newUri;
-  }
+  const isGzipSupported = headers['accept-encoding'] && headers['accept-encoding'][0].value.indexOf('gzip') > -1
   
+  if(isGzipSupported || isBrotliSupported){
+    const file = request.uri.substring(request.uri.lastIndexOf('/'));
+    if(file.includes("bundle.js")){
+      // Update request path based on custom header
+      let newUri = request.uri + (isBrotliSupported ? brPathSuffix : gzipPathSuffix);
+      request.uri = newUri;
+    }
+  }
   callback(null, request);
 };
 ```
