@@ -4,6 +4,10 @@ import { faEnvelope, faPhone, faFilePdf, faPrint } from '@fortawesome/free-solid
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import printJS from 'print-js'
 
+import avatarImage from '../images/avatar.jpeg'
+import avatarImageWebp from '../images/avatar.webp.jpeg'
+import { checkWebPSupport } from 'supports-webp-sync'
+
 // Append the current time to avoid caching
 const pdfPath = './static/james-leach-cv.pdf?' + new Date().getTime();
 const pdfBlackAndWhitePath = './static/james-leach-cv-bw.pdf?' + new Date().getTime();
@@ -14,9 +18,13 @@ export default () => {
         e.preventDefault();
         printJS(pdfBlackAndWhitePath);
     }
-    
+
+    const avatarUrl = checkWebPSupport() ? avatarImageWebp : avatarImage;
+
     return <React.Fragment>
-        <div className="avatar" />
+        <div className="avatar" style={{
+            backgroundImage: `url('${avatarUrl}')`
+        }} />
         <h1 className="name-heading">James Leach</h1>
         <h4 className="title-heading">Full stack developer</h4>
 

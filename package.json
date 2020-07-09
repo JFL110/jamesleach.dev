@@ -33,6 +33,7 @@
     "eslint": "^7.4.0",
     "eslint-plugin-react": "^7.20.3",
     "file-loader": "^6.0.0",
+    "image-webpack-loader": "^6.0.0",
     "immutability-helper": "^3.0.1",
     "immutable": "^4.0.0-rc.12",
     "node-libs-browser": "^2.2.1",
@@ -69,6 +70,7 @@
     "react-dom": "^16.12.0",
     "react-images": "^1.1.7",
     "react-leaflet": "^2.6.3",
-    "react-leaflet-control": "^2.1.2"
+    "react-leaflet-control": "^2.1.2",
+    "supports-webp-sync": "^1.0.0"
   }
 }

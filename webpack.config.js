@@ -84,12 +84,24 @@ module.exports = env => ({
   mode: "development",
   module: {
     rules: [
+      // Image inline
       {
         test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
         loader: require.resolve('url-loader'),
         options: {
-          limit: 100000,
-          name: './static/[name].[hash:8].[ext]',
+          limit: 10 * 1024,
+          name: './static/[hash:8].[name].[ext]',
+        }
+      },
+      // Image optimise - webp
+      {
+        test: /\.(webp.jpe?g)$/i,
+        loader: 'image-webpack-loader',
+        enforce: 'pre',
+        options: {
+          webp: {
+            quality: 75
+          }
         }
       },
       {
