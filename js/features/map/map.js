@@ -6,6 +6,7 @@ import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 import Carousel, { Modal, ModalGateway } from 'react-images';
 import Control from 'react-leaflet-control';
 import mapSlice, { pointToCentre } from './mapSlice'
+import Delay from 'react-delay'
 
 const SimpleMap = ({
     isMiniMap = false,
@@ -68,63 +69,67 @@ const SimpleMap = ({
     const defaultZoom = isMiniMap ? 8 : 10;
 
     return (
-        <React.Fragment>
-            {(!isMiniMap && photoUrls.length > 0 && currentLightBoxImageIndex != null) && <ModalGateway>
-                <Modal
-                    onClose={onModalClose}
-                    styles={{
-                        blanket: base => ({
-                            ...base,
-                            backgroundColor: 'rgba(0,0,0,0.4)',
-                        }),
-                    }}>
-                    <Carousel
-                        views={photoUrls}
-                        currentIndex={currentLightBoxImageIndex}
-                        trackProps={{
-                            onViewChange: setCentreToPhotoId
-                        }}
-                    />
-                </Modal>
-            </ModalGateway>}
-            <LeafletMap
-                center={[centre.lat, centre.lng]}
-                {...(viewportObject.isInitial ? { zoom: defaultZoom } : {})}
-                minZoom={2}
-                maxZoom={14}
-                attributionControl={true}
-                zoomControl={true}
-                doubleClickZoom={true}
-                scrollWheelZoom={true}
-                dragging={true}
-                animate={true}
-                easeLinearity={0.35}
-                viewport={viewportObject}
-                className={isMiniMap ? "mini-map" : "maxi-map"}
-            >
+        <Delay
+            wait={isMiniMap ? 250 : 10}
+        >
+            <React.Fragment>
+                {(!isMiniMap && photoUrls.length > 0 && currentLightBoxImageIndex != null) && <ModalGateway>
+                    <Modal
+                        onClose={onModalClose}
+                        styles={{
+                            blanket: base => ({
+                                ...base,
+                                backgroundColor: 'rgba(0,0,0,0.4)',
+                            }),
+                        }}>
+                        <Carousel
+                            views={photoUrls}
+                            currentIndex={currentLightBoxImageIndex}
+                            trackProps={{
+                                onViewChange: setCentreToPhotoId
+                            }}
+                        />
+                    </Modal>
+                </ModalGateway>}
+                <LeafletMap
+                    center={[centre.lat, centre.lng]}
+                    {...(viewportObject.isInitial ? { zoom: defaultZoom } : {})}
+                    minZoom={2}
+                    maxZoom={14}
+                    attributionControl={true}
+                    zoomControl={true}
+                    doubleClickZoom={true}
+                    scrollWheelZoom={true}
+                    dragging={true}
+                    animate={true}
+                    easeLinearity={0.35}
+                    viewport={viewportObject}
+                    className={isMiniMap ? "mini-map" : "maxi-map"}
+                >
 
-                <Control position="topleft" className="leaflet-control-zoom leaflet-bar" >
-                    {!isMiniMap
-                        && <a className="leaflet-control-zoom-in zoom-circle" href="#" onClick={onCentreToMostRecentLocation} title="Centre to most recent location"></a>}
-                </Control>
-                {!isMiniMap && <Control position="topleft" className="leaflet-control-zoom leaflet-bar" >
-                    <a className="leaflet-control-zoom-in" href="#" onClick={onClickOpenPhotosControl} title="Open photos">
-                        <img src="/static/camera-icon.png" style={{ width: "100%" }} /></a>
-                </Control>}
-                <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
-                {
-                    points
-                        .filter(p => !isMiniMap || !p.isPhoto)
-                        .map(p => <Marker
-                            key={p.id}
-                            position={[p.lat, p.long]}
-                            icon={p.isPhoto ? photoIcon : (p.isMostRecent ? redDotIcon : blueDotIcon)}
-                            {...(p.isMostRecent ? { zIndexOffset: 1000 } : (p.isPhoto ? { zIndexOffset: 300 + p.photoPointId } : {}))}
-                            {...(p.isPhoto ? { onClick: () => onClickPhotoMarker(p) } : {})}
-                        />)
-                }
-            </LeafletMap>
-        </React.Fragment>
+                    <Control position="topleft" className="leaflet-control-zoom leaflet-bar" >
+                        {!isMiniMap
+                            && <a className="leaflet-control-zoom-in zoom-circle" href="#" onClick={onCentreToMostRecentLocation} title="Centre to most recent location"></a>}
+                    </Control>
+                    {!isMiniMap && <Control position="topleft" className="leaflet-control-zoom leaflet-bar" >
+                        <a className="leaflet-control-zoom-in" href="#" onClick={onClickOpenPhotosControl} title="Open photos">
+                            <img src="/static/camera-icon.png" style={{ width: "100%" }} /></a>
+                    </Control>}
+                    <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
+                    {
+                        points
+                            .filter(p => !isMiniMap || !p.isPhoto)
+                            .map(p => <Marker
+                                key={p.id}
+                                position={[p.lat, p.long]}
+                                icon={p.isPhoto ? photoIcon : (p.isMostRecent ? redDotIcon : blueDotIcon)}
+                                {...(p.isMostRecent ? { zIndexOffset: 1000 } : (p.isPhoto ? { zIndexOffset: 300 + p.photoPointId } : {}))}
+                                {...(p.isPhoto ? { onClick: () => onClickPhotoMarker(p) } : {})}
+                            />)
+                    }
+                </LeafletMap>
+            </React.Fragment>
+        </Delay>
     );
 }
 
