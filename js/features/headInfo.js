@@ -10,7 +10,11 @@ const pdfBlackAndWhitePath = './static/james-leach-cv-bw.pdf?' + new Date().getT
 
 export default () => {
 
-    const doPrint = () => printJS(pdfBlackAndWhitePath);
+    const doPrint = e => {
+        e.preventDefault();
+        printJS(pdfBlackAndWhitePath);
+    }
+    
     return <React.Fragment>
         <div className="avatar" />
         <h1 className="name-heading">James Leach</h1>
