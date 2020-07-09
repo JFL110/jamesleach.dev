@@ -7,25 +7,124 @@
   <meta name="theme-color" content="#000000">
   <script>
     var _L; function setLoaded(f) { _L = f; } function getLoaded() { return _L; }
-    var s = 3; function dec() { if (--s == 0) _L(); }
+    var s = 1; function dec() { if (--s == 0) _L(); }
   </script>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic&display=swap'
-    rel="stylesheet" media="print" onload="this.media='all'; dec()" type='text/css'>
-  <link rel="stylesheet" media="print" onload="this.media='all'; dec()"
+  <link rel="stylesheet" media="print" onload="this.media='all';"
     href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css">
   <link rel="shortcut icon" href="/static/favicon.png?">
   <title>James Leach CV</title>
-  <style>
-
-  </style>
 </head>
+<style>
+  .full-height,
+  #root,
+  body,
+  html,
+  main {
+    height: 100%
+  }
+
+  #root {
+    display: table;
+    width: 100%
+  }
+
+  #root main {
+    display: table-row;
+    width: 100%
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: rgb(230, 230, 230);
+    font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .loader {
+    font-size: 10px;
+    margin: 50px auto;
+    text-indent: -9999em;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%;
+    background: #000000;
+    background: -moz-linear-gradient(left, #000000 10%, rgba(0, 0, 0, 0) 42%);
+    background: -webkit-linear-gradient(left, #000000 10%, rgba(0, 0, 0, 0) 42%);
+    background: -o-linear-gradient(left, #000000 10%, rgba(0, 0, 0, 0) 42%);
+    background: -ms-linear-gradient(left, #000000 10%, rgba(0, 0, 0, 0) 42%);
+    background: linear-gradient(to right, #000000 10%, rgba(0, 0, 0, 0) 42%);
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .loader:before {
+    width: 50%;
+    height: 50%;
+    background: #000000;
+    border-radius: 100% 0 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+
+  .loader:after {
+    background: #fbfbfb;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  @-webkit-keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes load3 {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+</style>
 
 <body>
   <noscript>
     You need to enable JavaScript to view this page properly.
   </noscript>
-  <div id="root" class="full-height"></div>
-  <script src="/static/bundle.js?v=x"></script>
+  <div id="root">
+    <main>
+      <div style="width:100%; height:100%; text-align: center; display:table;">
+        <h1 style="display:table-cell; vertical-align: middle;">James Leach <br /> <br />
+          <div className="loader" />
+        </h1>
+      </div>
+    </main>
+  </div>
+  <script src=" /static/bundle.js?v=x"></script>
 </body>
 
 </html>

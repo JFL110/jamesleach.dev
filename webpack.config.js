@@ -29,7 +29,9 @@ module.exports = env => ({
     filename: ({ chunk }) => {
       const prefix = chunk.name == "app" ? "" : "pdf-";
       return "./static/" + prefix + "bundle.js";
-    }
+    },
+    // `chunkFilename` provides a template for naming code-split bundles (optional)
+    chunkFilename: './static/[hash:8].[name].bundle.js',
   },
   watchOptions: {
     aggregateTimeout: 200,
@@ -42,9 +44,9 @@ module.exports = env => ({
     }
   },
   optimization: {
-    splitChunks: {
-      chunks: 'async',
-    },
+    // splitChunks: {
+    //   chunks: 'async',
+    // },
   },
   plugins: [
     // Compression plugins
@@ -79,7 +81,7 @@ module.exports = env => ({
         },
       ],
     }),
-    new ArbitraryCodeAfterReload(swapVersions)
+    new ArbitraryCodeAfterReload(swapVersions),
   ].filter(Boolean),
   mode: "development",
   module: {
@@ -127,7 +129,8 @@ module.exports = env => ({
               "@babel/plugin-proposal-partial-application",
               "@babel/plugin-proposal-logical-assignment-operators",
               "@babel/plugin-proposal-throw-expressions",
-              "@babel/plugin-transform-react-constant-elements"]
+              "@babel/plugin-transform-react-constant-elements",
+              "@babel/plugin-syntax-dynamic-import"]
           }
         }
       }
