@@ -1,0 +1,153 @@
+@import "common";
+
+$timeline-circle-color: #3f51b5;
+$light-primary: #c5cae9;
+$text: #ffffff;
+
+.timeline {
+    margin-top: $section-gap;
+    position: relative;
+    &::before {
+        content: "";
+        background: linear-gradient(
+            to bottom,
+            rgba($right-bg-color, 100%) 0%,
+            $light-primary 2%,
+            $light-primary 90%,
+            rgba($right-bg-color, 100%) 100%
+        );
+        width: 5px;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .container {
+        @media (max-width: $small-desktop-screen) {
+            padding-left: 0;
+        }
+    }
+}
+
+.timeline-minor {
+    .timeline-title {
+        font-size: 1em;
+    }
+    .timeline-content {
+        padding-bottom: 0;
+    }
+}
+
+.timeline-item {
+    width: 100%;
+
+    .timeline-subtitle {
+        font-size: 1em;
+        margin-top: 0.5em;
+        display: block;
+    }
+
+    &:nth-child(even) {
+        .timeline-content {
+            float: right;
+            padding: 10px 30px 10px 30px;
+
+            @media (max-width: $small-desktop-screen) {
+                margin-top: 2em;
+                padding-top: 0;
+                padding-right: 0;
+            }
+
+            .date {
+                right: auto;
+                left: 0;
+            }
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.timeline-content {
+    position: relative;
+    width: 45%;
+    padding: 10px 30px;
+    border-radius: 4px;
+
+    @media (max-width: $small-desktop-screen) {
+        p {
+            font-size: 0.9em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+    }
+
+    .badge {
+        font-size: 0.8em;
+        margin-bottom: 0.4em;
+        background: rgba($left-bg-color, 60%);
+        color: $text;
+        padding: 5px 10px 5px 10px;
+    }
+
+    h2 {
+        margin-bottom: 0.25em;
+    }
+}
+
+@media screen and (max-width: $small-desktop-screen) {
+    .timeline {
+        &::before {
+            left: 50px;
+
+            @media (max-width: $small-desktop-screen) {
+                left: 10px;
+            }
+        }
+
+        .timeline-img {
+            left: 50px;
+
+            @media (max-width: $small-desktop-screen) {
+                left: 10px;
+            }
+        }
+
+        .timeline-content {
+            max-width: 100%;
+            width: auto;
+            margin-left: 70px;
+            @media (max-width: $small-desktop-screen) {
+                margin-left: 1em;
+                margin-right: 0;
+                padding-right: 0;
+            }
+        }
+
+        .timeline-item {
+            &:nth-child(even) {
+                .timeline-content {
+                    float: none;
+                }
+            }
+        }
+    }
+}
+
+.timeline-img {
+    width: 30px;
+    height: 30px;
+    background: $timeline-circle-color;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-top: 25px;
+    margin-left: -15px;
+}

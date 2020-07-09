@@ -1,11 +1,38 @@
+/*global setLoaded, dec, getLoaded*/
+
 import React from 'react'
 import { render } from 'react-dom'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+import App from './app'
+import appSlice from './features/appSlice'
+import rootReducer from './rootReducer'
+import LoggingMiddleware from './loggingMiddleware'
+import { getStore, setStore } from './features/globalStore'
+import { routerMiddleware } from 'connected-react-router'
+import { createBrowserHistory } from 'history'
+import mapLoadMiddleware from './features/map/mapLoadMiddleware'
+
+import './styles.scss'
+
+// Config react router
+export const history = createBrowserHistory({});
 
 // Queue rendering until after all resources (css) have loaded, or after one second
 setLoaded(() => {
   setLoaded(null);
 
-  render(<h1>Coming soon</h1>,
+  setStore(configureStore({
+    reducer: rootReducer(history),
+    middleware: [LoggingMiddleware, routerMiddleware(history), mapLoadMiddleware, ...getDefaultMiddleware()],
+  }));
+
+  getStore().dispatch(appSlice.actions.onPreFirstRender());
+
+  render(
+    <Provider store={getStore()}>
+      <App history={history} />
+    </Provider>,
     document.getElementById('root')
   );
 });

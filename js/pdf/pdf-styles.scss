@@ -1,0 +1,237 @@
+@import "../bootstrap.min";
+@import "../common";
+
+@page {
+	size: A4;
+}
+
+$line-color: rgba(0, 0, 0, 0.1);
+
+body {
+	margin: 0;
+	padding: 0;
+	color: rgb(50, 50, 50);
+	font-family: "Open Sans", sans-serif;
+	font-size: 112.5%;
+	line-height: 1.6em;
+}
+
+.full-height,
+main,
+body,
+html {
+	height: 100%;
+}
+
+#root {
+	width: 100%;
+	main {
+		width: 100%;
+
+		& > hr {
+			margin-top: 1em;
+			margin-bottom: 1.5em;
+			width: 90%;
+			height: 1px;
+			border-top: none;
+			background-image: linear-gradient(
+				to right,
+				rgba(white, 0%) 0%,
+				$line-color 4%,
+				$line-color 96%,
+				rgba(white, 0%) 100%
+			);
+		}
+	}
+}
+
+.pdf-head {
+	width: 100%;
+	padding: 0em;
+
+	& > div {
+		display: inline-block;
+	}
+}
+
+.name-heading-container {
+	vertical-align: top;
+}
+
+.qr-code-container {
+	text-align: center;
+	margin-left: 2em;
+	float: right;
+
+	& > .contact-details-container {
+		text-align: left;
+		margin-right: 2em;
+
+		& > span {
+			margin-top: 0.25em;
+			margin-bottom: 0.25em;
+			display: inline-block;
+
+			font-size: 1em;
+
+			& > svg {
+				margin-right: 0.8em;
+			}
+
+			& > .fa-arrow-right {
+				margin-left: 2em;
+			}
+		}
+	}
+
+	& > div {
+		vertical-align: middle;
+		display: inline-block;
+	}
+}
+
+.pdf-body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+
+	& > .body-column-one,
+	& > .body-column-two {
+		display: inline-block;
+		vertical-align: top;
+
+		& > hr {
+			margin-left: 2.5em;
+			width: 70%;
+			margin-right: 2em;
+			margin-top: 1.5em;
+			margin-bottom: 1.5em;
+		}
+	}
+
+	& > .body-column-one {
+		width: 50%;
+		border-right: 1px solid;
+		// Alpha must be zero at edges for proper fade in printed version
+		border-image: linear-gradient(
+			to bottom,
+			rgba(white, 0%) 0%,
+			$line-color 4%,
+			$line-color 96%,
+			rgba(white, 0%) 100%
+		);
+		border-image-slice: 1;
+		padding-right: 2em;
+
+		.timeline-content {
+			margin-bottom : 3.2em;
+		}
+	}
+
+	& > .body-column-two {
+		width: 50%;
+		padding-left: 2em;
+	}
+
+	h3 {
+		margin-bottom: 1em;
+	}
+
+	.badge {
+		float: right;
+		margin-right: 1em;
+		border: none;
+	}
+
+	.heading-break-above {
+		margin-top: 1.5em;
+	}
+
+	ul {
+		padding-inline-start: 1em;
+	}
+
+	.intro-text {
+		padding: 0 2em;
+		margin-top: 0.3em;
+		margin-bottom: 1.5em;
+		text-align: center;
+	}
+
+	.skill-card-group {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -0.3em;
+		margin-right: -0.8em;
+
+		.card {
+			margin: 0.3em 0.4em;
+			.card-body {
+				padding: 0.4em;
+				line-height: 0.1em;
+				.card-title {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.hobbies-heading {
+		margin-top: 2em;
+		margin-bottom: 1em;
+	}
+
+	.hobby-card-group {
+		display: table-row;
+
+		& > div {
+			display: table-cell;
+			.card {
+				display: inline-block;
+				margin: 0 0.4em;
+				.card-body {
+					padding: 0.7em 0.5em;
+
+					& > div {
+						display: table-row;
+
+						& > div {
+							display: table-cell;
+						}
+					}
+
+					.card-icon {
+						text-align: center;
+						padding-right: 0.8em;
+						vertical-align: middle;
+					}
+
+					.card-subtitle {
+						white-space: nowrap;
+					}
+				}
+			}
+		}
+	}
+}
+
+.name-heading {
+	font-size: 4em;
+}
+
+.timeline-item.timeline-not-last {
+	margin-bottom: 2.2em;
+}
+
+.timeline-item.timeline-last {
+	margin-bottom: 2em;
+}
+
+.timeline-subtitle {
+	font-size: 1em;
+	margin-bottom: 0.5em;
+}
+
+.extra-space {
+	margin-top: 2em;
+}

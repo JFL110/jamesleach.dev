@@ -21,9 +21,15 @@ const swapVersions = () => {
 };
 
 module.exports = env => ({
-  entry: "./js/index.js",
+  entry: {
+    app: "./js/index.js",
+    pdfVersion: "./js/pdf/pdfVersionIndex.js"
+  },
   output: {
-    filename: "./static/bundle.js"
+    filename: ({ chunk }) => {
+      const prefix = chunk.name == "app" ? "" : "pdf-";
+      return "./static/" + prefix + "bundle.js";
+    }
   },
   watchOptions: {
     aggregateTimeout: 200,
@@ -79,6 +85,14 @@ module.exports = env => ({
   module: {
     rules: [
       {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: require.resolve('url-loader'),
+        options: {
+          limit: 100000,
+          name: './static/[name].[hash:8].[ext]',
+        }
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader', 'css-loader', 'sass-loader',
@@ -86,7 +100,7 @@ module.exports = env => ({
       },
       {
         test: /\.css$/i,
-        use: ['style-loader','css-loader'],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.m?js$/,
