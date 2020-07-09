@@ -9,14 +9,14 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 import { Button, Card } from 'react-bootstrap';
 
-export default () => {
+export default ({ includeMap }) => {
 
     const onViewFull = () => { Frame.dispatchPush('/where-are-they'); }
 
     return <Card className='map-card'>
         <Card.Body>
             <div>
-                <Map isMiniMap />
+                {includeMap && <Map isMiniMap />}
                 <div className='map-card-content'>
                     <Card.Title>
                         My location map
@@ -31,7 +31,7 @@ export default () => {
                         </p>
                         <p>
                             Code is deployed and tested automatically on commit of new versions using Github Actions.
-                            Performance is improved by periodically 
+                            Performance is improved by periodically
                             digesting the location data into a JSON file and serving it statically to the frontend from S3.
                         </p>
                         <p>

@@ -8,7 +8,7 @@ import ExtraCardsContent from './extraCardsContent'
 import MapCard from './mapCard'
 import Text from '../text'
 
-const MainPage = () => {
+const MainPage = ({ includeMap = false }) => {
 
     return <main >
         <div className="left-placeholder" />
@@ -34,11 +34,12 @@ const MainPage = () => {
             <ExtraCardsContent />
 
             <h2 className="section-heading">Demo Project</h2>
-            <MapCard />
+            <MapCard includeMap={includeMap}/>
         </div>
     </main >
 };
 
 export default {
-    page: <MainPage />
+    page: <MainPage includeMap />,
+    pageNoMap: <MainPage />
 }

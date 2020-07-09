@@ -8,6 +8,16 @@ export default [
     component: MainPage.page
   },
   {
+    id: "cv",
+    path: "/cv",
+    component: MainPage.page
+  },
+  {
+    id: "cv-no-map",
+    path: "/cv-no-map",
+    component: MainPage.pageNoMap
+  },
+  {
     id: "map",
     path: "/where-are-they",
     component: MapPage.page
