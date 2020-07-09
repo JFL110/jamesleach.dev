@@ -18,7 +18,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    - run: eslint ./js/
+    - run: npx eslint ./js/
     - run: npm run start:git
     - uses: jakejarvis/s3-sync-action@master
       with:
