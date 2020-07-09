@@ -40,7 +40,7 @@ exports.handler = async (event) => {
   const { headers } = response;
 
   const headerCacheControl = 'Cache-Control';
-  const defaultTimeToLive = 1209600; // 14 days
+  const defaultTimeToLive = 15780000; // 6 months
 
   if (response.status === '200' && 
         request.uri.startsWith("/static/") && 
