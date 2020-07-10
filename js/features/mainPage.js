@@ -12,14 +12,14 @@ const MainPage = ({ includeMap = false }) => {
 
     return <main >
         <div className="left-placeholder" />
-        <div className="left-desktop">
+        <div className="left left-desktop">
             <HeadInfo />
         </div>
-        <div className="top-mobile">
+        <div className="left top-mobile">
             <HeadInfo />
         </div>
         <div className="right">
-            <h1 className="desktop-heading">James Leach</h1>
+            <h1 className="desktop-heading">I am...</h1>
             <div className="intro-section">
                 {Text.webIntro}
             </div>

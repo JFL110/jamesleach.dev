@@ -25,10 +25,10 @@ const TopBarComponent = ({
     return <div className="map-top-bar">
         <div>
             <div className="top-bar-left">
-                <h2 className="top-bar-text">Where are they?</h2>
+                <h2 className="top-bar-text noselect">Where are they?</h2>
             </div>
             <div className="top-bar-right">
-                <h2 className="top-bar-text">{hasFetchError ? ":( error - try refreshing)" : (pointsLoaded ? summary() : "Loading...")}</h2>
+                <h2 className="top-bar-text noselect">{hasFetchError ? ":( error - try refreshing)" : (pointsLoaded ? summary() : "Loading...")}</h2>
             </div>
         </div>
     </div>;

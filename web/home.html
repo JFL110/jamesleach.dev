@@ -73,7 +73,7 @@
   }
 
   .loader:after {
-    background: #fbfbfb;
+    background: rgb(230, 230, 230);
     width: 75%;
     height: 75%;
     border-radius: 50%;
@@ -112,14 +112,15 @@
 </style>
 
 <body>
-  <noscript>
-    You need to enable JavaScript to view this page properly.
-  </noscript>
+
   <div id="root">
     <main>
       <div style="width:100%; height:100%; text-align: center; display:table;">
         <h1 style="display:table-cell; vertical-align: middle;">James Leach <br /> <br />
-          <div className="loader" />
+          <div class="loader" />
+          <noscript>
+            You need to enable JavaScript to view this page properly.
+          </noscript>
         </h1>
       </div>
     </main>

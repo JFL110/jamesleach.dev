@@ -8,11 +8,12 @@ $left-width: 350px;
 
 $trailing-timline-height: 50px;
 $item-line-distance: 30px;
+
 body {
-	color: rgb(50, 50, 50);
 	font-size: 112.5%;
 	line-height: 1.6em;
 }
+
 .left-placeholder {
 	width: $left-width;
 	min-width: $left-width;
@@ -38,6 +39,27 @@ body {
 	}
 }
 
+.left {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6,
+	p,
+	span,
+	body,
+	a {
+		color: #353535;
+	}
+}
+
 .right {
 	background-color: $right-bg-color;
 	margin-left: $left-width;
@@ -57,12 +79,34 @@ body {
 	@media (min-width: $big-screen) {
 		padding: 5em 7em 4em 7em;
 	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6,
+	p,
+	span,
+	body,
+	a {
+		color: #404040;
+	}
+}
+
+.btn {
+	color: white !important;
 }
 
 /** Remove link styling **/
 
 a {
-	color: inherit;
 	text-decoration: inherit;
 }
 
@@ -136,7 +180,7 @@ a {
 }
 
 .back-end {
-	background-color: rgba($left-bg-color, 50%);
+	background-color: $badge-color;
 }
 
 .front-end {
@@ -144,7 +188,7 @@ a {
 }
 
 .deployment {
-	background-color: rgba(green, 50%);
+	background-color: $green;
 }
 
 .card-subtitle {
@@ -164,7 +208,7 @@ a {
 
 .intro-section {
 	font-size: 1.1em;
-	margin-top: $section-gap;
+	margin-top: 3em;
 	margin-bottom: $section-gap;
 	padding-left: 5em;
 	padding-right: 5em;
@@ -266,8 +310,8 @@ a {
 
 .avatar {
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+	width: 225px;
+	height: 225px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-bottom: 1em;
@@ -276,6 +320,7 @@ a {
 }
 
 .name-heading {
+	color: white !important;
 	margin-top: 0.5em;
 	display: inline-block;
 	font-weight: 600;
@@ -341,4 +386,8 @@ a {
 			display: table-cell;
 		}
 	}
+	.loader:after {
+		background: #fbfbfb;
+	}
 }
+

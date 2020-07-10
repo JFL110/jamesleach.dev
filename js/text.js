@@ -74,10 +74,10 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         More details and examples of recent work can be found on my online CV.</p>,
 
     webIntro: <React.Fragment>
-        <p>Enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years
+        <p>An enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years
             learning and working on personal projects. Producer of clean, well-tested and performant code.</p>
         <p>Known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
-        <p>Recent professional projects range from educational websites to clustered Extract Transform Load systems transferring gigabytes
+        <p>Truly full stack; recent professional projects range from educational websites to clustered Extract Transform Load systems transferring gigabytes
              of financial data in real-time.</p>
     </React.Fragment>,
 });

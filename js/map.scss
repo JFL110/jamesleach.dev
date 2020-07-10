@@ -124,26 +124,6 @@
 	opacity: 0.9;
 }
 
-// .carousel-root {
-// 	max-width: 90vw;
-
-// 	& > .carousel {
-// 		max-height: 95vh;
-
-// 		img {
-// 			width: unset !important;
-// 			max-width: 90vw;
-// 			max-height: 90vh;
-// 		}
-
-// 		.slide {
-// 			max-width: 90vw;
-// 			max-height: 90vh;
-// 			background: rgba(0, 0, 0, 0.2);
-// 		}
-// 	}
-// }
-
 .modal-content {
 	margin: auto;
 }
@@ -152,4 +132,8 @@
 	max-width: 90vw !important;
 	max-height: 90vh;
 	margin: auto;
+}
+
+.badge{
+	background-color: $green;
 }
