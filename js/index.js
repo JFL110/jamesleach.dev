@@ -8,11 +8,12 @@ import App from './app'
 import appSlice from './features/appSlice'
 import rootReducer from './rootReducer'
 // import LoggingMiddleware from './loggingMiddleware'
+import pageChangeMiddleware from './features/pageChangeMiddleware'
 import { getStore, setStore } from './features/globalStore'
 import { routerMiddleware } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 import mapLoadMiddleware from './features/map/mapLoadMiddleware'
-
+import pages from './pages'
 import './styles.scss'
 
 // Config react router
@@ -24,7 +25,7 @@ setLoaded(() => {
 
   setStore(configureStore({
     reducer: rootReducer(history),
-    middleware: [/*LoggingMiddleware,*/ routerMiddleware(history), mapLoadMiddleware, ...getDefaultMiddleware()],
+    middleware: [/*LoggingMiddleware,*/ routerMiddleware(history), pageChangeMiddleware(pages), mapLoadMiddleware, ...getDefaultMiddleware()],
   }));
 
   getStore().dispatch(appSlice.actions.onPreFirstRender());
