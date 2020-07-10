@@ -1,11 +1,14 @@
 /*global L*/
 
 import React from 'react'
-import { connect } from 'react-redux'
+import Frame from '../frame'
 import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
-import Carousel, { Modal, ModalGateway } from 'react-images';
 import Control from 'react-leaflet-control';
 import mapSlice, { pointToCentre } from './mapSlice'
+import { Modal } from 'react-bootstrap';
+
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/src/core/styles.scss';
 
 const SimpleMap = ({
     isMiniMap = false,
@@ -35,7 +38,10 @@ const SimpleMap = ({
     // Photos
 
     const photoUrls = points.filter(p => p.isPhoto).map(p => ({ src: p.url }));
-    const onModalClose = () => { setCurrentLightBoxImageIndex(null); };
+    const onModalClose = () => {
+        console.log("close");
+        setCurrentLightBoxImageIndex(null);
+    };
 
     const setCentreToPhotoId = i => {
         setCurrentLightBoxImageIndex(i);
@@ -69,24 +75,21 @@ const SimpleMap = ({
 
     return (
         <React.Fragment>
-            {(!isMiniMap && photoUrls.length > 0 && currentLightBoxImageIndex != null) && <ModalGateway>
+            {(!isMiniMap && photoUrls.length > 0) &&
                 <Modal
-                    onClose={onModalClose}
-                    styles={{
-                        blanket: base => ({
-                            ...base,
-                            backgroundColor: 'rgba(0,0,0,0.4)',
-                        }),
-                    }}>
-                    <Carousel
-                        views={photoUrls}
-                        currentIndex={currentLightBoxImageIndex}
-                        trackProps={{
-                            onViewChange: setCentreToPhotoId
-                        }}
-                    />
-                </Modal>
-            </ModalGateway>}
+                    show={currentLightBoxImageIndex != null}
+                    onHide={onModalClose}
+                    keyboard={false}
+                    dialogClassName='modal-content-only'
+                    centered
+                >
+                    <AwesomeSlider
+                        bullets={false}
+                        selected={currentLightBoxImageIndex}
+                    >
+                        {photoUrls.map((e, i) => <div key={i} data-src={e.src} />)}
+                    </AwesomeSlider>
+                </Modal>}
             <LeafletMap
                 center={[centre.lat, centre.lng]}
                 {...(viewportObject.isInitial ? { zoom: defaultZoom } : {})}
@@ -124,20 +127,8 @@ const SimpleMap = ({
                         />)
                 }
             </LeafletMap>
-        </React.Fragment>
+        </React.Fragment >
     );
 }
 
-export default connect(// State -> Props (it gets all the slice state)
-    state => ({
-        points: state[mapSlice.name].points,
-        centre: state[mapSlice.name].centre,
-        viewportObject: state[mapSlice.name].viewportObject,
-        currentLightBoxImageIndex: state[mapSlice.name].currentLightBoxImageIndex,
-        lastNonNullLightBoxImageIndex: state[mapSlice.name].lastNonNullLightBoxImageIndex
-    }),
-    // Dispatch -> Props
-    {
-        setNewCentre: mapSlice.actions.setNewCentre,
-        setCurrentLightBoxImageIndex: mapSlice.actions.setCurrentLightBoxImageIndex
-    })(SimpleMap)
+export default Frame.connectWithSlice(mapSlice, SimpleMap);
