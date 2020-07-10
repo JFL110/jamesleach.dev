@@ -47,4 +47,4 @@ setTimeout(function () {
     console.log("Warning - Delayed load");
     currentLoaded();
   }
-}, 2000);
+}, 1000);
