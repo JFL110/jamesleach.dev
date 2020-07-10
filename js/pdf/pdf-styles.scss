@@ -163,6 +163,7 @@ html {
 		flex-wrap: wrap;
 		margin-left: -0.3em;
 		margin-right: -0.8em;
+		margin-top: 1em;
 
 		.card {
 			margin: 0.3em 0.4em;
@@ -177,7 +178,7 @@ html {
 	}
 
 	.hobbies-heading {
-		margin-top: 2em;
+		margin-top: 2.8em;
 		margin-bottom: 1em;
 	}
 
@@ -220,11 +221,11 @@ html {
 }
 
 .timeline-item.timeline-not-last {
-	margin-bottom: 2.2em;
+	margin-bottom: 1.8em;
 }
 
 .timeline-item.timeline-last {
-	margin-bottom: 2em;
+	margin-bottom: 1.8em;
 }
 
 .timeline-subtitle {
