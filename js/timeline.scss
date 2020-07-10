@@ -92,7 +92,7 @@ $badge-text: #ffffff;
     .badge {
         font-size: 0.8em;
         margin-bottom: 0.4em;
-        background: rgba($left-bg-color, 100%);
+        background: $orange;
         color: $badge-text;
         padding: 5px 10px 5px 10px;
     }

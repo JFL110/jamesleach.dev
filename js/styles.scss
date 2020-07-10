@@ -180,11 +180,11 @@ a {
 }
 
 .back-end {
-	background-color: $badge-color;
+	background-color: $left-bg-color;
 }
 
 .front-end {
-	background-color: rgba(red, 50%);
+	background-color: $orange;
 }
 
 .deployment {
@@ -301,8 +301,8 @@ a {
 
 .btn-primary {
 	color: #fff;
-	background-color: #78c2ad;
-	border-color: #78c2ad;
+	background-color: $orange;
+	border-color: $orange;
 }
 
 .section-heading {

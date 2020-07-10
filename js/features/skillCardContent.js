@@ -17,7 +17,7 @@ import webpackLogo from '../icons/webpack.png'
 
 const frontEndBadge = {
     text: "front end",
-    className: "frontend"
+    className: "front-end"
 };
 const backEndBadge = {
     text: "back end",
