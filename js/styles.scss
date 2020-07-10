@@ -5,7 +5,7 @@
 
 $link-color: black;
 $left-width: 350px;
-
+$left-width-big-screen: 400px;
 $trailing-timline-height: 50px;
 $item-line-distance: 30px;
 
@@ -25,6 +25,11 @@ body {
 	@media (max-width: $mobile-screen) {
 		display: none;
 	}
+
+	@media (min-width: $big-screen) {
+		width: $left-width-big-screen;
+		min-width: $left-width-big-screen;
+	}
 }
 
 .left-desktop {
@@ -36,6 +41,10 @@ body {
 
 	@media (max-width: $mobile-screen) {
 		display: none;
+	}
+
+	@media (min-width: $big-screen) {
+		width: $left-width-big-screen;
 	}
 }
 
@@ -364,6 +373,15 @@ a {
 		width: 100%;
 		padding: 2em;
 		background-color: $left-bg-color;
+	}
+
+	@media (min-width: $small-mobile-screen) and (max-width: $mobile-screen) {
+		text-align: center;
+
+		.avatar {
+			width: 350px;
+			height: 350px;
+		}
 	}
 }
 
