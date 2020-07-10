@@ -22,9 +22,9 @@ export default [
     path: "/where-are-they",
     component: MapPage.page
   },
-  // {
-  //   id: "404",
-  //   path: "404",
-  //   component: ErrorPage.page404,
-  // }
+  {
+    id: "404",
+    path: "404",
+    component: MainPage.page,
+  }
 ];
