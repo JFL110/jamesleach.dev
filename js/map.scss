@@ -61,12 +61,22 @@
 	margin-top: 20px;
 }
 
-.maxi-map {
-	height: calc(100% - 4.7em);
-	width: 100%;
+.map-container {
+	height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+	padding-top: 3em;
 	@media (max-width: 800px) {
-		height: calc(100% - 3.5em);
+		padding-top: 2em
+
 	}
+}
+
+.maxi-map {
+	height: 100%;
+	width: 100%;
 }
 
 .mini-map {

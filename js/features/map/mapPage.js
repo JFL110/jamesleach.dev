@@ -6,7 +6,9 @@ import MapLazy from './mapLazy'
 const MapPage = () => {
     return <main >
         <TopBar />
-        <MapLazy loadingComponent={<Loading className="maxi-map" />} />
+        <div className="map-container">
+            <MapLazy loadingComponent={<Loading className="maxi-map" />} />
+        </div>
     </main >
 };
 
