@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import App from './app'
 import appSlice from './features/appSlice'
 import rootReducer from './rootReducer'
-import LoggingMiddleware from './loggingMiddleware'
+// import LoggingMiddleware from './loggingMiddleware'
 import { getStore, setStore } from './features/globalStore'
 import { routerMiddleware } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
@@ -24,7 +24,7 @@ setLoaded(() => {
 
   setStore(configureStore({
     reducer: rootReducer(history),
-    middleware: [LoggingMiddleware, routerMiddleware(history), mapLoadMiddleware, ...getDefaultMiddleware()],
+    middleware: [/*LoggingMiddleware,*/ routerMiddleware(history), mapLoadMiddleware, ...getDefaultMiddleware()],
   }));
 
   getStore().dispatch(appSlice.actions.onPreFirstRender());
