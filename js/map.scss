@@ -134,6 +134,11 @@
 	margin: auto;
 }
 
-.badge{
+.badge {
 	background-color: $green;
+}
+
+.awssld__controls__arrow-right,
+.awssld__controls__arrow-left {
+	opacity: 1 !important;
 }

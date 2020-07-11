@@ -34,7 +34,7 @@ export default ({ includeMap }) => {
                             digesting the location data into a JSON file and serving it statically to the frontend from S3.
                         </p>
                         <p>
-                            Take a look at the source repositories for more info.
+                            Take a look at the source repositories for more information.
                         </p>
                     </h6>
                     <h6>

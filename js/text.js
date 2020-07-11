@@ -29,7 +29,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         content: <React.Fragment>
             <p>Developed, maintained and provided support for a Java-based asset-management software used by lenders across the globe.</p>
             <p>Specialised in Business Intelligence with a focus on concurrency, performance and stability.
-                Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three. 
+            Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three.
                 Quickly became an authority in the area.</p>
             <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
@@ -60,10 +60,10 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
 
     timeOff: {
         date: "2019 - 20",
-        title: "Building a motorhome and traveling",
+        title: "Building a motorhome and travelling",
         content: <React.Fragment>
             <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fiberglass body completely from scratch.</p>
-            <p>Required extensive research, planning, budgeting and learning a number of new skills.</p>
+            <p>Required extensive research, planning, budgeting.</p>
             <p>Travel itinerary was unfortunately brought to an early close by COVID-19.</p>
         </React.Fragment>
     },
@@ -76,8 +76,9 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
     webIntro: <React.Fragment>
         <p>An enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years
             learning and working on personal projects. Producer of clean, well-tested and performant code.</p>
-        <p>Known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
         <p>Truly full stack; recent professional projects range from educational websites to clustered Extract Transform Load systems transferring gigabytes
              of financial data in real-time.</p>
+        <p>Known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
+
     </React.Fragment>,
 });
