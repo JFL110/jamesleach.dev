@@ -114,7 +114,7 @@ const SimpleMap = ({
                     <a className="leaflet-control-zoom-in" href="#" onClick={onClickOpenPhotosControl} title="Open photos">
                         <img src="/static/camera-icon.png" style={{ width: "100%" }} /></a>
                 </Control>}
-                <TileLayer url='http://{s}.tile.osm.org/{z}/{x}/{y}.png' />
+                <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
                 {
                     points
                         .filter(p => !isMiniMap || !p.isPhoto)
