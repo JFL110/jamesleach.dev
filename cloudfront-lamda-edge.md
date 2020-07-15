@@ -9,7 +9,6 @@ exports.handler = (event, context, callback) => {
   const gzipPathSuffix = '.gzip';
   const brPathSuffix = '.br';
 
-  // Look at headers to see if brotli is supported
   const { request } = event.Records[0].cf;
   const { headers } = request;
 
