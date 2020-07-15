@@ -1,7 +1,7 @@
 import React from 'react'
-import Frame from './frame'
-import MapLazy from './map/mapLazy'
-import Loading from './loading'
+import Frame from '../frame'
+import MapLazy from '../map/mapLazy'
+import Loading from '../loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarked } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
@@ -21,7 +21,7 @@ export default ({ includeMap }) => {
                         My location map
                     </Card.Title>
                     <Card.Subtitle>
-                        Map to keep family and friends updated when my partner and I are abroad
+                        Map to keep family and friends updated when my partner and I have been abroad.
                     </Card.Subtitle>
                     <h6>
                         <p>

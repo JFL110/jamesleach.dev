@@ -142,3 +142,14 @@
 .awssld__controls__arrow-left {
 	opacity: 1 !important;
 }
+
+.modal-content {
+	max-width: 97vw;
+	@media (min-width: $big-screen) {
+		max-width: 80vw;
+		margin-top: 1em;
+	}
+	@media (min-width: $small-desktop-screen) {
+		max-width: 85vw;
+	}
+}

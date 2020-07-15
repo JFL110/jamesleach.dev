@@ -2,7 +2,7 @@ import React from 'react'
 import SkillCard from './skillCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTools, faMountain } from '@fortawesome/free-solid-svg-icons'
-import celtaLogo from '../icons/cambridge-celta.png'
+import celtaLogo from './icons/cambridge-celta.png'
 
 export default () =>
     <div className="skill-card-group row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 rows-cols-xxl-3">

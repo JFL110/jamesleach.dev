@@ -2,7 +2,7 @@ import React from 'react'
 
 import Timeline from './timeline'
 import TimelineItem from './timelineItem'
-import Text from '../text'
+import Text from '../../text'
 
 export default () => <Timeline>
     <TimelineItem

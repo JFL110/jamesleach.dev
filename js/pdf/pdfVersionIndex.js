@@ -34,15 +34,15 @@ const SkillItem = ({ title }) => <Card>
 const SkillContent = () => <div className="skill-card-group">
     <SkillItem title="Java" />
     <SkillItem title="AWS" />
-    <SkillItem title="SQL" />
+    <SkillItem title="Oracle and MySQL" />
     <SkillItem title="NoSQL" />
-    <SkillItem title="Netsuite" />
     <SkillItem title="C#" />
     <SkillItem title="Javascript" />
     <SkillItem title="React + Redux" />
     <SkillItem title="Webpack" />
     <SkillItem title="HTML" />
     <SkillItem title="Sass" />
+    <SkillItem title="Netsuite" />
     <SkillItem title="GitHub Actions" />
 </div>
 

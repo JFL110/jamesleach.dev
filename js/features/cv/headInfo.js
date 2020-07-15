@@ -4,8 +4,8 @@ import { faEnvelope, faPhone, faFilePdf, faPrint } from '@fortawesome/free-solid
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import printJS from 'print-js'
 
-import avatarImage from '../images/avatar.jpeg'
-import avatarImageWebp from '../images/avatar.webp.jpeg'
+import avatarImage from '../../images/avatar.jpeg'
+import avatarImageWebp from '../../images/avatar.webp.jpeg'
 import { checkWebPSupport } from 'supports-webp-sync'
 
 // Append the current time to avoid caching

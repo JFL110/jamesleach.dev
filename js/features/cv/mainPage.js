@@ -6,7 +6,7 @@ import SkillCardContent from './skillCardContent'
 import ExtraCardsContent from './extraCardsContent'
 
 import MapCard from './mapCard'
-import Text from '../text'
+import Text from '../../text'
 
 const MainPage = ({ includeMap = false }) => {
 

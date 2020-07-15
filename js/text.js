@@ -33,7 +33,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
                 Quickly became an authority in the area.</p>
             <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
-            <p>Delivered numerous training sessions to experienced colleagues and new hires.</p>
+            <p>Delivered regular training sessions to experienced colleagues and new hires.</p>
         </React.Fragment>
     },
 
@@ -54,7 +54,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         content: <React.Fragment>
             <p>Developing an educational product to produce customisable worksheets for STEM subjects.
             The project involves creation of a web interface, backend user management system and an API for other developers to add content.</p>
-            <p>Adding custom functionality to Oracle NetSuite and building integrations with Java for a consultancy.</p>
+            <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
         </React.Fragment>
     },
 
@@ -62,23 +62,37 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         date: "2019 - 20",
         title: "Building a motorhome and travelling",
         content: <React.Fragment>
-            <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fiberglass body completely from scratch.</p>
+            <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.
+            </p>
             <p>Required extensive research, planning, budgeting.</p>
-            <p>Travel itinerary was unfortunately brought to an early close by COVID-19.</p>
         </React.Fragment>
     },
 
-    pdfIntro:
-        <p>Enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years learning
-        and working on personal projects.
-        More details and examples of recent work can be found on my online CV.</p>,
+    pdfIntro: <React.Fragment>
+            <p>
+            Enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years learning
+            and working on personal projects. I write clean, well-tested and performant code and have a practical attitude that gets the job done.
+            </p><p>
+                More details and examples of recent work can be found on my online CV.
+            </p>
+        </React.Fragment>,
 
     webIntro: <React.Fragment>
         <p>An enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years
-            learning and working on personal projects. Producer of clean, well-tested and performant code.</p>
-        <p>Truly full stack; recent professional projects range from educational websites to clustered Extract Transform Load systems transferring gigabytes
-             of financial data in real-time.</p>
-        <p>Known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
+            learning and working on personal projects. I write clean, well-tested and performant code and have a practical attitude that gets the job done.</p>
+
+        <p>Recent professional projects range from educational websites to financial administration systems used to
+        managed millions of contracts across the globe.
+      
+        In the latter I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
+        
+        In addition to designing and developing a number of new product features, I dramatically improved process speed by optimising
+        database structure, queries and Java code. 
+        
+        I also took a special interest in identifying and fixing concurrency based issues, resulting in a stable product and satisfied clients.
+        </p>
+
+        <p>I am known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
 
     </React.Fragment>,
 });
