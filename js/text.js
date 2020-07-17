@@ -70,21 +70,21 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
 
     pdfIntro: <React.Fragment>
             <p>
-            Enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years learning
-            and working on personal projects. I write clean, well-tested and performant code and have a practical attitude that gets the job done.
+            Enthusiastic, proactive and dependable full stack developer with four years professional experience and over 14 years learning
+            and working on personal projects. I write clean, well-tested and performant code and have a practical attitude to solving problems.
             </p><p>
                 More details and examples of recent work can be found on my online CV.
             </p>
         </React.Fragment>,
 
     webIntro: <React.Fragment>
-        <p>An enthusiastic, proactive and independent full stack developer with four years professional experience and over 14 years
-            learning and working on personal projects. I write clean, well-tested and performant code and have a practical attitude that gets the job done.</p>
+        <p>An enthusiastic, proactive and dependable full stack developer with four years professional experience and over 14 years
+            learning and working on personal projects. I write clean, well-tested and performant code and have a practical attitude to solving problems.</p>
 
         <p>Recent professional projects range from educational websites to financial administration systems used to
         managed millions of contracts across the globe.
       
-        In the latter I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
+        In the latter, I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
         
         In addition to designing and developing a number of new product features, I cut process speed by optimising
         database structure, queries and Java code. 
