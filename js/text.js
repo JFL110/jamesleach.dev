@@ -86,7 +86,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
       
         In the latter I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
         
-        In addition to designing and developing a number of new product features, I dramatically improved process speed by optimising
+        In addition to designing and developing a number of new product features, I cut process speed by optimising
         database structure, queries and Java code. 
         
         I also took a special interest in identifying and fixing concurrency based issues, resulting in a stable product and satisfied clients.
