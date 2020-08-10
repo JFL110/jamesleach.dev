@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 
 import MainPage from './features/cv/mainPage'
 import MapPage from './features/map/mapPage'
