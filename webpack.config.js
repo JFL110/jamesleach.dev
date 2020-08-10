@@ -2,6 +2,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyPlugin = require('copy-webpack-plugin');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const fs = require('fs');
 
 // Plugin to execute any code after compilation
@@ -49,6 +50,11 @@ module.exports = env => ({
     // },
   },
   plugins: [
+   new SitemapPlugin('https://www.jamesleach.dev', ['/cv/'], {
+      filename: '/static/sitemap.xml',
+      lastmod: true,
+    }),
+    // new BundleAnalyzerPlugin(),
     // Compression plugins
     env.NODE_ENV === 'production' && new CompressionPlugin({
       filename: '[path].gz[query]',
