@@ -2,7 +2,7 @@ import React from 'react'
 
 import MainPage from './features/cv/mainPage'
 import MapPage from './features/map/mapPage'
-import CamperPageLazy from './features/camper/camperPageLazy'
+// import CamperPageLazy from './features/camper/camperPageLazy'
 
 const jamesLeachCv = "James Leach - Full Stack Developer CV";
 
@@ -31,12 +31,12 @@ export default [
     component: MapPage.page,
     pageTitle: "Where are they?"
   },
-  {
-    id: "camper",
-    path: "/camper",
-    component: < CamperPageLazy />,
-    pageTitle: "Building a Camper"
-  },
+  // {
+  //   id: "camper",
+  //   path: "/camper",
+  //   component: < CamperPageLazy />,
+  //   pageTitle: "Building a Camper"
+  // },
   {
     id: "404",
     path: "404",
