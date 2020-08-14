@@ -33,6 +33,7 @@ module.exports = env => ({
     },
     // `chunkFilename` provides a template for naming code-split bundles (optional)
     chunkFilename: './static/[hash:8].[name].bundle.js',
+    publicPath: "/"
   },
   watchOptions: {
     aggregateTimeout: 200,
@@ -50,7 +51,7 @@ module.exports = env => ({
     // },
   },
   plugins: [
-   new SitemapPlugin('https://www.jamesleach.dev', ['/cv/'], {
+    new SitemapPlugin('https://www.jamesleach.dev', ['/cv'], {
       filename: '/static/sitemap.xml',
       lastmod: true,
     }),
