@@ -1,7 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import QRCode from 'qrcode.react'
-import { faEnvelope, faPhone, faExternalLinkAlt, faArrowRight, faTools, faMountain } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
+import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone'
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalLinkAlt'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight'
+import { faTools } from '@fortawesome/free-solid-svg-icons/faTools'
+import { faMountain } from '@fortawesome/free-solid-svg-icons/faMountain'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { Card } from 'react-bootstrap';
@@ -34,12 +40,12 @@ const SkillItem = ({ title }) => <Card>
 const SkillContent = () => <div className="skill-card-group">
     <SkillItem title="Java" />
     <SkillItem title="AWS" />
+    <SkillItem title="Spring" />
     <SkillItem title="Oracle and MySQL" />
     <SkillItem title="NoSQL" />
     <SkillItem title="C#" />
     <SkillItem title="Javascript" />
     <SkillItem title="React + Redux" />
-    <SkillItem title="Webpack" />
     <SkillItem title="HTML" />
     <SkillItem title="Sass" />
     <SkillItem title="Netsuite" />

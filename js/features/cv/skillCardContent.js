@@ -13,7 +13,7 @@ import csharp from './icons/csharp.png'
 import mysqlLogo from './icons/mysql.png'
 import netsuiteLogo from './icons/netsuite.png'
 import reactLogo from './icons/react.png'
-import webpackLogo from './icons/webpack.png'
+import springLogo from './icons/spring.png'
 
 const frontEndBadge = {
     text: "front end",
@@ -48,9 +48,9 @@ export default () =>
             badge={frontEndBadge}
             iconSrc={reactLogo} />
         <SkillCard
-            title="Webpack"
-            badge={frontEndBadge}
-            iconSrc={webpackLogo} />
+            title="Spring"
+            badge={backEndBadge}
+            iconSrc={springLogo} />
         <SkillCard
             title="SQL"
             badge={backEndBadge}

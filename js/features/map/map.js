@@ -75,6 +75,7 @@ const SimpleMap = ({
 
     return (
         <React.Fragment>
+            
             {(!isMiniMap && photoUrls.length > 0) &&
                 <Modal
                     show={currentLightBoxImageIndex != null}
@@ -90,6 +91,7 @@ const SimpleMap = ({
                         {photoUrls.map((e, i) => <div key={i} data-src={e.src} />)}
                     </AwesomeSlider>
                 </Modal>}
+
             <LeafletMap
                 center={[centre.lat, centre.lng]}
                 {...(viewportObject.isInitial ? { zoom: defaultZoom } : {})}

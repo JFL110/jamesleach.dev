@@ -1,7 +1,11 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone, faFilePdf, faPrint } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
+import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone'
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons/faFilePdf'
+import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint'
+
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import printJS from 'print-js'
 
 import avatarImage from '../../images/avatar.jpeg'

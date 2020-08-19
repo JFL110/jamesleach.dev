@@ -6,6 +6,8 @@ import SkillCardContent from './skillCardContent'
 import ExtraCardsContent from './extraCardsContent'
 
 import MapCard from './mapCard'
+import WebCanvasCard from './webCanvasCard'
+
 import Text from '../../text'
 
 const MainPage = ({ includeMap = false }) => {
@@ -34,6 +36,7 @@ const MainPage = ({ includeMap = false }) => {
             <ExtraCardsContent />
 
             <h2 className="section-heading">Demo Project</h2>
+            <WebCanvasCard />
             <MapCard includeMap={includeMap}/>
         </div>
     </main >

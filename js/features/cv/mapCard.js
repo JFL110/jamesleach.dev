@@ -3,8 +3,8 @@ import Frame from '../frame'
 import MapLazy from '../map/mapLazy'
 import Loading from '../loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarked } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faMapMarked } from '@fortawesome/free-solid-svg-icons/faMapMarked'
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 
 import { Button, Card } from 'react-bootstrap';
 
@@ -12,11 +12,11 @@ export default ({ includeMap }) => {
 
     const onViewFull = () => { Frame.dispatchPush('/where-are-they'); }
 
-    return <Card className='map-card'>
+    return <Card className='map-card project-card'>
         <Card.Body>
             <div>
                 {includeMap && <MapLazy isMiniMap loadingComponent={<Loading className="mini-map full-height" />} />}
-                <div className='map-card-content'>
+                <div className='card-content'>
                     <Card.Title>
                         My location map
                     </Card.Title>
@@ -25,7 +25,7 @@ export default ({ includeMap }) => {
                     </Card.Subtitle>
                     <h6>
                         <p>
-                            This project combines an Android app, AWS hosted Java backend and Javascript React frontend to collect location
+                            This project combines an Android app, AWS Lambda hosted Java backend and Javascript React frontend to collect location
                             information and display it on a map with a selection of photos.
                         </p>
                         <p>

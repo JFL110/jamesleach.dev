@@ -1,7 +1,8 @@
 import React from 'react'
 import SkillCard from './skillCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTools, faMountain } from '@fortawesome/free-solid-svg-icons'
+import { faTools } from '@fortawesome/free-solid-svg-icons/faTools'
+import { faMountain } from '@fortawesome/free-solid-svg-icons/faMountain'
 import celtaLogo from './icons/cambridge-celta.png'
 
 export default () =>
