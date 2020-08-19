@@ -236,7 +236,7 @@ a {
 	}
 }
 
-.map-card {
+.project-card {
 	margin-top: $section-gap;
 	padding: 0;
 
@@ -249,6 +249,39 @@ a {
 		margin-left: -1em;
 		margin-right: -1em;
 		border-radius: 0;
+	}
+
+	.mini-map {
+		height: 200px;
+		width: 350px;
+		@media (max-width: $small-desktop-screen) {
+			width: 100%;
+			height: 200px;
+		}
+	}
+
+	.mini-canvas-container {
+		max-height: 350px;
+		& > div {
+			position: relative;
+		}
+		
+	}
+
+	.project-card-img {
+		height: 200px;
+		width: 350px;
+		max-width: 350px;
+		overflow: hidden;
+		@media (max-width: $small-desktop-screen) {
+			width: 100%;
+			height: 200px;
+			max-width: calc(100vw - 22em);
+		}
+		@media (max-width: $mobile-screen) {
+			max-width: calc(100vw - 1em);
+		}
+
 	}
 
 	.card-body {
@@ -272,7 +305,9 @@ a {
 		}
 	}
 
-	.map-card-content {
+	.card-content {
+		z-index: 20;
+		background-color: white;
 		padding: 2em;
 		position: relative;
 		vertical-align: top;
