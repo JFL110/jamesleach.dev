@@ -119,7 +119,7 @@ a {
 	text-decoration: inherit;
 }
 
-.anchor-link{
+.anchor-link {
 	font-weight: 600;
 }
 
@@ -193,15 +193,15 @@ a {
 }
 
 .back-end {
-	background-color: $left-bg-color;
-}
-
-.front-end {
 	background-color: $orange;
 }
 
+.front-end {
+	background-color: $left-bg-color;
+}
+
 .deployment {
-	background-color: $green;
+	background-color: $second-badge-color;
 }
 
 .badge {
@@ -269,7 +269,6 @@ a {
 		& > div {
 			position: relative;
 		}
-		
 	}
 
 	.project-card-img {
@@ -285,7 +284,6 @@ a {
 		@media (max-width: $mobile-screen) {
 			max-width: calc(100vw - 1em);
 		}
-
 	}
 
 	.card-body {
@@ -351,6 +349,11 @@ a {
 	color: #fff;
 	background-color: $orange;
 	border-color: $orange;
+
+	&:hover {
+		background-color: $second-orange;
+		border-color: $second-orange;
+	}
 }
 
 .section-heading {

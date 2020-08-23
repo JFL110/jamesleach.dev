@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
 import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone'
@@ -8,8 +8,9 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import printJS from 'print-js'
 
-import avatarImage from '../../images/avatar.jpeg'
-import avatarImageWebp from '../../images/avatar.webp.jpeg'
+import avatarImage from '../../images/8-small.jpeg'
+import avatarImageNano from '../../images/8-nano.png'
+import avatarImageWebp from '../../images/8-small.webp.jpeg'
 import { checkWebPSupport } from 'supports-webp-sync'
 
 // Append the current time to avoid caching
@@ -25,9 +26,16 @@ export default () => {
 
     const avatarUrl = checkWebPSupport() ? avatarImageWebp : avatarImage;
 
+    const [avatarImageLoaded, setAvatarImageLoaded] = useState(false);
+    if (!avatarImageLoaded) {
+        const imageLoader = new Image();
+        imageLoader.src = avatarUrl;
+        imageLoader.onload = () =>   setAvatarImageLoaded(true);
+    }
+
     return <React.Fragment>
         <div className="avatar" style={{
-            backgroundImage: `url('${avatarUrl}')`
+            backgroundImage: `url('${avatarImageLoaded ? avatarUrl : avatarImageNano}')`
         }} />
         <h1 className="name-heading">James Leach</h1>
         <h4 className="title-heading">Full stack developer</h4>

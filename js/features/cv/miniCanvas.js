@@ -27,6 +27,7 @@ export default () => {
                 canvasHeight={800}
                 ref={canvasRef}
                 loadTimeOffset={1}
+                brushColor={'#f48a0a'}
             />
         </div>
     </VisibilitySensor>
