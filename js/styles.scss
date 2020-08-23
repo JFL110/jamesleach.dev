@@ -347,12 +347,27 @@ a {
 
 .btn-primary {
 	color: #fff;
-	background-color: $orange;
-	border-color: $orange;
+	background-color: $orange !important;
+	border-color: $orange !important;
 
 	&:hover {
-		background-color: $second-orange;
-		border-color: $second-orange;
+		background-color: $second-orange !important;
+		border-color: $second-orange !important;
+	}
+
+	&:active {
+		background-color: $second-orange !important;
+		border-color: $second-orange !important;
+	}
+
+	&:visited {
+		background-color: $orange !important;
+		border-color: $orange !important;
+	}
+
+	&:link {
+		background-color: $orange !important;
+		border-color: $orange !important;
 	}
 }
 
