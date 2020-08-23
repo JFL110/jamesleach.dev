@@ -35,7 +35,7 @@ const MainPage = ({ includeMap = false }) => {
             <h2 className="section-heading">Hobbies & Extras</h2>
             <ExtraCardsContent />
 
-            <h2 className="section-heading">Demo Project</h2>
+            <h2 className="section-heading">Demo Projects</h2>
             <WebCanvasCard />
             <MapCard includeMap={includeMap}/>
         </div>

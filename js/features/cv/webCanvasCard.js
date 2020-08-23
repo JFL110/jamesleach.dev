@@ -30,7 +30,8 @@ export default () => {
                             Continuous integration is used to build, test and deploy the app automatically to AWS Elastic Beanstalk.
                         </p>
                         <p>
-                            Take a look at the source repositories for more information.
+                            Take a look at the source repositories for more information. 
+                            To test the app, open it in two windows or devices and navigate to the same canvas in both.
                         </p>
                     </h6>
                     <h6>
