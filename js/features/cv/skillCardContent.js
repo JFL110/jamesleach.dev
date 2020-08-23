@@ -32,7 +32,6 @@ export default () =>
     <div className="skill-card-group row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 rows-cols-xxl-4 ">
         <SkillCard
             title="Java"
-            isHighlighted
             badge={backEndBadge}
             iconSrc={javaLogo} />
         <SkillCard
