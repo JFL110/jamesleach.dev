@@ -78,10 +78,10 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         </React.Fragment>,
 
     webIntro: <React.Fragment>
-        <p>An enthusiastic, proactive and dependable full stack developer with four years professional experience and over 14 years
+        <p>I am an enthusiastic, proactive and dependable full stack developer with four years professional experience and over 14 years
             learning and working on personal projects. I write clean, well-tested and performant code and have a practical attitude to solving problems.</p>
 
-        <p>Recent professional projects range from educational websites to financial administration systems used to
+        <p>Recent professional projects range from educational platforms to financial administration systems used to
         managed millions of contracts across the globe.
       
         In the latter, I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
@@ -93,6 +93,8 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         </p>
 
         <p>I am known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
+
+        <p>Take a look at some of my <a href="#demos" className="anchor-link">demo projects</a>.</p>
 
     </React.Fragment>,
 });

@@ -21,7 +21,6 @@ const MainPage = ({ includeMap = false }) => {
             <HeadInfo />
         </div>
         <div className="right">
-            <h1 className="desktop-heading">I am...</h1>
             <div className="intro-section">
                 {Text.webIntro}
             </div>
@@ -35,10 +34,10 @@ const MainPage = ({ includeMap = false }) => {
             <h2 className="section-heading">Hobbies & Extras</h2>
             <ExtraCardsContent />
 
-            <h2 className="section-heading">Demo Projects</h2>
-            <WebCanvasCard />
-            <MapCard includeMap={includeMap}/>
-        </div>
+            <h2 className="section-heading"><a name="demos">Demo Projects</a></h2>
+        <WebCanvasCard />
+        <MapCard includeMap={includeMap} />
+        </div >
     </main >
 };
 
