@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
+import { faPaintBrush } from '@fortawesome/free-solid-svg-icons/faPaintBrush'
+
 import Loading from '../loading'
 import { Button, Card } from 'react-bootstrap';
 
@@ -39,7 +41,7 @@ export default () => {
                     </h6>
                     <div className="lower-button-group">
                         <Button as="a" href="http://d1kzdlgex69htr.cloudfront.net/random" target="_blank">
-                            View app
+                        <FontAwesomeIcon icon={faPaintBrush} />View app
                         </Button>
                         <Button as="a" href="https://github.com/JFL110/spring-websockets-example" target="_blank">
                             <FontAwesomeIcon icon={faGithub} />Backend source
