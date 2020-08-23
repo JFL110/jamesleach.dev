@@ -280,7 +280,7 @@ a {
 		@media (max-width: $small-desktop-screen) {
 			width: 100%;
 			height: 200px;
-			max-width: calc(100vw - 22em);
+			max-width: calc(100vw - 22.5em);
 		}
 		@media (max-width: $mobile-screen) {
 			max-width: calc(100vw - 1em);
