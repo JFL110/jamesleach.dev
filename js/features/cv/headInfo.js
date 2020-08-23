@@ -43,7 +43,7 @@ export default () => {
         <h5 className="side-heading">Get in touch</h5>
 
         <a className="side-item-container" href="mailto:contact@jamesleach.dev"><FontAwesomeIcon icon={faEnvelope} />contact@jamesleach.dev</a>
-        <a className="side-item-container" href="tel:+44-946-496-228"> <FontAwesomeIcon icon={faPhone} />+44 946 496 228</a>
+        <a className="side-item-container" href="tel:+447-946-496-228"> <FontAwesomeIcon icon={faPhone} />+447 946 496 228</a>
         <a className="side-item-container" target="_blank" rel="noreferrer" href="https://github.com/JFL110"> <FontAwesomeIcon icon={faGithub} />JFL110</a>
 
         <h5 className="side-heading">Take away</h5>
