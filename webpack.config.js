@@ -60,10 +60,12 @@ module.exports = env => ({
     env.NODE_ENV === 'production' && new CompressionPlugin({
       filename: '[path].gz[query]',
       algorithm: 'gzip',
+      minRatio: Number.MAX_SAFE_INTEGER, 
       test: /\.js$|\.css$|\.html$/,
     }),
     env.NODE_ENV === 'production' && new BrotliPlugin({
       asset: '[path].br[query]',
+      minRatio: Number.MAX_SAFE_INTEGER, 
       test: /\.js$|\.css$|\.html$/,
     }),
     // Copy static content plugin
