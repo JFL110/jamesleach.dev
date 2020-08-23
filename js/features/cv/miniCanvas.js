@@ -15,7 +15,7 @@ export default () => {
                     width: 1200 * scaleDown,
                     height: 800 * scaleDown
                 }));
-            }, 500);
+            }, 50);
             setDrawingRendered(true);
         }
     };
@@ -26,7 +26,7 @@ export default () => {
                 canvasWidth={1000}
                 canvasHeight={800}
                 ref={canvasRef}
-                loadTimeOffset={1}
+                loadTimeOffset={10}
                 brushColor={'#f48a0a'}
             />
         </div>
