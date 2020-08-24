@@ -99,7 +99,7 @@ export default () => {
             <h1 className="main-heading">Building a Camper</h1>
 
             <p>
-                In 2019, Cara and I converted a 2004 Toyota Hilux into an 4x4 camper.
+                In 2019, my partner Cara and I converted a 2004 Toyota Hilux into an 4x4 camper.
                 Partly we were looking for a challenge, and partly we wanted a vehicle that could be lived in,
                 could go almost anywhere and that didn&apos;t cost a fortune.
             </p>

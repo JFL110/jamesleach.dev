@@ -15,7 +15,7 @@ export default () => {
                     width: 1200 * scaleDown,
                     height: 800 * scaleDown
                 }));
-            }, 50);
+            }, 500);
             setDrawingRendered(true);
         }
     };

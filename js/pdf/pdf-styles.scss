@@ -119,7 +119,7 @@ html {
 	}
 
 	& > .body-column-one {
-		width: 54%;
+		width: 56%;
 		border-right: 1px solid;
 		// Alpha must be zero at edges for proper fade in printed version
 		border-image: linear-gradient(
@@ -134,7 +134,7 @@ html {
 	}
 
 	& > .body-column-two {
-		width: 46%;
+		width: 44%;
 		padding-left: 2em;
 		
 	}

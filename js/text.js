@@ -34,7 +34,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
                 Quickly became an authority in the area and took ownership of key developments..</p>
             <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
-            <p>Delivered regular training sessions to experienced colleagues and new hires.</p>
+            <p>Delivered regular training sessions to experienced colleagues and new hires on Java, SQL and internal frameworks.</p>
         </React.Fragment>
     },
 
@@ -43,17 +43,21 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         title: "El Ministerio de Educación, Colombia",
         subTitle: "Full-Time Volunteer English Teacher",
         content: <React.Fragment>
-            <p>Taught classes of up to forty state-school teenagers, both alone and cooperatively with local teachers.</p>
+            <p>Taught classes of up to forty state-school teenagers as well as improving teachers' English and course materials.</p>
             <p>Created an educational App to utilise previously unused tablets in the classroom.</p>
-            <p>Completed a Cambridge CELTA English teaching course in preparation.</p>
-        </React.Fragment>
+        </React.Fragment>,
+        pdfContent: <React.Fragment>
+            <p>Taught classes of up to forty state-school teenagers as well as improving teachers' English and course materials.</p>
+          <p>Created an educational App to utilise previously unused tablets in the classroom.</p>
+          <p>Completed a Cambridge CELTA English teaching course in preparation.</p>
+      </React.Fragment>
     },
 
     freelance: {
         date: "2020 - present",
         title: "Freelance",
         content: <React.Fragment>
-            <p>Developing an educational product to produce customisable worksheets for STEM subjects.
+            <p>Independently developing an educational product to produce customisable worksheets for STEM subjects.
             The project involves creation of a web interface, backend user management system and an API for other developers to add content.</p>
             <hr />
             <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
@@ -64,8 +68,8 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         date: "2020 - present",
         title: "Freelance",
         content: <React.Fragment>
-            <p>Developing an educational product to produce customisable worksheets for STEM subjects.
-            The project involves creation of a web interface, backend user management system and an API for other developers to add content.</p>
+            <p>Independently developing an educational product to produce custom worksheets for STEM subjects.
+            The project involves creation of a web interface, backend user management system and an API for developers to add content.</p>
             <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
         </React.Fragment>
     },
@@ -82,7 +86,6 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         pdfContent: <React.Fragment>
             <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.
             </p>
-            <p>Required extensive research, planning and budgeting.</p>
         </React.Fragment>
     },
 
