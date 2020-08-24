@@ -99,7 +99,7 @@ export default () => {
             <p>
                 In 2019, Cara and I converted a 2004 Toyota Hilux into an 4x4 camper.
                 Partly we were looking for a challenge, and partly we wanted a vehicle that could be lived in,
-                could go almost anywhere and that didn't cost a fortune.
+                could go almost anywhere and that didn&apos;t cost a fortune.
             </p>
             <p>
                 We took off the back and replaced it with a body built from handmade fibreglass composite panels that we designed with CAD.
