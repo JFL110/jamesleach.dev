@@ -83,7 +83,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
     pdfIntro: <React.Fragment>
             <p>
             Beginning with my first website at age eleven, I have been coding for over 17 years. 
-           In this time I`ve learnt to write clean, well-tested and performant code and to identify problems before they happen.
+           In this time I&apos;ve learnt to write clean, well-tested and performant code and to identify problems before they happen.
            I am known for approachability, great quality work and creating tooling that makes life better for the whole team.
             </p><p>
                 More details and examples of recent work can be found on my online CV.
@@ -92,7 +92,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
 
     webIntro: <React.Fragment>
         <p>Beginning with my first website at age eleven, I have been coding for over 17 years. 
-           In this time I`ve learnt to write clean, well-tested and performant code and to identify problems before they happen.
+           In this time I&apos;ve learnt to write clean, well-tested and performant code and to identify problems before they happen.
            I am known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
         
         <p>Recent professional projects range from educational platforms to financial administration systems used to
