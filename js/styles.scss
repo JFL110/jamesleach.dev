@@ -62,7 +62,9 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
-	padding: 2em;
+	padding-left: 2em;
+	padding-top: 2em;
+	padding-right: 2em;
 
 	@media (max-width: $mobile-screen) {
 		display: none;
@@ -424,9 +426,9 @@ a {
 	display: inline-block;
 	font-weight: 600;
 
-	@media (max-height: 900px) {
-		margin-top: 1em;
-		margin-bottom: 0.5em;
+	@media (max-height: 870px) {
+		margin-top: 1.5em;
+		margin-bottom: 1em;
 	}
 }
 
