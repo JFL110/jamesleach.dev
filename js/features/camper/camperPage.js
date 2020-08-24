@@ -33,10 +33,12 @@ const MainImage = ({ image, caption, className, onClick }) =>
 
 const LazyImage = ({ image, onClick }) => {
     const [isLoaded, setIsLoaded] = useState(loadedImageMarkers[image.src] === true);
+    const thumb = image.thumbnail ?? image.src;
+    console.log(isLoaded);
 
     if (!isLoaded) {
         const imageLoader = new Image();
-        imageLoader.src = image.src;
+        imageLoader.src = thumb;
 
         imageLoader.onload = () => {
             setIsLoaded(true);
@@ -47,7 +49,7 @@ const LazyImage = ({ image, onClick }) => {
     return <div
         className={"div-image " + (onClick == null ? "" : "clickable")}
         onClick={onClick}
-        style={{ backgroundImage: "url('" + (isLoaded ? image.src : image.nano) + "')" }} />
+        style={{ backgroundImage: "url('" + (isLoaded ? (thumb) : image.nano) + "')" }} />
 }
 
 const BuildImage = ({ image, onClick }) => <div className="col build-image-col">
