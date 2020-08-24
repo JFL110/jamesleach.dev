@@ -110,7 +110,7 @@ export default () => {
                 It was a gruelling task but the end result is a truly unique home away from home which can go where others can&apos;t.
             </p>
 
-            <p>You can take a look at some of the places we've been <PushLink dest='./where-are-they'>on this map</PushLink>.</p>
+            <p>You can take a look at some of the places we&apos;ve been <PushLink dest='./where-are-they'>on this map</PushLink>.</p>
 
             {(selectedImage !== null) && <Lightbox
                 mainSrc={filteredImages[selectedImage].src}
