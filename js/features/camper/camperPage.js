@@ -102,7 +102,7 @@ export default () => {
                 could go almost anywhere and that didn&apos;t cost a fortune.
             </p>
             <p>
-                We took off the back and replaced it with a body built from handmade fibreglass composite panels that we designed with CAD.
+                We replaced the pickup bed with a body built from handmade fibreglass composite panels that we designed with CAD.
 
                 Inside we created a cosy interior with all the comforts of home including central heating, running water and cooking facilities.
                 Outside we reinforced the suspension and brakes and gave the truck some mechanical TLC.
