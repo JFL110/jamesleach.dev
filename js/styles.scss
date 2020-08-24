@@ -9,7 +9,27 @@ $left-width-big-screen: 375px;
 $trailing-timline-height: 50px;
 $item-line-distance: 30px;
 
+@mixin scroll-bar {
+	
+	&::-webkit-scrollbar {
+		width: 12px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #888;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
+}
+
 body {
+	@include scroll-bar();
 	font-size: 112.5%;
 	line-height: 1.6em;
 }
@@ -33,6 +53,11 @@ body {
 }
 
 .left-desktop {
+	// Scroll bar in case page is too short - hopefully not seen but better than inaccessable content
+	@include scroll-bar();
+	overflow-y: auto;
+	max-height: 100vh;
+
 	width: $left-width;
 	position: fixed;
 	top: 0;
@@ -46,7 +71,9 @@ body {
 	@media (min-width: $big-screen) {
 		width: $left-width-big-screen;
 	}
+
 }
+
 
 .left {
 	h1,
@@ -392,10 +419,15 @@ a {
 }
 
 .side-heading {
-	margin-top: 4em;
+	margin-top: 3em;
 	margin-bottom: 1.5em;
 	display: inline-block;
 	font-weight: 600;
+
+	@media (max-height: 900px) {
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+	}
 }
 
 .side-item-container {
