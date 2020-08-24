@@ -51,7 +51,7 @@ module.exports = env => ({
     // },
   },
   plugins: [
-    new SitemapPlugin('https://www.jamesleach.dev', ['/cv'], {
+    new SitemapPlugin('https://www.jamesleach.dev', ['/cv', '/where-are-they', '/camper'], {
       filename: '/static/sitemap.xml',
       lastmod: true,
     }),

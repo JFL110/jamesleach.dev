@@ -8,7 +8,7 @@ export default ({
     e.preventDefault();
     Frame.dispatchPush(dest);
 }}
-    href="#"
+    href={dest}
     className="text-link">
         {children}
     </a>

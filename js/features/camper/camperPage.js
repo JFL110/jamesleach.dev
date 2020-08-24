@@ -87,9 +87,9 @@ export default () => {
         <div>
             <div className="camper-breadcrumb">
                 <span>
-                    <a onClick={() => Frame.dispatchPush('./')} className="text-link" href="">
+                    <PushLink dest='./'>
                         <FontAwesomeIcon icon={faHome} /> home
-                   </a>
+                        </PushLink>
                 </span>
                 <span><FontAwesomeIcon icon={faLongArrowAltRight} /></span>
             </div>
