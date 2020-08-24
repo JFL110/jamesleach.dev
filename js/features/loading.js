@@ -1,8 +1,9 @@
 import React from 'react'
 
 export default (
-    { className = "" }
-) => <div className={"loading-container " + className}>
+    { className = ""
+        , style = {} }
+) => <div className={"loading-container " + className} style={style}>
         <div>
             <div>
                 <div className="loader" />

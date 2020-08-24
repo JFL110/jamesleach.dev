@@ -1,4 +1,5 @@
 import React from 'react'
+import PushLink from './features/pushLink'
 
 export default ({
 
@@ -76,7 +77,12 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         content: <React.Fragment>
             <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.
             </p>
-            <p>Required extensive research, planning, budgeting.</p>
+            <p>Take a look at the <PushLink dest='./camper'>build photos</PushLink> from the project.</p>
+        </React.Fragment>,
+        pdfContent: <React.Fragment>
+            <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.
+            </p>
+            <p>Required extensive research, planning and budgeting.</p>
         </React.Fragment>
     },
 
@@ -106,7 +112,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         During my time on the project, both client satisfaction and sales of new enhancements greatly improved.
         </p>
 
-        <p>Take a look at some of my <a href="#demos" className="anchor-link">demo projects</a>.</p>
+        <p>Take a look at some of my <a href="#demos" className="text-link">demo projects</a>.</p>
 
     </React.Fragment>,
 });

@@ -1,0 +1,150 @@
+@import "../../common";
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+p,
+span,
+body,
+a {
+    color: #353535;
+}
+
+.main-heading {
+    margin-bottom: 1em;
+}
+
+.camper-main {
+    & > div {
+        background-color: $right-bg-color;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-top: 4em;
+        height: 100%;
+
+        @media (max-width: $mobile-screen) {
+            padding-left: 3vw;
+            padding-right: 3vw;
+        }
+    }
+}
+
+.camper-breadcrumb {
+    & > span {
+        margin-right: 1em;
+    }
+    margin-bottom: 0.5em;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.build-image-container {
+    margin-top: 2em;
+    padding-bottom: 2em;
+    clear: both;
+
+    .build-image-col {
+        text-align: center;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        padding-top: 1em;
+
+        & > div {
+            width: 100%;
+            height: 20vw;
+
+            @media (max-width: /*575px*/ 768px) {
+                height: 60vw;
+            }
+
+            @media (min-width: 1600px) {
+                height: 15vw;
+            }
+        }
+    }
+}
+
+.camper-section-heading {
+    margin-top: 2em;
+}
+
+.div-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.before-after-container {
+    @media (min-width: $mobile-screen) {
+        display: block;
+        & > .left-image {
+            padding-right: 5vw;
+        }
+        & > .right-image {
+            padding-left: 5vw;
+        }
+
+        & > div {
+            width: 50%;
+            display: inline-block;
+            height: 100%;
+
+            & > div {
+                text-align: center;
+                display: inline-block;
+                width: 100%;
+                min-height: 26vw;
+                margin-top: 3em;
+            }
+        }
+    }
+
+    @media (max-width: $mobile-screen) {
+        & > div {
+            margin: auto;
+            width: 90vw;
+            text-align: center;
+            & > div {
+                text-align: center;
+                width: 100%;
+                min-height: 60vw;
+                margin-top: 5em;
+            }
+        }
+    }
+}
+
+.main-image-container {
+    & > div {
+        margin-top: 5em;
+        text-align: center;
+        & > img {
+            width: 65%;
+        }
+    }
+}
+
+.highlights-button-container {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0.1em;
+    font-size: 1.2em;
+    float: right;
+    & > div {
+        margin-left: 0.5em;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
