@@ -30,7 +30,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
             <p>Developed, maintained and provided support for a Java-based asset-management software used by lenders across the globe.</p>
             <p>Specialised in Business Intelligence with a focus on concurrency, performance and stability.
             Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three.
-                Quickly became an authority in the area.</p>
+                Quickly became an authority in the area and took ownership of key developments..</p>
             <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
             <p>Delivered regular training sessions to experienced colleagues and new hires.</p>
@@ -54,9 +54,21 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         content: <React.Fragment>
             <p>Developing an educational product to produce customisable worksheets for STEM subjects.
             The project involves creation of a web interface, backend user management system and an API for other developers to add content.</p>
+            <hr />
             <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
         </React.Fragment>
     },
+
+    freelancePdf: {
+        date: "2020 - present",
+        title: "Freelance",
+        content: <React.Fragment>
+            <p>Developing an educational product to produce customisable worksheets for STEM subjects.
+            The project involves creation of a web interface, backend user management system and an API for other developers to add content.</p>
+            <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
+        </React.Fragment>
+    },
+
 
     timeOff: {
         date: "2019 - 20",
@@ -70,29 +82,29 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
 
     pdfIntro: <React.Fragment>
             <p>
-            Enthusiastic, proactive and dependable full stack developer with four years professional experience and over 14 years learning
-            and working on personal projects. I write clean, well-tested and performant code and have a practical attitude to solving problems.
+            Beginning with my first website at age eleven, I have been coding for over 17 years. 
+           In this time I've learnt to write clean, well-tested and performant code and to identify problems before they happen.
+           I am known for approachability, great quality work and creating tooling that makes life better for the whole team.
             </p><p>
                 More details and examples of recent work can be found on my online CV.
             </p>
         </React.Fragment>,
 
     webIntro: <React.Fragment>
-        <p>I am an enthusiastic, proactive and dependable full stack developer with four years professional experience and over 14 years
-            learning and working on personal projects. I write clean, well-tested and performant code and have a practical attitude to solving problems.</p>
-
+        <p>Beginning with my first website at age eleven, I have been coding for over 17 years. 
+           In this time I've learnt to write clean, well-tested and performant code and to identify problems before they happen.
+           I am known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
+        
         <p>Recent professional projects range from educational platforms to financial administration systems used to
-        managed millions of contracts across the globe.
+        manage millions of contracts across the globe.
       
         In the latter, I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
-        
-        In addition to designing and developing a number of new product features, I cut process speed by optimising
-        database structure, queries and Java code. 
-        
-        I also took a special interest in identifying and fixing concurrency based issues, resulting in a stable product and satisfied clients.
-        </p>
+        I advanced the framework, trained and supervised developers to use it, and so cut the time to create new features. 
 
-        <p>I am known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
+        I also improved throughput and stability by optimising queries, database structure and tackling concurrency based issues.
+        
+        During my time on the project, both client satisfaction and sales of new enhancements greatly improved.
+        </p>
 
         <p>Take a look at some of my <a href="#demos" className="anchor-link">demo projects</a>.</p>
 

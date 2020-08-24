@@ -83,7 +83,7 @@ render(
                     <br />
                     <span><FontAwesomeIcon icon={faExternalLinkAlt} />jamesleach.dev/cv <FontAwesomeIcon icon={faArrowRight} /></span>
                     <br />
-                    <span><FontAwesomeIcon icon={faPhone} />+44 946 496 228</span>
+                    <span><FontAwesomeIcon icon={faPhone} />+447946 496228</span>
                     <br />
                     <span><FontAwesomeIcon icon={faGithub} />JFL110</span>
                 </div>
@@ -105,7 +105,7 @@ render(
                 <h3>Development experience</h3>
 
                 <TimelineItem
-                    {...Text.freelance}
+                    {...Text.freelancePdf}
                 />
 
                 <TimelineItem
