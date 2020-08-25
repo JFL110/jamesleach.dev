@@ -43,11 +43,11 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
         title: "El Ministerio de Educación, Colombia",
         subTitle: "Full-Time Volunteer English Teacher",
         content: <React.Fragment>
-            <p>Taught classes of up to forty state-school teenagers as well as improving teachers' English and course materials.</p>
+            <p>Taught classes of up to forty state-school teenagers as well as improving teachers&apos; English and course materials.</p>
             <p>Created an educational App to utilise previously unused tablets in the classroom.</p>
         </React.Fragment>,
         pdfContent: <React.Fragment>
-            <p>Taught classes of up to forty state-school teenagers as well as improving teachers' English and course materials.</p>
+            <p>Taught classes of up to forty state-school teenagers as well as improving teachers&apos; English and course materials.</p>
           <p>Created an educational App to utilise previously unused tablets in the classroom.</p>
           <p>Completed a Cambridge CELTA English teaching course in preparation.</p>
       </React.Fragment>
@@ -62,7 +62,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
             <hr />
             <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
         </React.Fragment>,
-        pdfContent :     <React.Fragment>
+        pdfContent : <React.Fragment>
         <p>Independently developing an educational product to produce custom worksheets for STEM subjects.
         The project involves the creation of a web interface, backend user management system and an API for developers to add content.</p>
         <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
