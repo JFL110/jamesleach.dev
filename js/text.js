@@ -11,14 +11,14 @@ export default ({
         subTitle: "MEng. Chemical Engineering",
         date: "2010 - 14",
         content: < React.Fragment >
-            <p>Managed a number of team projects and brought software skills to the course,
-running training sessions on LaTeX markup-language and Autodesk 3D modeling software.</p>
+            <p>Managed several team projects and brought software skills to the course,
+running training sessions on LaTeX markup-language and Autodesk 3D modelling software.</p>
             <p>Took on a part-time job as a mechanic in a local garage.</p>
             <p>Led the restoration of a classic Mini as Car Officer of the Imperial CGCU Motor Club.</p>
         </React.Fragment >,
         pdfContent: < React.Fragment >
-            <p>Managed a number of team projects and brought software skills to the course,
-running training sessions on LaTeX markup-language and Autodesk 3D modeling software.</p>
+            <p>Managed several team projects and brought software skills to the course,
+running training sessions on LaTeX markup-language and Autodesk 3D modelling software.</p>
             <p>Led the restoration of a classic Mini as Car Officer of the Imperial CGCU Motor Club.</p>
         </React.Fragment >
     },
@@ -31,7 +31,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
             <p>Developed, maintained and provided support for a Java-based asset-management software used by lenders across the globe.</p>
             <p>Specialised in Business Intelligence with a focus on concurrency, performance and stability.
             Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three.
-                Quickly became an authority in the area and took ownership of key developments..</p>
+                Quickly became an authority in the area and took ownership of key developments.</p>
             <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
             <p>Delivered regular training sessions to experienced colleagues and new hires on Java, SQL and internal frameworks.</p>
@@ -58,20 +58,15 @@ running training sessions on LaTeX markup-language and Autodesk 3D modeling soft
         title: "Freelance",
         content: <React.Fragment>
             <p>Independently developing an educational product to produce customisable worksheets for STEM subjects.
-            The project involves creation of a web interface, backend user management system and an API for other developers to add content.</p>
+            The project involves the creation of a web interface, backend user management system and an API for other developers to add content.</p>
             <hr />
             <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
-        </React.Fragment>
-    },
-
-    freelancePdf: {
-        date: "2020 - present",
-        title: "Freelance",
-        content: <React.Fragment>
-            <p>Independently developing an educational product to produce custom worksheets for STEM subjects.
-            The project involves creation of a web interface, backend user management system and an API for developers to add content.</p>
-            <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
-        </React.Fragment>
+        </React.Fragment>,
+        pdfContent :     <React.Fragment>
+        <p>Independently developing an educational product to produce custom worksheets for STEM subjects.
+        The project involves the creation of a web interface, backend user management system and an API for developers to add content.</p>
+        <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
+    </React.Fragment>
     },
 
 

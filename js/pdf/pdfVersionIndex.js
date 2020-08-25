@@ -105,7 +105,7 @@ render(
                 <h3>Development experience</h3>
 
                 <TimelineItem
-                    {...Text.freelancePdf}
+                    {...Text.freelance}
                 />
 
                 <TimelineItem
