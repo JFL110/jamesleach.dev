@@ -191,9 +191,9 @@ html {
 			display: table-cell;
 			.card {
 				display: inline-block;
-				margin: 0 0.4em;
+				margin: 0 0.35em;
 				.card-body {
-					padding: 0.7em 0.5em;
+					padding: 0.7em 0.45em;
 
 					& > div {
 						display: table-row;
@@ -236,5 +236,5 @@ html {
 }
 
 .extra-space {
-	margin-top: 2em;
+	margin-top: 3em;
 }
