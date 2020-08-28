@@ -1,17 +1,20 @@
 /*global L*/
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Frame from '../frame'
 import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 import Control from 'react-leaflet-control';
 import mapSlice, { pointToCentre } from './mapSlice'
 import { Modal } from 'react-bootstrap';
-
 import AwesomeSlider from 'react-awesome-slider';
+
 import 'react-awesome-slider/src/core/styles.scss';
+import './leaflet.css'
+import './map.scss'
 
 const SimpleMap = ({
     isMiniMap = false,
+    onMapFirstRender,
     centre,
     points,
     viewportObject,
@@ -19,6 +22,11 @@ const SimpleMap = ({
     setCurrentLightBoxImageIndex,
     setNewCentre,
     lastNonNullLightBoxImageIndex }) => {
+
+    useEffect(() => {
+        onMapFirstRender();
+    }, []);
+
     // Markers
     const redDotIcon = L.divIcon({ className: 'red-dot-marker' });
     const blueDotIcon = L.divIcon({ className: 'blue-dot-marker' });
@@ -75,7 +83,7 @@ const SimpleMap = ({
 
     return (
         <React.Fragment>
-            
+
             {(!isMiniMap && photoUrls.length > 0) &&
                 <Modal
                     show={currentLightBoxImageIndex != null}

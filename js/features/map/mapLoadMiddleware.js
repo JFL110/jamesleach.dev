@@ -13,9 +13,12 @@ const fetch_retry = async (url, options, n) => {
     }
 };
 
+/**
+ * Middleware to load map locations on first render of the map
+ */
 export default ({ dispatch }) => next => action => {
 
-    if (action.type != "app/onPreFirstRender") {
+    if (action.type != "map/onMapFirstRender") {
         next(action);
         return;
     }

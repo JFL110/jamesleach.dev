@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import mergeByKey from "array-merge-by-key";
 
-const initialViewportObject = { isInitial : true };
+const initialViewportObject = { isInitial: true };
 
 export const pointToCentre = point => ({ lat: point.lat, lng: point.long, default: false });
 
@@ -17,6 +17,7 @@ export default createSlice({
         lastNonNullLightBoxImageIndex: null
     },
     reducers: {
+        onMapFirstRender: state => state,
         setCurrentLightBoxImageIndex: (state, action) => { state.currentLightBoxImageIndex = action.payload; if (action.payload != null) { state.lastNonNullLightBoxImageIndex = action.payload; } },
         setMainLocationsFetched: (state, action) => { state.mainLocationsFetched = action.payload; },
         setFetchError: (state, action) => { state.fetchError = action.payload; },

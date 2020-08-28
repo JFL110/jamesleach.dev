@@ -2,6 +2,7 @@ import React from 'react'
 import Loading from '../loading'
 import TopBar from './mapTopBar'
 import MapLazy from './mapLazy'
+import './map.scss'
 
 const MapPage = () => {
     return <main >
