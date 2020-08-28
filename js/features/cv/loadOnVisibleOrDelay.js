@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import VisibilitySensor from "react-visibility-sensor";
 
-const showAfterDelayMs = 6 * 1000;
+const showAfterDelayMs = 20 * 1000;
 
 export default ({
     placeholder,
