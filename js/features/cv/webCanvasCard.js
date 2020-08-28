@@ -2,8 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faPaintBrush } from '@fortawesome/free-solid-svg-icons/faPaintBrush'
-import MiniCanvasLazy from './miniCanvasLazy'
-
+import MiniCanvasLazy, { miniCanvasPlaceholder } from './miniCanvasLazy'
+import LoadOnVisible from './loadOnVisible'
 import { Button, Card } from 'react-bootstrap';
 
 export default () => {
@@ -11,7 +11,10 @@ export default () => {
         <Card.Body>
             <div>
                 <div className='project-card-img' >
-                    <MiniCanvasLazy />
+                    <LoadOnVisible
+                        placeholder={miniCanvasPlaceholder}
+                        componentFunc={() => <MiniCanvasLazy />}
+                    />
                 </div>
                 <div className='card-content'>
                     <Card.Title>
@@ -30,7 +33,7 @@ export default () => {
                             Continuous integration is used to build, test and deploy the app automatically to AWS Elastic Beanstalk.
                         </p>
                         <p>
-                            Take a look at the source repositories for more information. 
+                            Take a look at the source repositories for more information.
                             To test the app, open it in two windows or devices and navigate to the same canvas in both.
                         </p>
                     </h6>

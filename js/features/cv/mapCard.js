@@ -5,17 +5,21 @@ import Loading from '../loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarked } from '@fortawesome/free-solid-svg-icons/faMapMarked'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
-
 import { Button, Card } from 'react-bootstrap';
+import LoadOnVisible from './loadOnVisible'
 
+const mapLoadingPlaceholder = <Loading className="mini-map full-height" />
 export default ({ includeMap }) => {
 
     const onViewFull = () => { Frame.dispatchPush('/where-are-they'); }
-
+    //
     return <Card className='map-card project-card'>
         <Card.Body>
             <div>
-                {includeMap && <MapLazy isMiniMap loadingComponent={<Loading className="mini-map full-height" />} />}
+                {includeMap && <LoadOnVisible
+                    placeholder={mapLoadingPlaceholder}
+                    componentFunc={() => <MapLazy isMiniMap loadingComponent={mapLoadingPlaceholder} />}
+                />}
                 <div className='card-content'>
                     <Card.Title>
                         My location map
