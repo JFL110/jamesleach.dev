@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faPaintBrush } from '@fortawesome/free-solid-svg-icons/faPaintBrush'
-import MiniCanvas from './miniCanvas'
+import MiniCanvasLazy from './miniCanvasLazy'
 
 import { Button, Card } from 'react-bootstrap';
 
@@ -11,7 +11,7 @@ export default () => {
         <Card.Body>
             <div>
                 <div className='project-card-img' >
-                    <MiniCanvas />
+                    <MiniCanvasLazy />
                 </div>
                 <div className='card-content'>
                     <Card.Title>
