@@ -10,7 +10,7 @@ import WebCanvasCard from './webCanvasCard'
 
 import Text from '../../text'
 
-const MainPage = ({ includeMap = false }) => {
+const MainPage = () => {
 
     return <main >
         <div className="left-placeholder" />
@@ -35,13 +35,12 @@ const MainPage = ({ includeMap = false }) => {
             <ExtraCardsContent />
 
             <h2 className="section-heading"><a name="demos">Demo Projects</a></h2>
-        <WebCanvasCard />
-        <MapCard includeMap={includeMap} />
+            <WebCanvasCard />
+            <MapCard />
         </div >
     </main >
 };
 
 export default {
-    page: <MainPage includeMap />,
-    pageNoMap: <MainPage />
+    page: <MainPage />,
 }

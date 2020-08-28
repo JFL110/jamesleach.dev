@@ -9,17 +9,17 @@ import { Button, Card } from 'react-bootstrap';
 import LoadOnVisible from './loadOnVisible'
 
 const mapLoadingPlaceholder = <Loading className="mini-map full-height" />
-export default ({ includeMap }) => {
+export default () => {
 
     const onViewFull = () => { Frame.dispatchPush('/where-are-they'); }
     //
     return <Card className='map-card project-card'>
         <Card.Body>
             <div>
-                {includeMap && <LoadOnVisible
+                <LoadOnVisible
                     placeholder={mapLoadingPlaceholder}
                     componentFunc={() => <MapLazy isMiniMap loadingComponent={mapLoadingPlaceholder} />}
-                />}
+                />
                 <div className='card-content'>
                     <Card.Title>
                         My location map

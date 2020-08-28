@@ -6,6 +6,7 @@ import CamperPageLazy from './features/camper/camperPageLazy'
 
 const jamesLeachCv = "James Leach - Full Stack Developer CV";
 const cvDesc = "Hi! I am a full stack developer and I've living and breathing code for over 17 years. Take a look at my online CV.";
+
 export default [
   {
     id: "home",
@@ -20,15 +21,6 @@ export default [
     id: "cv",
     path: "/cv",
     component: MainPage.page,
-    pageTitle: jamesLeachCv,
-    meta : {
-      description: cvDesc
-    }
-  },
-  {
-    id: "cv-no-map",
-    path: "/cv-no-map",
-    component: MainPage.pageNoMap,
     pageTitle: jamesLeachCv,
     meta : {
       description: cvDesc
