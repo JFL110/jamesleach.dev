@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import VisibilitySensor from "react-visibility-sensor";
 
 const showAfterDelayMs = 20 * 1000;
-
 export default ({
     placeholder,
     componentFunc
@@ -12,9 +11,9 @@ export default ({
     const onVisibilityChange = v => { if (v) setTriggered(true); }
 
     // Queue a trigger to load it anyway after a delay
-    useEffect(() => setTimeout(() => setTriggered(true), showAfterDelayMs), []);
+    useEffect(() => { setTimeout(() => setTriggered(true), showAfterDelayMs) }, []);
 
-    return <VisibilitySensor partialVisibility onChange={onVisibilityChange}>
+    return <VisibilitySensor partialVisibility onChange={onVisibilityChange} offset={{ top: 200 }}>
         {(isVisible) => ((isVisible.isVisible || triggered) ? componentFunc() : placeholder)}
     </VisibilitySensor>
 }
