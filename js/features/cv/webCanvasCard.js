@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faPaintBrush } from '@fortawesome/free-solid-svg-icons/faPaintBrush'
 import MiniCanvasLazy, { miniCanvasPlaceholder } from './miniCanvasLazy'
-import LoadOnVisible from './loadOnVisible'
+import LoadOnVisible from './loadOnVisibleOrDelay'
 import { Button, Card } from 'react-bootstrap';
 
 export default () => {

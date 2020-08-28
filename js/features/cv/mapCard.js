@@ -6,9 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMapMarked } from '@fortawesome/free-solid-svg-icons/faMapMarked'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { Button, Card } from 'react-bootstrap';
-import LoadOnVisible from './loadOnVisible'
+import LoadOnVisible from './loadOnVisibleOrDelay'
 
 const mapLoadingPlaceholder = <Loading className="mini-map full-height" />
+
 export default () => {
 
     const onViewFull = () => { Frame.dispatchPush('/where-are-they'); }
