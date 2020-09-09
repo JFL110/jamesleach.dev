@@ -4,7 +4,7 @@ import PushLink from './features/pushLink'
 export default ({
 
     name: "James Leach",
-    title: "Full stack developer",
+    title: "Full-stack Java developer",
 
     imperial: {
         title: "Imperial College London",
@@ -23,55 +23,71 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
         </React.Fragment >
     },
 
+    school: {
+        title: "Knights Templar School",
+        content: < React.Fragment >
+            <p>A-Levels: Maths A*, Economics A*, Chemistry A</p>
+            <p>AS-Levels: Further Maths A</p>
+            <p>GCSEs: Ten A*s</p>
+        </React.Fragment >
+    },
+
     alfa: {
-        date: "2016 - 19",
+        date: "Feb 2016 - Jan 19",
         title: "ALFA Systems, London",
         subTitle: "Software Consultant",
         content: <React.Fragment>
             <p>Developed, maintained and provided support for a Java-based asset-management software used by lenders across the globe.</p>
-            <p>Specialised in Business Intelligence with a focus on concurrency, performance and stability.
-            Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three.
-                Quickly became an authority in the area and took ownership of key developments.</p>
+            <p>Specialised in Data Warehousing with a focus on concurrency, performance and stability.
+            Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three, using a combination
+            of schema redesign, SQL query optimisation and Java transformation optimisations.
+                Quickly became an authority in the area and took ownership of key developments in an agile environment.</p>
             <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
+            <p>Oversaw proposed changes to the application&apos;s database schema, ensuring conventions were adhered to and performance issues avoided.</p>
+            <p>Supervised and guided the development of junior team members.</p>
             <p>Delivered regular training sessions to experienced colleagues and new hires on Java, SQL and internal frameworks.</p>
         </React.Fragment>
     },
 
+    anderson: {
+        date: "Dec 2015 - Feb 16",
+        title: "Anderson Group, Luton",
+        subTitle: "Software Developer",
+        content: <React.Fragment>
+            <p>Took on an interim position after volunteering abroad. Developed in-house workflow systems using C# and MVC patterns.</p>
+        </React.Fragment>
+    },
+
     colombia: {
-        date: "2015 - 16",
+        date: "Dec 2014 - Dec 15",
         title: "El Ministerio de Educación, Colombia",
         subTitle: "Full-Time Volunteer English Teacher",
         content: <React.Fragment>
             <p>Taught classes of up to forty state-school teenagers as well as improving teachers&apos; English and course materials.</p>
-            <p>Created an educational App to utilise previously unused tablets in the classroom.</p>
+            <p>Created an educational Android App to utilise previously unused tablets in the classroom using a C# content server over a local network.</p>
         </React.Fragment>,
         pdfContent: <React.Fragment>
-            <p>Taught classes of up to forty state-school teenagers as well as improving teachers&apos; English and course materials.</p>
-          <p>Created an educational App to utilise previously unused tablets in the classroom.</p>
-          <p>Completed a Cambridge CELTA English teaching course in preparation.</p>
+         <p>Taught classes of up to forty state-school teenagers as well as improving teachers&apos; English and course materials.</p>
+         <p>Completed a Cambridge CELTA English teaching course in preparation.</p>
+         <p>Created an educational Android App to utilise previously unused tablets in the classroom using a C# content server over a local network.</p>
       </React.Fragment>
     },
 
     freelance: {
-        date: "2020 - present",
+        date: "Feb 2020 - present",
         title: "Freelance",
-        content: <React.Fragment>
-            <p>Independently developing an educational product to produce customisable worksheets for STEM subjects.
-            The project involves the creation of a web interface, backend user management system and an API for other developers to add content.</p>
-            <hr />
-            <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
-        </React.Fragment>,
-        pdfContent : <React.Fragment>
-        <p>Independently developing an educational product to produce custom worksheets for STEM subjects.
-        The project involves the creation of a web interface, backend user management system and an API for developers to add content.</p>
-        <p>Adding custom functionality to Oracle NetSuite and building integrations for a consultancy.</p>
+        content : <React.Fragment>
+            <p>Developing an educational product to produce custom worksheets and track progress for STEM subjects.</p>
+            <p>Designed a cloud-hosted microservice infrastructure to manage users and content that communicates with a React front end. 
+                Includes a cost-optimised NoSQL schema and OAuth security.</p>
+            <p>Created a user-friendly DSL for future developers to add content, in addition to a CI pipeline and integration tests.</p>
     </React.Fragment>
     },
 
 
     timeOff: {
-        date: "2019 - 20",
+        date: "Jan 2019 - Feb 20",
         title: "Building a motorhome and travelling",
         content: <React.Fragment>
             <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.
@@ -79,25 +95,27 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
             <p>Take a look at the <PushLink dest='./camper'>build photos</PushLink> from the project.</p>
         </React.Fragment>,
         pdfContent: <React.Fragment>
-            <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.
-            </p>
+            <p>Converted a pickup truck to a 4x4 motorhome by designing and building a fibreglass body completely from scratch.</p>
         </React.Fragment>
     },
 
     pdfIntro: <React.Fragment>
             <p>
-            Beginning with my first website at age eleven, I have been coding for over 17 years. 
-           In this time I&apos;ve learnt to write clean, well-tested and performant code and to identify problems before they happen.
-           I am known for approachability, great quality work and creating tooling that makes life better for the whole team.
-            </p><p>
+                I have been developing my coding skills ever since my first website at age eleven.
+                I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation. 
+                I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done. 
+            </p>
+            <p>
                 More details and examples of recent work can be found on my online CV.
             </p>
         </React.Fragment>,
 
     webIntro: <React.Fragment>
-        <p>Beginning with my first website at age eleven, I have been coding for over 17 years. 
-           In this time I&apos;ve learnt to write clean, well-tested and performant code and to identify problems before they happen.
-           I am known for approachability, great quality work and creating tooling that makes life better for the whole team.</p>
+        <p>
+            I have been developing my coding skills ever since my first website at age eleven.
+            I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation. 
+            I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done. 
+        </p>
         
         <p>Recent professional projects range from educational platforms to financial administration systems used to
         manage millions of contracts across the globe.

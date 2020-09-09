@@ -25,8 +25,10 @@ const TimelineItem = ({
         <div className="timeline-img" />
         <div className="timeline-content">
             <span className="badge badge-pill badge-info">{date}</span>
-            <h4 className="timeline-title">{title}</h4>
-            {subTitle && <h4 className="timeline-subtitle">{subTitle}</h4>}
+            <div className="timeline-item-titles">
+                <h4 className="timeline-title">{title}</h4>
+                {subTitle && <h4 className="timeline-subtitle">{subTitle}</h4>}
+            </div>
             {pdfContent || content}
         </div>
     </div>
@@ -37,20 +39,31 @@ const SkillItem = ({ title }) => <Card>
     </Card.Body>
 </Card>
 
-const SkillContent = () => <div className="skill-card-group">
-    <SkillItem title="Java" />
-    <SkillItem title="AWS" />
-    <SkillItem title="Oracle and MySQL" />
-    <SkillItem title="NoSQL" />
-    <SkillItem title="Spring" />
-    <SkillItem title="Hibernate" />
-    <SkillItem title="JUnit" />
-    <SkillItem title="C#" />
-    <SkillItem title="Javascript" />
-    <SkillItem title="React + Redux" />
-    <SkillItem title="HTML" />
-    <SkillItem title="GitHub Actions" />
-</div>
+const Header = () => <React.Fragment>
+    <div className="pdf-head">
+        <div className="name-heading-container">
+            <h1 className="name-heading">{Text.name}</h1>
+            <h2>{Text.title}</h2>
+        </div>
+        <div className="qr-code-container">
+            <div className="contact-details-container">
+                <span><FontAwesomeIcon icon={faEnvelope} />contact@jamesleach.dev</span>
+                <br />
+                <span><FontAwesomeIcon icon={faExternalLinkAlt} />jamesleach.dev/cv <FontAwesomeIcon icon={faArrowRight} /></span>
+                <br />
+                <span><FontAwesomeIcon icon={faPhone} />+447946 496228</span>
+                <br />
+                <span><FontAwesomeIcon icon={faGithub} />JFL110</span>
+            </div>
+            <div>
+                <QRCode
+                    className="link-qr-code"
+                    value="https://www.jamesleach.dev/cv" />
+            </div>
+        </div>
+    </div >
+    <hr />
+</React.Fragment>
 
 const HobbyItem = ({
     subTitle,
@@ -70,31 +83,60 @@ const HobbyItem = ({
     </Card>
     </div>
 
+const TechItems = () => <React.Fragment>
+    <div className="skill-card-container skill-card-container-one">
+        <h5>Back end</h5><br />
+        <div className="skill-card-group">
+            <SkillItem title="Java" />
+            <SkillItem title="AWS" />
+            <SkillItem title="Oracle + MySQL" />
+            <SkillItem title="NoSQL" />
+            <SkillItem title="Hibernate" />
+            <SkillItem title="JDBC" />
+            <SkillItem title="Spring" />
+            <SkillItem title="Guice" />
+            <SkillItem title="JUnit" />
+            <SkillItem title="Gradle" />
+            <SkillItem title="C#" />
+            <SkillItem title="REST" />
+        </div>
+    </div>
+    <div className="skill-card-container skill-card-container-two">
+        <h5>Practices</h5><br />
+        <div className="skill-card-group ">
+            <SkillItem title="TDD" />
+            <SkillItem title="Integration testing" />
+            <SkillItem title="Continuous deployment" />
+            <SkillItem title="Agile" />
+            <SkillItem title="Training" />
+        </div>
+    </div>
+    <div className="skill-card-container skill-card-container-three">
+        <h5>Front end</h5><br />
+        <div className="skill-card-group ">
+            <SkillItem title="Javascript" />
+            <SkillItem title="HTML5" />
+            <SkillItem title="S/CSS" />
+            <SkillItem title="React + Redux" />
+            <SkillItem title="Pagespeed optimisation" />
+        </div>
+    </div>
+    <div className="skill-card-container skill-card-container-four">
+        <h5>Hobbies</h5><br />
+        <div className="skill-card-group hobby-card-group">
+            <HobbyItem
+                subTitle={<React.Fragment>Car mechanics, <br />robotics, inventing</React.Fragment>}
+                icon={faTools} />
+            <HobbyItem
+                subTitle={<React.Fragment> Hiking, camping <br />running </React.Fragment>}
+                icon={faMountain} />
+        </div>
+    </div>
+</React.Fragment>
+
 render(
     <main>
-        <div className="pdf-head">
-            <div className="name-heading-container">
-                <h1 className="name-heading">{Text.name}</h1>
-                <h2>{Text.title}</h2>
-            </div>
-            <div className="qr-code-container">
-                <div className="contact-details-container">
-                    <span><FontAwesomeIcon icon={faEnvelope} />contact@jamesleach.dev</span>
-                    <br />
-                    <span><FontAwesomeIcon icon={faExternalLinkAlt} />jamesleach.dev/cv <FontAwesomeIcon icon={faArrowRight} /></span>
-                    <br />
-                    <span><FontAwesomeIcon icon={faPhone} />+447946 496228</span>
-                    <br />
-                    <span><FontAwesomeIcon icon={faGithub} />JFL110</span>
-                </div>
-                <div>
-                    <QRCode
-                        className="link-qr-code"
-                        value="https://www.jamesleach.dev/cv" />
-                </div>
-            </div>
-        </div >
-        <hr />
+        <Header />
         <div className="pdf-body">
             <div className="intro-text">
                 {Text.pdfIntro}
@@ -104,47 +146,30 @@ render(
 
                 <h3>Development experience</h3>
 
-                <TimelineItem
-                    {...Text.freelance}
-                />
+                <TimelineItem {...Text.freelance} />
 
-                <TimelineItem
-                    {...Text.alfa}
-                    isLast
-                />
+                <TimelineItem{...Text.alfa} />
 
-                <h4 className="extra-space">Technologies</h4>
-
-                <SkillContent />
+                <TimelineItem  {...Text.anderson} isLast />
 
             </div>
             <div className="body-column-two">
+                <h3>Education</h3>
+
+                <TimelineItem{...Text.imperial} />
+
+                <TimelineItem {...Text.school} />
 
                 <h3>Other experience</h3>
 
-                <TimelineItem
-                    {...Text.timeOff}
-                />
+                <TimelineItem {...Text.timeOff} />
 
-                <TimelineItem
-                    {...Text.colombia}
-                />
+                <TimelineItem{...Text.colombia} isLast />
 
-                <TimelineItem
-                    {...Text.imperial}
-                    isLast
-                />
-
-                <h4 className="hobbies-heading">Hobbies</h4>
-                <div className="hobby-card-group">
-                    <HobbyItem
-                        subTitle={<React.Fragment>Car mechanics, <br />robotics, inventing</React.Fragment>}
-                        icon={faTools} />
-                    <HobbyItem
-                        subTitle={<React.Fragment> Hiking, camping <br />running </React.Fragment>}
-                        icon={faMountain} />
-                </div>
             </div>
+
+            <TechItems />
+
         </div>
     </main>,
     document.getElementById('root')
