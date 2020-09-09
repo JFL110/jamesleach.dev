@@ -118,7 +118,7 @@ const TechItems = () => <React.Fragment>
             <SkillItem title="HTML5" />
             <SkillItem title="S/CSS" />
             <SkillItem title="React + Redux" />
-            <SkillItem title="Pagespeed optimisation" />
+            <SkillItem title="PageSpeed optimisation" />
         </div>
     </div>
     <div className="skill-card-container skill-card-container-four">
