@@ -1,5 +1,5 @@
 import React from 'react'
-import Frame from '../frame'
+import { dispatchPush } from 'repileux'
 import MapLazy from '../map/mapLazy'
 import Loading from '../loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,7 +12,7 @@ const mapLoadingPlaceholder = <Loading className="mini-map full-height" />
 
 export default () => {
 
-    const onViewFull = () => { Frame.dispatchPush('/where-are-they'); }
+    const onViewFull = () => dispatchPush('/where-are-they')
     //
     return <Card className='map-card project-card'>
         <Card.Body>

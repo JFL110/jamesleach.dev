@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react'
-
 const Map = React.lazy(() => import('./map'));
 
 export default ({

@@ -1,10 +1,11 @@
 /*global L*/
 
 import React, { useEffect } from 'react'
-import Frame from '../frame'
+import { connectWithSlice, connectToOpState } from 'repileux'
 import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
 import Control from 'react-leaflet-control';
 import mapSlice, { pointToCentre } from './mapSlice'
+import mapPointsState from './mapPointsState'
 import { Modal } from 'react-bootstrap';
 import AwesomeSlider from 'react-awesome-slider';
 
@@ -14,7 +15,6 @@ import './map.scss'
 
 const SimpleMap = ({
     isMiniMap = false,
-    onMapFirstRender,
     centre,
     points,
     viewportObject,
@@ -23,8 +23,17 @@ const SimpleMap = ({
     setNewCentre,
     lastNonNullLightBoxImageIndex }) => {
 
+    const onCentreToMostRecentLocation = _points => {
+        const _mostRecentPoint = _points?.find(p => p.isMostRecent);
+        if (_mostRecentPoint) {
+            setNewCentre(pointToCentre(_mostRecentPoint));
+        }
+    };
+
     useEffect(() => {
-        onMapFirstRender();
+        mapPointsState.calculateIfNeeded().then(_points => {
+            onCentreToMostRecentLocation(_points)
+        });
     }, []);
 
     // Markers
@@ -36,25 +45,17 @@ const SimpleMap = ({
         iconAnchor: [20, 20],
     });
 
-    const onCentreToMostRecentLocation = () => {
-        const _mostRecentPoint = points.find(p => p.isMostRecent);
-        if (_mostRecentPoint != null) {
-            setNewCentre(pointToCentre(_mostRecentPoint));
-        }
-    };
-
     // Photos
 
-    const photoUrls = points.filter(p => p.isPhoto).map(p => ({ src: p.url }));
+    const photoUrls = points.value?.filter(p => p.isPhoto).map(p => ({ src: p.url })) ?? [];
     const onModalClose = () => {
-        console.log("close");
         setCurrentLightBoxImageIndex(null);
     };
 
     const setCentreToPhotoId = i => {
         setCurrentLightBoxImageIndex(i);
-        const _imagePoint = points.find(p => p.isPhoto && p.photoPointId == i);
-        if (_imagePoint != null) {
+        const _imagePoint = points.value?.find(p => p.isPhoto && p.photoPointId == i);
+        if (_imagePoint) {
             setNewCentre(pointToCentre(_imagePoint));
         }
     };
@@ -67,7 +68,7 @@ const SimpleMap = ({
     const onClickOpenPhotosControl = () => {
         if (lastNonNullLightBoxImageIndex == null) {
             // Goto most recent
-            const sortedPhotos = points.filter(p => p.isPhoto && p.time != null).sort((a, b) => b.time - a.time);
+            const sortedPhotos = points.value?.filter(p => p.isPhoto && p.time != null).sort((a, b) => b.time - a.time) ?? [];
             if (sortedPhotos.length > 0) {
                 setCurrentLightBoxImageIndex(sortedPhotos[0].photoPointId);
                 setNewCentre(pointToCentre(sortedPhotos[0]));
@@ -102,7 +103,7 @@ const SimpleMap = ({
 
             <LeafletMap
                 center={[centre.lat, centre.lng]}
-                {...(viewportObject.isInitial ? { zoom: defaultZoom } : {})}
+                zoom={defaultZoom}
                 minZoom={2}
                 maxZoom={14}
                 attributionControl={true}
@@ -118,7 +119,10 @@ const SimpleMap = ({
 
                 <Control position="topleft" className="leaflet-control-zoom leaflet-bar" >
                     {!isMiniMap
-                        && <a className="leaflet-control-zoom-in zoom-circle" href="#" onClick={onCentreToMostRecentLocation} title="Centre to most recent location"></a>}
+                        && <a className="leaflet-control-zoom-in zoom-circle"
+                            href="#"
+                            onClick={() => onCentreToMostRecentLocation(points.value)}
+                            title="Centre to most recent location"></a>}
                 </Control>
                 {!isMiniMap && <Control position="topleft" className="leaflet-control-zoom leaflet-bar" >
                     <a className="leaflet-control-zoom-in" href="#" onClick={onClickOpenPhotosControl} title="Open photos">
@@ -127,7 +131,8 @@ const SimpleMap = ({
                 <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
                 {
                     points
-                        .filter(p => !isMiniMap || !p.isPhoto)
+                        .value
+                        ?.filter(p => !isMiniMap || !p.isPhoto)
                         .map(p => <Marker
                             key={p.id}
                             position={[p.lat, p.long]}
@@ -141,4 +146,5 @@ const SimpleMap = ({
     );
 }
 
-export default Frame.connectWithSlice(mapSlice, SimpleMap);
+export default connectToOpState(mapPointsState,
+    connectWithSlice(mapSlice, SimpleMap))

@@ -1,24 +1,22 @@
 import React from 'react'
-import Frame from '../frame'
+import { connectWithSlice, connectToOpState } from 'repileux'
 import timeSinceString from '../timeSinceString'
 import mapSlice from './mapSlice'
+import mapPointsState from './mapPointsState'
 
 const TopBarComponent = ({
-    mainLocationsFetched,
-    fetchError,
+    points,
     setNewCentre,
-    points
 }) => {
-    const pointsLoaded = mainLocationsFetched;
-    const hasFetchError = fetchError || (mainLocationsFetched && points.length == 0);
-    const _mostRecentPoint = points.find(p => p.isMostRecent);
+    const pointsLoaded = !points.isInProgress();
+    const hasFetchError = points.wasError() || (pointsLoaded && points.value?.length == 0);
+    const _mostRecentPoint = points.value?.find(p => p.isMostRecent);
 
-    const centreMap = () =>
-        setNewCentre({ lat: _mostRecentPoint.lat, lng: _mostRecentPoint.long, default: false })
+    const centreMap = () => setNewCentre({ lat: _mostRecentPoint.lat, lng: _mostRecentPoint.long, default: false })
 
     const summary = () => <div onClick={centreMap} className="clickToCentreButton">
         <h2 className="top-bar-text">
-            {"Updated " + timeSinceString(new Date(_mostRecentPoint.time)) + " ago"}
+            {"Updated " + (_mostRecentPoint ? (timeSinceString(new Date(_mostRecentPoint.time)) + " ago") : "Loading...")}
         </h2>
     </div>;
 
@@ -34,4 +32,6 @@ const TopBarComponent = ({
     </div>;
 }
 
-export default Frame.connectWithSlice(mapSlice, TopBarComponent);
+export default connectToOpState(
+    mapPointsState
+    , connectWithSlice(mapSlice, TopBarComponent));

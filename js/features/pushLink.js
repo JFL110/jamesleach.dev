@@ -1,12 +1,12 @@
 import React from 'react'
-import Frame from './frame'
+import { dispatchPush } from 'repileux'
 
 export default ({
     dest,
     children
 }) => <a onClick={e => {
     e.preventDefault();
-    Frame.dispatchPush(dest);
+    dispatchPush(dest);
 }}
     href={dest}
     className="text-link">
