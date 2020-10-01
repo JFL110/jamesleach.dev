@@ -10,7 +10,6 @@ import { Modal } from 'react-bootstrap';
 import AwesomeSlider from 'react-awesome-slider';
 import useEventListener from '@use-it/event-listener';
 
-import 'react-awesome-slider/src/core/styles.scss';
 import './leaflet.css'
 import './map.scss'
 
@@ -53,6 +52,7 @@ const SimpleMap = ({
 
     const setCentreToPhotoId = i => {
         setCurrentLightBoxImageIndex(i);
+        console.log(i);
         const _imagePoint = points.value?.find(p => p.isPhoto && p.photoPointId == i);
         if (_imagePoint) {
             setNewCentre(pointToCentre(_imagePoint));
@@ -87,10 +87,10 @@ const SimpleMap = ({
         if (keyCode == 39 && 
             points.value?.some(p => p.isPhoto && p.time != null && p.photoPointId == currentLightBoxImageIndex + 1)){
             // Right
-            setCurrentLightBoxImageIndex(currentLightBoxImageIndex + 1);
+            setCentreToPhotoId(currentLightBoxImageIndex + 1);
         } else if (keyCode == 37 && currentLightBoxImageIndex > 0) {
             // Left
-            setCurrentLightBoxImageIndex(currentLightBoxImageIndex - 1);
+            setCentreToPhotoId(currentLightBoxImageIndex - 1);
         }
     });
 
