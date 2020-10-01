@@ -116,29 +116,55 @@
 }
 
 .badge {
-	background-color:  $second-badge-color;
+	background-color: $second-badge-color;
+}
+
+.modal-dialog-centered {
+	min-height: calc(100% - 1em) !important ;
+}
+
+.modal-content { 
+	background-color: unset !important;
 }
 
 .modal-content-only {
 	max-width: 90vw !important;
-	max-height: 90vh;
-	margin: auto;
+	max-height: 85vh;
+	margin: 0.5em auto !important;
 
 	.modal-content {
-	
 		margin: auto;
 		max-width: 97vw;
 		@media (min-width: $big-screen) {
 			max-width: 80vw;
-			margin-top: 1em;
 		}
 		@media (min-width: $small-desktop-screen) {
 			max-width: 85vw;
 		}
-	
+
 		.awssld__controls__arrow-right,
 		.awssld__controls__arrow-left {
 			opacity: 1 !important;
 		}
+	}
+
+	.awssld__box {
+		max-height: 95vh !important;
+	}
+
+	.awssld__wrapper {
+		max-height: 95vh !important;
+	}
+
+	.awssld__content {
+		background-color: rgba(0, 0, 0, 0.14) !important;
+
+		& > img {
+			object-fit: scale-down !important;
+		}
+	}
+
+	.awssld__controls__arrow-left:before, .awssld__controls__arrow-left:after, .awssld__controls__arrow-right:before, .awssld__controls__arrow-right:after{
+		background-color : #DDD !important;
 	}
 }

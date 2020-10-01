@@ -43,17 +43,16 @@ const readPoints = response => {
         points.push(...photoPoints);
     }
 
-    // TODO state.centre = pointToCentre(_mostRecentPoint);
-
     return mergeByKey('id', points);
 }
 
 export default createNetOpState({
     name: 'points',
     endpoint: createEndpoint({
-        uri: "https://jfl110-my-location.s3.eu-west-2.amazonaws.com/my-location-points.json",
+        uri: "https://jfl110-my-location.s3.eu-west-2.amazonaws.com/live.my-location-points.json",
     }),
     persistInLocalStorage: true,
+    persistenceVersion : 6,
     persistenceExpirationMs: 60 * 60 * 1000,
     responseBodyTransformations: readPoints,
     retryDelayMs: 500,

@@ -2,12 +2,13 @@
 
 import React, { useEffect } from 'react'
 import { connectWithSlice, connectToOpState } from 'repileux'
-import { Map as LeafletMap, TileLayer, Marker } from 'react-leaflet';
+import { Map as LeafletMap, TileLayer, Marker, CircleMarker } from 'react-leaflet';
 import Control from 'react-leaflet-control';
 import mapSlice, { pointToCentre } from './mapSlice'
 import mapPointsState from './mapPointsState'
 import { Modal } from 'react-bootstrap';
 import AwesomeSlider from 'react-awesome-slider';
+import useEventListener from '@use-it/event-listener';
 
 import 'react-awesome-slider/src/core/styles.scss';
 import './leaflet.css'
@@ -37,8 +38,6 @@ const SimpleMap = ({
     }, []);
 
     // Markers
-    const redDotIcon = L.divIcon({ className: 'red-dot-marker' });
-    const blueDotIcon = L.divIcon({ className: 'blue-dot-marker' });
     const photoIcon = L.icon({
         iconUrl: '/static/camera-icon.png',
         iconSize: [40, 40],
@@ -78,6 +77,23 @@ const SimpleMap = ({
         }
     };
 
+
+    // Key presses
+    useEventListener('keydown', ({ keyCode }) => {
+        // Only if lightbox shown
+        if (currentLightBoxImageIndex == null) {
+            return;
+        }
+        if (keyCode == 39 && 
+            points.value?.some(p => p.isPhoto && p.time != null && p.photoPointId == currentLightBoxImageIndex + 1)){
+            // Right
+            setCurrentLightBoxImageIndex(currentLightBoxImageIndex + 1);
+        } else if (keyCode == 37 && currentLightBoxImageIndex > 0) {
+            // Left
+            setCurrentLightBoxImageIndex(currentLightBoxImageIndex - 1);
+        }
+    });
+
     //
 
     const defaultZoom = isMiniMap ? 8 : 10;
@@ -102,6 +118,7 @@ const SimpleMap = ({
                 </Modal>}
 
             <LeafletMap
+                preferCanvas={true}
                 center={[centre.lat, centre.lng]}
                 zoom={defaultZoom}
                 minZoom={2}
@@ -133,13 +150,18 @@ const SimpleMap = ({
                     points
                         .value
                         ?.filter(p => !isMiniMap || !p.isPhoto)
-                        .map(p => <Marker
+                        .map(p => p.isPhoto ? <Marker
                             key={p.id}
                             position={[p.lat, p.long]}
-                            icon={p.isPhoto ? photoIcon : (p.isMostRecent ? redDotIcon : blueDotIcon)}
+                            icon={photoIcon}
                             {...(p.isMostRecent ? { zIndexOffset: 1000 } : (p.isPhoto ? { zIndexOffset: 300 + p.photoPointId } : {}))}
                             {...(p.isPhoto ? { onClick: () => onClickPhotoMarker(p) } : {})}
-                        />)
+                        /> :
+                            <CircleMarker
+                                key={p.id}
+                                center={[p.lat, p.long]}
+                                radius={7}
+                            />)
                 }
             </LeafletMap>
         </React.Fragment >

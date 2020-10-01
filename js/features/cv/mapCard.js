@@ -34,9 +34,8 @@ export default () => {
                             information and display it on a map with a selection of photos.
                         </p>
                         <p>
-                            Code is deployed and tested automatically on commit of new versions using Github Actions.
-                            Performance is improved by periodically
-                            digesting the location data into a JSON file and serving it statically to the frontend from S3.
+                            Code is deployed and tested automatically on commit of new versions using Github Actions and Terraform.
+                            Performance is improved by periodically digesting the location data into a JSON file and serving it statically to the frontend from S3.
                         </p>
                         <p>
                             Take a look at the source repositories for more information.
