@@ -79,7 +79,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
         title: "Lumin",
         subTitle: "Senior Java Developer",
         content : <React.Fragment>
-            <p>Developing and supporting AWS applications with startup whose clients aid consumers in legal disputes with utility providers.</p>
+            <p>Developing and supporting AWS applications with a startup whose clients aid consumers in legal disputes with utility providers.</p>
     </React.Fragment>
     },
 
