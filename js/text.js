@@ -74,12 +74,21 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
       </React.Fragment>
     },
 
+    lumin : {
+        date: "Oct 2020 - Present",
+        title: "Lumin",
+        subTitle: "Senior Java Developer",
+        content : <React.Fragment>
+            <p>Developing and supporting AWS applications with startup whose clients aid consumers in legal disputes with utility providers.</p>
+    </React.Fragment>
+    },
+
     freelance: {
-        date: "Feb 2020 - present",
+        date: "Feb 2020 - Oct 2020",
         title: "Freelance",
         content : <React.Fragment>
             <p>Developing an educational product to produce custom worksheets and track progress for STEM subjects.</p>
-            <p>Designed a cloud-hosted microservice infrastructure to manage users and content that communicates with a React front end. 
+            <p>Designed an AWS-hosted microservice infrastructure to manage users and content that communicates with a React front end. 
                 Includes a cost-optimised NoSQL schema and OAuth security.</p>
             <p>Created a user-friendly DSL for future developers to add content, in addition to a CI pipeline and integration tests.</p>
     </React.Fragment>

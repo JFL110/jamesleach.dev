@@ -6,6 +6,9 @@ import Text from '../../text'
 
 export default () => <Timeline>
     <TimelineItem
+        {...Text.lumin}
+    />
+    <TimelineItem
         {...Text.freelance}
     />
     <TimelineItem
