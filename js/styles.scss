@@ -477,19 +477,3 @@ a {
 		display: none;
 	}
 }
-
-.loading-container {
-	& > div {
-		width: 100%;
-		height: 100%;
-		display: table;
-		text-align: center;
-		& > div {
-			vertical-align: middle;
-			display: table-cell;
-		}
-	}
-	.loader:after {
-		background: #fbfbfb;
-	}
-}

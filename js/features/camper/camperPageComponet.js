@@ -3,9 +3,6 @@ import PushLink from '../pushLink'
 import galleryImages from './camperImagesSrc'
 import imageInfo from './camperImageInfo'
 import ToggleButton from 'react-toggle-button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons/faLongArrowAltRight'
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import 'react-awesome-slider/src/core/styles.scss';
 
@@ -84,89 +81,78 @@ export default () => {
 
     const filteredImages = sortedImages.filter(i => showAll || i.highlight);
 
-    return <main className="camper-main">
-        <div>
-            <div className="camper-breadcrumb">
-                <span>
-                    <PushLink dest='./'>
-                        <FontAwesomeIcon icon={faHome} /> home
-                        </PushLink>
-                </span>
-                <span><FontAwesomeIcon icon={faLongArrowAltRight} /></span>
-            </div>
+    return <React.Fragment>
+        <h1 className="main-heading">Building a Camper</h1>
 
-            <h1 className="main-heading">Building a Camper</h1>
-
-            <p>
-                In 2019, my partner Cara and I converted a 2004 Toyota Hilux into an 4x4 camper.
-                Partly we were looking for a challenge, and partly we wanted a vehicle that could be lived in,
-                could go almost anywhere and that didn&apos;t cost a fortune.
+        <p>
+            In 2019, my partner Cara and I converted a 2004 Toyota Hilux into an 4x4 camper.
+            Partly we were looking for a challenge, and partly we wanted a vehicle that could be lived in,
+            could go almost anywhere and that didn&apos;t cost a fortune.
             </p>
-            <p>
-                We replaced the pickup bed with a body built from handmade fibreglass composite panels that we designed with CAD.
+        <p>
+            We replaced the pickup bed with a body built from handmade fibreglass composite panels that we designed with CAD.
 
-                Inside we created a cosy interior with all the comforts of home including central heating, running water and cooking facilities.
-                Outside we reinforced the suspension and brakes and gave the truck some mechanical TLC.
+            Inside we created a cosy interior with all the comforts of home including central heating, running water and cooking facilities.
+            Outside we reinforced the suspension and brakes and gave the truck some mechanical TLC.
 
-                It was a gruelling task but the end result is a truly unique home away from home which can go where others can&apos;t.
+            It was a gruelling task but the end result is a truly unique home away from home which can go where others can&apos;t.
             </p>
 
-            <p>You can take a look at some of the places we&apos;ve been <PushLink dest='./where-are-they'>on this map</PushLink>.</p>
+        <p>You can take a look at some of the places we&apos;ve been <PushLink dest='./where-are-they'>on this map</PushLink>.</p>
 
-            {(selectedImage !== null) && <Lightbox
-                mainSrc={filteredImages[selectedImage].src}
-                nextSrc={filteredImages[(selectedImage + 1) % filteredImages.length].src}
-                prevSrc={filteredImages[(selectedImage + filteredImages.length - 1) % filteredImages.length].src}
-                onCloseRequest={() => setSelecedImage(null)}
-                onMovePrevRequest={() => setSelecedImage((selectedImage + filteredImages.length - 1) % filteredImages.length)}
-                onMoveNextRequest={() => setSelecedImage((selectedImage + 1) % filteredImages.length)}
-            />}
+        {(selectedImage !== null) && <Lightbox
+            mainSrc={filteredImages[selectedImage].src}
+            nextSrc={filteredImages[(selectedImage + 1) % filteredImages.length].src}
+            prevSrc={filteredImages[(selectedImage + filteredImages.length - 1) % filteredImages.length].src}
+            onCloseRequest={() => setSelecedImage(null)}
+            onMovePrevRequest={() => setSelecedImage((selectedImage + filteredImages.length - 1) % filteredImages.length)}
+            onMoveNextRequest={() => setSelecedImage((selectedImage + 1) % filteredImages.length)}
+        />}
 
-            <div className="before-after-container">
-                <MainImage image={filteredImages[0]}
-                    caption="Before"
-                    className="left-image"
-                    onClick={() => setSelecedImage(0)} />
-                <MainImage image={filteredImages[1]} caption="After"
-                    className="right-image"
-                    onClick={() => setSelecedImage(1)} />
-            </div>
+        <div className="before-after-container">
+            <MainImage image={filteredImages[0]}
+                caption="Before"
+                className="left-image"
+                onClick={() => setSelecedImage(0)} />
+            <MainImage image={filteredImages[1]} caption="After"
+                className="right-image"
+                onClick={() => setSelecedImage(1)} />
+        </div>
 
-            <h1 className="camper-section-heading">Build photos</h1>
+        <h1 className="camper-section-heading">Build photos</h1>
 
-            <div className="highlights-button-container">
-                <span>Show highlights only: </span>
-                <div><ToggleButton
-                    inactiveLabel={''}
-                    activeLabel={''}
-                    colors={{
-                        activeThumb: {
-                            base: 'rgb(250,250,250)',
-                        },
-                        inactiveThumb: {
-                            base: 'rgb(62,130,247)',
-                        },
-                        active: {
-                            base: 'rgb(207,221,245)',
-                            hover: 'rgb(177, 191, 215)',
-                        },
-                        inactive: {
-                            base: 'rgb(65,66,68)',
-                            hover: 'rgb(95,96,98)',
-                        }
-                    }}
-                    value={!showAll}
-                    onToggle={() => setShowAll(!showAll)} />
-                </div>
-            </div>
-            <div className="build-image-container row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 rows-cols-xxl-4 ">
-                {filteredImages
-                    .filter((_, i) => i >= 2)
-                    .map((i, index) => <BuildImage
-                        image={i}
-                        key={index}
-                        onClick={() => setSelecedImage(index + 2)} />)}
+        <div className="highlights-button-container">
+            <span>Show highlights only: </span>
+            <div><ToggleButton
+                inactiveLabel={''}
+                activeLabel={''}
+                colors={{
+                    activeThumb: {
+                        base: 'rgb(250,250,250)',
+                    },
+                    inactiveThumb: {
+                        base: 'rgb(62,130,247)',
+                    },
+                    active: {
+                        base: 'rgb(207,221,245)',
+                        hover: 'rgb(177, 191, 215)',
+                    },
+                    inactive: {
+                        base: 'rgb(65,66,68)',
+                        hover: 'rgb(95,96,98)',
+                    }
+                }}
+                value={!showAll}
+                onToggle={() => setShowAll(!showAll)} />
             </div>
         </div>
-    </main>
+        <div className="build-image-container row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 rows-cols-xxl-4 ">
+            {filteredImages
+                .filter((_, i) => i >= 2)
+                .map((i, index) => <BuildImage
+                    image={i}
+                    key={index}
+                    onClick={() => setSelecedImage(index + 2)} />)}
+        </div>
+    </React.Fragment>
 }

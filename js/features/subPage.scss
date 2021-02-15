@@ -1,0 +1,31 @@
+@import "../common.scss";
+
+.sub-page-breadcrumb {
+    margin-left: 2em;
+    margin-top: 0.5em;
+    & > span {
+        margin-right: 1em;
+    }
+    margin-bottom: 1em;
+    @media (max-width: $mobile-screen) {
+        margin-bottom: 0em;
+        margin-left: 0.5em;
+    }
+}
+
+.outer-wrapper {
+    & > div {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        padding-top: 4em;
+        height: 100%;
+
+        @media (max-width: $big-screen) {
+            padding-left: 3vw;
+            padding-right: 3vw;
+        }
+        @media (max-width: $mobile-screen) {
+            padding-top: 0.5em;
+        }
+    }
+}
