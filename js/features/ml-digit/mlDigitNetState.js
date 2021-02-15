@@ -1,6 +1,6 @@
 import { createNetOpState, createEndpoint } from 'repileux'
 
-const baseUri = 'http://demo-project-alb-2139081777.eu-west-2.elb.amazonaws.com:8080'
+const baseUri = 'https://9jrjho3ttd.execute-api.eu-west-2.amazonaws.com/main'
 
 /**
  * POST to the /classify-digit endpoint, passing pixel data and
