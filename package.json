@@ -51,6 +51,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.9",
+    "@react-hook/window-size": "^3.0.7",
     "@reduxjs/toolkit": "^1.2.2",
     "@use-it/event-listener": "^0.1.5",
     "array-merge-by-key": "^1.0.1",

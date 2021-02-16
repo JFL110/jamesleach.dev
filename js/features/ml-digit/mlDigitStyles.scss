@@ -33,7 +33,7 @@ body {
     margin-top: 1em;
     border-style: solid;
     border-color: darkgray;
-    @media (min-width: $small-desktop-screen) {
+    @media (min-width: $small-desktop-screen + 1) {
         margin-right: $desktop-centre-spacing;
     }
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .desktop-bar {
-    @media (min-width: $small-desktop-screen) {
+    @media (min-width: $small-desktop-screen  + 1) {
         margin-left: $desktop-centre-spacing;
     }
 }
@@ -91,7 +91,7 @@ body {
     }
 }
 
-@media (min-width: $small-desktop-screen) {
+@media (min-width: $small-desktop-screen + 1) {
     .ml-mobile-only {
         display: none !important;
         & > canvas {

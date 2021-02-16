@@ -1,20 +1,23 @@
 import React, { useRef } from 'react'
-import { useMediaQuery } from 'react-responsive';
-import CanvasDraw from "react-canvas-draw";
-import { Row } from 'react-bootstrap';
+import { useMediaQuery } from "react-responsive"
+import CanvasDraw from "react-canvas-draw"
+import { Row } from 'react-bootstrap'
 import { connectToOpState } from 'repileux'
 
 import mlDigitNetState from './mlDigitNetState'
-import { DesktopBarGraph, MobileBarGraph, probabilitiesToChartData } from './mlDigitGraphs';
+import { DesktopBarGraph, MobileBarGraph, probabilitiesToChartData } from './mlDigitGraphs'
 import ClearButton from './clearButton'
 import canvasToMnistFormat from './canvasToMnistFormat'
 import { size as mnistSize } from './mnistConfiguration'
-import { Blurb, MoreDetails } from './mlDigitText'
+import { Blurb, MoreDetails, MobileTopSummary } from './mlDigitText'
+import { useWindowWidth } from '@react-hook/window-size'
 
 import './mlDigitStyles.scss'
 
 // Constants
 const updateDelayMs = 400;
+const maxSizeMultiplier = 17;
+const minSizeMultiplier = 8;
 const brushRadius = 12;
 
 // State
@@ -47,7 +50,7 @@ const processChange = (sizeMultiplier, canvasRef) => {
 // Mobile or desktop graph - invert mobile graph data
 const Charts = connectToOpState(mlDigitNetState,
     ({ sizeMultiplier, mlDigitData }) => {
-        const showMobileGraph = useMediaQuery({ query: `(min-width: 1200px)` });
+        const showMobileGraph = useMediaQuery({ query: `(min-width: 1201px)` });
         return showMobileGraph
             ? <DesktopBarGraph
                 width={mnistSize * sizeMultiplier}
@@ -62,8 +65,11 @@ const Charts = connectToOpState(mlDigitNetState,
 
 export default () => {
     // Shrink graph and canvas on mobile
-    const isSmallMobile = useMediaQuery({ query: `(max-width: 700px)` });
-    const sizeMultiplier = isSmallMobile ? 13 : 17;
+    const widowWidth = useWindowWidth()
+    const sizeMultiplier =
+        Math.max(minSizeMultiplier,
+            Math.min(maxSizeMultiplier,
+                Math.floor(widowWidth / 36)));
 
     const canvasRef = useRef();
     const queueUpdate = () => !timeoutHandle && (timeoutHandle = setTimeout(() => processChange(sizeMultiplier, canvasRef), updateDelayMs));
@@ -81,7 +87,7 @@ export default () => {
                 <MoreDetails />
             </p>
             <p className="ml-mobile-only">
-                Try drawing on the canvas below. Full details and source on <a href="https://github.com/JFL110/deployed-ml" >Github</a >.
+                <MobileTopSummary />
             </p>
         </div>
         <Row className='flex-container'>
@@ -105,7 +111,7 @@ export default () => {
             <Charts sizeMultiplier={sizeMultiplier} />
         </Row>
         <p className="ml-mobile-only blurb-bottom">
-            <Blurb />
+            <Blurb mobile />
         </p>
     </React.Fragment>
 }
