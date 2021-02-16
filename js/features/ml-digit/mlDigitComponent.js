@@ -103,6 +103,7 @@ export default () => {
             <div className="d-flex flex-wrap">
                 <div
                     className='canvas-container'
+                    onTouchMove={queueUpdate}
                     onMouseMove={e => e.buttons && queueUpdate()}
                 >
                     <ClearButton onClick={clear} />
