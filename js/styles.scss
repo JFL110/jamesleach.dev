@@ -9,7 +9,6 @@ $trailing-timline-height: 50px;
 $item-line-distance: 30px;
 
 @mixin scroll-bar {
-	
 	&::-webkit-scrollbar {
 		width: 12px;
 	}
@@ -72,9 +71,7 @@ body {
 	@media (min-width: $big-screen) {
 		width: $left-width-big-screen;
 	}
-
 }
-
 
 .left {
 	h1,
@@ -314,6 +311,11 @@ a {
 		}
 	}
 
+	.background-card-img {
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
 	.card-body {
 		padding: 0;
 		display: table;
@@ -357,7 +359,7 @@ a {
 
 	.lower-button-group {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		margin-top: 1.5em;
 
 		@media (max-width: 1400px) {

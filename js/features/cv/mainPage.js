@@ -7,6 +7,7 @@ import ExtraCardsContent from './extraCardsContent'
 
 import MapCard from './mapCard'
 import WebCanvasCard from './webCanvasCard'
+import MlDigtCard from './mlDigitCard'
 
 import Text from '../../text'
 
@@ -36,6 +37,7 @@ const MainPage = () => <main >
         <ExtraCardsContent />
 
         <h2 className="section-heading"><a name="demos">Demo Projects</a></h2>
+        <MlDigtCard />
         <WebCanvasCard />
         <MapCard />
     </div >

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useMediaQuery } from "react-responsive"
 import CanvasDraw from "react-canvas-draw"
 import { Row } from 'react-bootstrap'
@@ -51,16 +51,25 @@ const processChange = (sizeMultiplier, canvasRef) => {
 const Charts = connectToOpState(mlDigitNetState,
     ({ sizeMultiplier, mlDigitData }) => {
         const showMobileGraph = useMediaQuery({ query: `(min-width: 1201px)` });
+
+        // Track errors
+        const [lastRequestWasError, setLastRequestWasError] = useState(false);
+        if (!mlDigitData.isInProgress() && lastRequestWasError !== mlDigitData.wasError()) {
+            setLastRequestWasError(mlDigitData.wasError());
+        }
+
         return showMobileGraph
             ? <DesktopBarGraph
+                error={lastRequestWasError}
                 width={mnistSize * sizeMultiplier}
                 height={mnistSize * sizeMultiplier}
                 data={probabilitiesToChartData(mlDigitData?.value?.labelProbabilities)}
             />
             : <MobileBarGraph
+                error={lastRequestWasError}
                 width={mnistSize * sizeMultiplier}
                 data={probabilitiesToChartData(mlDigitData?.value?.labelProbabilities, true)}
-            />;
+            />
     });
 
 export default () => {

@@ -1,5 +1,8 @@
 import React from 'react'
+import classNames from 'classnames'
 import { HorizontalBar, Bar } from 'react-chartjs-2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons/faExclamationTriangle'
 
 // Probabilities -> chart.js data
 export const probabilitiesToChartData = (labelProbabilities, invert) => {
@@ -20,8 +23,20 @@ export const probabilitiesToChartData = (labelProbabilities, invert) => {
     });
 };
 
-export const DesktopBarGraph = ({ height, width, data }) =>
-    <div className="d-flex flex-wrap desktop-bar">
+const ErrorOverlay = ({ show }) =>
+    <div className={classNames('error-overlay', show ? "" : "no-error")} >
+        <div><FontAwesomeIcon icon={faExclamationTriangle} /> Oops!</div>
+        <br />
+        Something went wrong.
+        <br />
+        To keep things free, this app is run using very small resource limits, so it may have fallen over.
+        <br />
+        Please come back later.
+    </div>;
+
+export const DesktopBarGraph = ({ error, height, width, data }) =>
+    <div className="d-flex flex-wrap bar-container desktop-bar">
+        <ErrorOverlay show={error} />
         <HorizontalBar
             responsive={false}
             height={height}
@@ -44,8 +59,9 @@ export const DesktopBarGraph = ({ height, width, data }) =>
         />
     </div>;
 
-export const MobileBarGraph = ({ width, data }) =>
-    <div className="d-flex flex-wrap bar" >
+export const MobileBarGraph = ({ error, width, data }) =>
+    <div className="d-flex flex-wrap bar-container bar" >
+        <ErrorOverlay show={error} />
         <Bar
             responsive={false}
             height={180}

@@ -15,6 +15,6 @@ export default createPage({
     component: < MlDigtPageLazy />,
     meta: {
         title: "James Leach - Digit Recognition ML",
-        description: 'Digit recognition demonstration using machine learning in Java.'
+        description: 'Digit recognition demonstration using machine learning in Java and Deeplearning4j.'
     }
 });
