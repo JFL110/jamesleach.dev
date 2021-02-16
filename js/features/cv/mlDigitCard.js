@@ -22,12 +22,12 @@ export default () => {
                         Deployed Neural Networks
                     </Card.Title>
                     <Card.Subtitle>
-                        A quick demo of a neural network for digit recognition implemented using Java's Deeplearning4j.
+                        A quick demo of a neural network for digit recognition implemented using Java&apos;s Deeplearning4j.
                     </Card.Subtitle>
                     <h6>
                         <p>
                             The simple feed forward network is trained on the MNIST dataset of 60,000 hand-drawn images of the digits zero to nine,
-                            commonly regarded as the 'hello world' dataset of machine learning.
+                            commonly regarded as the &apos;hello world&apos; dataset of machine learning.
                         </p>
                         <p>
                             The network is trained using a Spring Boot command line application and the serialized network is uploaded to AWS S3.
