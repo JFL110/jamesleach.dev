@@ -30,7 +30,7 @@ export default () => {
                             on a canvas. Changes are propagated to all users, showing updates in real time.
                         </p>
                         <p>
-                            Continuous integration is used to build, test and deploy the app automatically to AWS Elastic Beanstalk.
+                            Continuous integration is used to build, test and deploy the app automatically to AWS ECS.
                         </p>
                         <p>
                             Take a look at the source repositories for more information.
