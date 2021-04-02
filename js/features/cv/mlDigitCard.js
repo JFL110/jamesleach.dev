@@ -33,7 +33,7 @@ export default () => {
                             The network is trained using a Spring Boot command line application and the serialized network is uploaded to AWS S3.
                         </p>
                         <p>
-                            A separate Spring Boot REST application reads the serialized network and uses it to classify images input as pixel arrays.
+                            A separate Spring Boot REST application reads the serialized network and uses it to classify images input as pixel arrays sent from a React frontend.
                             Github Actions is used to test and package the REST application as a Docker image and deploy to an AWS Elastic Container Service cluster.
                         </p>
                     </h6>
