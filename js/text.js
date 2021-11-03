@@ -82,7 +82,7 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
                Developing and supporting AWS applications with a startup whose clients aid consumers in legal disputes with utility providers.
             </p>
             <p>
-               Designing and implementing a restack of a legacy Ruby-on Rails system to Java using an agile and reversible approach to
+               Designing and implementing a restack of a Ruby-on Rails system to Java and React using an agile and reversible approach to
                eliminate disruption to business operations.
             </p>
             <p>
