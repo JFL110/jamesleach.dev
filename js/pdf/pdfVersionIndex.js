@@ -85,7 +85,6 @@ const HobbyItem = ({
 
 const TechItems = () => <React.Fragment>
     <div className="skill-card-container skill-card-container-one">
-        <h5>Back end</h5><br />
         <div className="skill-card-group">
             <SkillItem title="Java" />
             <SkillItem title="AWS" />
@@ -94,26 +93,17 @@ const TechItems = () => <React.Fragment>
             <SkillItem title="Hibernate" />
             <SkillItem title="JDBC" />
             <SkillItem title="Spring" />
-            <SkillItem title="Guice" />
+            <SkillItem title="Docker" />
             <SkillItem title="JUnit" />
             <SkillItem title="Gradle" />
             <SkillItem title="C#" />
             <SkillItem title="REST" />
-        </div>
-    </div>
-    <div className="skill-card-container skill-card-container-two">
-        <h5>Practices</h5><br />
-        <div className="skill-card-group ">
             <SkillItem title="TDD" />
             <SkillItem title="Integration testing" />
-            <SkillItem title="Continuous deployment" />
+            <SkillItem title="CD" />
+            <SkillItem title="CI" />
             <SkillItem title="Agile" />
             <SkillItem title="Training" />
-        </div>
-    </div>
-    <div className="skill-card-container skill-card-container-three">
-        <h5>Front end</h5><br />
-        <div className="skill-card-group ">
             <SkillItem title="Javascript" />
             <SkillItem title="HTML5" />
             <SkillItem title="S/CSS" />
@@ -121,11 +111,10 @@ const TechItems = () => <React.Fragment>
             <SkillItem title="PageSpeed optimisation" />
         </div>
     </div>
-    <div className="skill-card-container skill-card-container-four">
-        <h5>Hobbies</h5><br />
+    <div className="skill-card-container skill-card-container-two">
         <div className="skill-card-group hobby-card-group">
             <HobbyItem
-                subTitle={<React.Fragment>Car mechanics, <br />robotics, inventing</React.Fragment>}
+                subTitle={<React.Fragment>Car mechanics, <br />home improvement, inventing</React.Fragment>}
                 icon={faTools} />
             <HobbyItem
                 subTitle={<React.Fragment> Hiking, camping <br />running </React.Fragment>}
@@ -145,6 +134,8 @@ render(
             <div className="body-column-one">
 
                 <h3>Development experience</h3>
+
+                <TimelineItem {...Text.lumin} />
 
                 <TimelineItem {...Text.freelance} />
 

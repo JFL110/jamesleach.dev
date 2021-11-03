@@ -10,6 +10,6 @@
 The source is compiled with Webpack to produce a Javascipt bundle, including multiple compressed versions using brotli and gzip. Additional Webpack plugins are used to organise the site content to seperate static and non-cacheable content. 
 
 ## Hosting
-The site is hosted in S3 and served via an AWS Cloudfront distribution. This setup costs nothing for low trafic and gives a good response time.
+The site is hosted in S3 and served via an AWS Cloudfront distribution. This setup costs nothing for low traffic and gives a good response time.
 
 In order to use React Router with S3, all requests must route to a single page. This is achived with a Lambda@Edge function that intercepts requests and re-directs to the right resource. Lambda@Edge functions are also used to implement a caching policy and serve pre-compressed content using gzip or brotli if supported; [code here](https://github.com/JFL110/jamesleach.dev/blob/master/cloudfront-lamda-edge.md).
