@@ -42,7 +42,6 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
             Improved the speed of a several-billion-record Extract Transform Load process from eight hours to less than three, using a combination
             of schema redesign, SQL query optimisation and Java transformation optimisations.
                 Quickly became an authority in the area and took ownership of key developments in an agile environment.</p>
-            <p>Conceived and built a number of tools to aid developers and support teams.</p>
             <p>Assisted international clients on-site with SQL report writing.</p>
             <p>Oversaw proposed changes to the application&apos;s database schema, ensuring conventions were adhered to and performance issues avoided.</p>
             <p>Supervised and guided the development of junior team members.</p>
@@ -77,9 +76,23 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
     lumin : {
         date: "Oct 2020 - Present",
         title: "Lumin",
-        subTitle: "Senior Java Developer",
+        subTitle: "Senior Full Stack Developer",
         content : <React.Fragment>
-            <p>Developing and supporting AWS applications with a startup whose clients aid consumers in legal disputes with utility providers.</p>
+            <p>
+               Developing and supporting AWS applications with a startup whose clients aid consumers in legal disputes with utility providers.
+            </p>
+            <p>
+               Designing and implementing a restack of a legacy Ruby-on Rails system to Java using an agile and reversible approach to
+               eliminate disruption to business operations.
+            </p>
+            <p>
+                Pioneered Java technologies including Lombok and Gradle multi-project builds to remove boilerplate code and
+                configuration. Created custom Gradle plugins hosted in AWS Codeartifact to define company-wide
+                standards and archetypes used by multiple teams and contractors.
+            </p>
+            <p>
+                Setup CI and CD pipelines and AWS monitoring systems including Lambdas to send alerts to Microsoft Teams.
+            </p>
     </React.Fragment>
     },
 
@@ -88,9 +101,8 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
         title: "Freelance",
         content : <React.Fragment>
             <p>Developing an educational product to produce custom worksheets and track progress for STEM subjects.</p>
-            <p>Designed an AWS-hosted microservice infrastructure to manage users and content that communicates with a React front end. 
+            <p>Designed an AWS-hosted microservice infrastructure to manage users and content that communicates with a React front end.
                 Includes a cost-optimised NoSQL schema and OAuth security.</p>
-            <p>Created a user-friendly DSL for future developers to add content, in addition to a CI pipeline and integration tests.</p>
     </React.Fragment>
     },
 
@@ -111,8 +123,8 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
     pdfIntro: <React.Fragment>
             <p>
                 I have been developing my coding skills ever since my first website at age eleven.
-                I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation. 
-                I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done. 
+                I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation.
+                I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done.
             </p>
             <p>
                 More details and examples of recent work can be found on my online CV.
@@ -122,18 +134,18 @@ running training sessions on LaTeX markup-language and Autodesk 3D modelling sof
     webIntro: <React.Fragment>
         <p>
             I have been developing my coding skills ever since my first website at age eleven.
-            I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation. 
-            I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done. 
+            I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation.
+            I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done.
         </p>
-        
+
         <p>Recent professional projects range from educational platforms to financial administration systems used to
         manage millions of contracts across the globe.
-      
+
         In the latter, I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
-        I advanced the framework, trained and supervised developers to use it, and so cut the time to create new features. 
+        I advanced the framework, trained and supervised developers to use it, and so cut the time to create new features.
 
         I also improved throughput and stability by optimising queries, database structure and tackling concurrency based issues.
-        
+
         During my time on the project, both client satisfaction and sales of new enhancements greatly improved.
         </p>
 
