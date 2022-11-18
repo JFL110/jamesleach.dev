@@ -1,6 +1,5 @@
 import { createNetOpState, createEndpoint } from 'repileux'
-
-const baseUri = 'https://o4zjbqbsp5.execute-api.eu-west-2.amazonaws.com/main/staging/8081'
+import environmentConfig from '../../environmentConfig'
 
 /**
  * POST to the /classify-digit endpoint, passing pixel data and
@@ -13,9 +12,9 @@ export default createNetOpState({
         headers: () => ({
             'Content-Type': 'application/json'
         }),
-        uri: `${baseUri}/classify-digit`,
+        uri: `${environmentConfig.digitRecognitionApiBase}/classify-digit`,
     }),
-    ignoreConcurrent: true, 
+    ignoreConcurrent: true,
     persistInLocalStorage: false,
     retryDelayMs: 500,
     maxRetryCount: 1,
