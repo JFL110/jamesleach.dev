@@ -1,9 +1,9 @@
 const CompressionPlugin = require('compression-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CopyPlugin = require('copy-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const fs = require('fs');
+const { EnvironmentPlugin, DefinePlugin } = require('webpack');
 
 // Plugin to execute any code after compilation
 const ArbitraryCodeAfterReload = function (cb) {
@@ -45,25 +45,22 @@ module.exports = env => ({
       index: '/dist/home.html'
     }
   },
-  optimization: {
-    // splitChunks: {
-    //   chunks: 'async',
-    // },
-  },
   plugins: [
     new SitemapPlugin('https://www.jamesleach.dev', ['/cv', '/where-are-they', '/camper'], {
       filename: '/static/sitemap.xml',
       lastmod: true,
     }),
-    // new BundleAnalyzerPlugin(),
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(env.NODE_ENV)
+    }),
     // Compression plugins
-    env.NODE_ENV === 'production' && new CompressionPlugin({
+    env.NODE_ENV !== 'development' && new CompressionPlugin({
       filename: '[path].gz[query]',
       algorithm: 'gzip',
       minRatio: Number.MAX_SAFE_INTEGER, 
       test: /\.js$|\.css$|\.html$/,
     }),
-    env.NODE_ENV === 'production' && new BrotliPlugin({
+    env.NODE_ENV !== 'development' && new BrotliPlugin({
       asset: '[path].br[query]',
       minRatio: Number.MAX_SAFE_INTEGER, 
       test: /\.js$|\.css$|\.html$/,

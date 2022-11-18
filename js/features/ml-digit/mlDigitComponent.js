@@ -15,7 +15,7 @@ import { useWindowWidth } from '@react-hook/window-size'
 import './mlDigitStyles.scss'
 
 // Constants
-const updateDelayMs = 400;
+const updateDelayMs = 200;
 const maxSizeMultiplier = 17;
 const minSizeMultiplier = 8;
 const brushRadius = 12;
