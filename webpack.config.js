@@ -1,9 +1,11 @@
+/*global require module*/
 const CompressionPlugin = require('compression-webpack-plugin');
 const BrotliPlugin = require('brotli-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const fs = require('fs');
-const { EnvironmentPlugin, DefinePlugin } = require('webpack');
+const { DefinePlugin } = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // Plugin to execute any code after compilation
 const ArbitraryCodeAfterReload = function (cb) {
@@ -16,9 +18,18 @@ const ArbitraryCodeAfterReload = function (cb) {
 
 const swapVersions = () => {
   console.log('Swapping versions')
-  const homePage = './dist/home.html';
-  const content = fs.readFileSync(homePage, { encoding: 'utf8', flag: 'r' });
-  fs.writeFileSync(homePage, content.replace("?v=x", "?v=" + new Date().getTime()))
+
+  try {
+    fs.readdirSync('./dist/').forEach(file => {
+      console.log(file);
+    });
+
+    const homePage = './dist/home.html';
+    const content = fs.readFileSync(homePage, { encoding: 'utf8', flag: 'r' });
+    fs.writeFileSync(homePage, content.replace("?v=x", "?v=" + new Date().getTime()))
+  } catch (e) {
+    console.error(e);
+  }
 };
 
 module.exports = env => ({
@@ -46,6 +57,7 @@ module.exports = env => ({
     }
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new SitemapPlugin('https://www.jamesleach.dev', ['/cv', 'travel-map', '/camper'], {
       filename: '/static/sitemap.xml',
       lastmod: true,
@@ -57,12 +69,12 @@ module.exports = env => ({
     env.NODE_ENV !== 'development' && new CompressionPlugin({
       filename: '[path].gz[query]',
       algorithm: 'gzip',
-      minRatio: Number.MAX_SAFE_INTEGER, 
+      minRatio: Number.MAX_SAFE_INTEGER,
       test: /\.js$|\.css$|\.html$/,
     }),
     env.NODE_ENV !== 'development' && new BrotliPlugin({
       asset: '[path].br[query]',
-      minRatio: Number.MAX_SAFE_INTEGER, 
+      minRatio: Number.MAX_SAFE_INTEGER,
       test: /\.js$|\.css$|\.html$/,
     }),
     // Copy static content plugin

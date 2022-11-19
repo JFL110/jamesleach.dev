@@ -10,7 +10,6 @@ import WebCanvasCard from './webCanvasCard'
 import MlDigtCard from './mlDigitCard'
 
 import Text from '../../text'
-import ProcessCard from './processCard'
 
 const jamesLeachCv = "James Leach - Full Stack Engineer CV";
 const cvDesc = "Hi! I am a Senor Full Stack Engineer focusing on beautiful Java and Javascript. Take a look at my online CV.";
@@ -30,33 +29,6 @@ const MainPage = () => <main >
 
         <h2 className="section-heading">Technologies</h2>
         <SkillCardContent />
-
-        {/* <div className="skill-card-group row row-cols-1 row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-3 rows-cols-xxl-4">
-            <ProcessCard
-                title="Green-field system design"
-                body=""
-                />
-            <ProcessCard
-                title="Legacy System refactoring"
-                body=""
-                />
-            <ProcessCard
-                title="End-to-end testing"
-                body=""
-                />
-            <ProcessCard
-                title="Business process improvement"
-                body=""
-                />
-            <ProcessCard
-                title="Feature design"
-                body=""
-                />
-            <ProcessCard
-                title="Automated CI & CD"
-                body=""
-                />
-        </div> */}
 
         <h2 className="section-heading">Timeline</h2>
         <TimelineContent />
