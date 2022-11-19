@@ -18,18 +18,9 @@ const ArbitraryCodeAfterReload = function (cb) {
 
 const swapVersions = () => {
   console.log('Swapping versions')
-
-  try {
-    fs.readdirSync('./dist/').forEach(file => {
-      console.log(file);
-    });
-
-    const homePage = './dist/home.html';
-    const content = fs.readFileSync(homePage, { encoding: 'utf8', flag: 'r' });
-    fs.writeFileSync(homePage, content.replace("?v=x", "?v=" + new Date().getTime()))
-  } catch (e) {
-    console.error(e);
-  }
+  const homePage = './dist/home.html';
+  const content = fs.readFileSync(homePage, { encoding: 'utf8', flag: 'r' });
+  fs.writeFileSync(homePage, content.replace("?v=x", "?v=" + new Date().getTime()))
 };
 
 module.exports = env => ({
