@@ -102,6 +102,26 @@ $badge-text: #ffffff;
     }
 }
 
+.timeline-expander-container{
+    text-align: center;
+    margin-top: 0.75em;
+    padding-top: 0.25em;
+    cursor: pointer;
+
+    &:hover{
+        font-weight: 1000;
+    }
+
+    h4 {
+        font-weight: unset;
+    }
+
+    svg {
+        margin-top: 0.4em;
+        margin-bottom: 0.4em;
+    }
+}
+
 @media screen and (max-width: $small-desktop-screen) {
     .timeline {
         &::before {

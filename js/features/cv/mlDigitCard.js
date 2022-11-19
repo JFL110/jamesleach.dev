@@ -34,7 +34,7 @@ export default () => {
                         </p>
                         <p>
                             A separate Spring Boot REST application reads the serialized network and uses it to classify images input as pixel arrays sent from a React frontend.
-                            Github Actions is used to test and package the REST application as a Docker image and deploy to an AWS Elastic Container Service cluster.
+                            Github Actions is used to test and package the REST application as a Docker image and deploy it as an AWS Elastic Container Service.
                         </p>
                     </h6>
                     <h6>
@@ -43,7 +43,7 @@ export default () => {
                         <Button as="a" href="./ml-digit">
                             <FontAwesomeIcon icon={faRobot} />View demo
                         </Button>
-                        <Button as="a" href="https://github.com/JFL110/deployed-ml" target="_blank">
+                        <Button as="a" href="https://github.com/JFL110/jamesleach.dev-backend-monorepo/tree/main/neural" target="_blank">
                             <FontAwesomeIcon icon={faGithub} />Backend source
                         </Button>
                     </div>

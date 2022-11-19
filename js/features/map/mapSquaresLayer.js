@@ -1,7 +1,6 @@
 import React from 'react'
 import * as L from 'leaflet'
 import { Rectangle } from 'react-leaflet';
-
 const squareToMarker = (latitudeIncrement, longitudeIncrement, square) => {
 
     const gridWidth = 360 / longitudeIncrement

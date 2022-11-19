@@ -11,8 +11,8 @@ import MlDigtCard from './mlDigitCard'
 
 import Text from '../../text'
 
-const jamesLeachCv = "James Leach - Full Stack Developer CV";
-const cvDesc = "Hi! I am a full stack developer focusing on beautiful Java and Javascript. Take a look at my online CV.";
+const jamesLeachCv = "James Leach - Full Stack Engineer CV";
+const cvDesc = "Hi! I am a Senor Full Stack Engineer focusing on beautiful Java and Javascript. Take a look at my online CV.";
 
 const MainPage = () => <main >
     <div className="left-placeholder" />

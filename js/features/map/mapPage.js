@@ -14,10 +14,10 @@ const MapPage = () => <main >
 </main >
 
 export default createPage({
-    paths: '/where-are-they',
+    paths: ['/travel-map', '/where-are-they'],
     component: <MapPage />,
     meta: {
-        title: "Where are they?",
-        description: 'A location tracking map showing where we\'ve been and photos.',
+        title: "Travel History",
+        description: 'An anonymised location tracking map showing where we\'ve been with photos.',
     }
 })

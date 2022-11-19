@@ -13,7 +13,7 @@ export default () =>
             iconSrc={celtaLogo} />
         <SkillCard
             title="Making"
-            subTitle="Car mechanics and robotics"
+            subTitle="Car mechanics, robotics and home renovations"
             icon={<FontAwesomeIcon icon={faTools} className="fa-lg" />} />
         <SkillCard
             title="The Outdoors"

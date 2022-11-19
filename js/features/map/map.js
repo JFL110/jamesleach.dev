@@ -10,6 +10,7 @@ import './leaflet.css'
 import './map.scss'
 import { PhotoMarker } from './photoMarker';
 import PhotoLightbox from './photoLightbox.js';
+import MapBottomBar from './mapBottomBar';
 
 
 const SimpleMap = ({
@@ -89,6 +90,7 @@ const SimpleMap = ({
                 points.value?.squareCollection && <MapSquaresLayer squareCollection={points.value.squareCollection} />
             }
         </LeafletMap >
+        {!isMiniMap && <MapBottomBar />}
     </>
 }
 

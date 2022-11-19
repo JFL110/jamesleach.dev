@@ -12,7 +12,7 @@ const mapLoadingPlaceholder = <Loading className="mini-map full-height" />
 
 export default () => {
 
-    const onViewFull = () => dispatchPush('/where-are-they')
+    const onViewFull = () => dispatchPush('/travel-map')
     //
     return <Card className='map-card project-card'>
         <Card.Body>
@@ -23,21 +23,23 @@ export default () => {
                 />
                 <div className='card-content'>
                     <Card.Title>
-                        My location map
+                        My travel map
                     </Card.Title>
                     <Card.Subtitle>
-                        Map to keep family and friends updated when my partner and I have been abroad.
+                        Map showing anonymised location history data and photos.
                     </Card.Subtitle>
                     <h6>
                         <p>
-                            This project combines an Android app, AWS Lambda hosted Java backend and Javascript React frontend to collect location
-                            information and display it on a map with a selection of photos.
+                            This project was originally designed to keep friends and family update with my live location while traveling.
+                            Since then, it has been converted into a static view of my location history. The data is anonymised by chunking the globe into
+                            fixed-size latitude and longitude increments and the concept of time and frequency.
                         </p>
                         <p>
-                            Code is deployed and tested automatically on commit of new versions using Github Actions and Terraform.
-                            Performance is improved by periodically digesting the location data into a JSON file and serving it statically to the frontend from S3.
+                            The source data is taken from a Google Takeout download containing location history and photos and stored in DynamoDB.
+                            This data is periodically updated, combined with some public photos and digested into a JSON file hosted in S3. 
                         </p>
                         <p>
+                            A CI and CD pipeline tests the code and builds a Docker image, which is moved through Staging and Production ECS environments.
                             Take a look at the source repositories for more information.
                         </p>
                     </h6>
@@ -47,7 +49,7 @@ export default () => {
                         <Button onClick={onViewFull} ><FontAwesomeIcon icon={faMapMarked} />
                             View map
                         </Button>
-                        <Button as="a" href="https://github.com/JFL110/where-are-they-aws-app" target="_blank">
+                        <Button as="a" href="https://github.com/JFL110/jamesleach.dev-backend-monorepo/tree/main/location" target="_blank">
                             <FontAwesomeIcon icon={faGithub} />Backend source
                         </Button>
                         <Button as="a" href="https://github.com/JFL110/jamesleach.dev" target="_blank"  >

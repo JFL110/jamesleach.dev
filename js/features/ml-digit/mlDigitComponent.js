@@ -87,7 +87,7 @@ export default () => {
         mlDigitNetState.clear();
     }
 
-    return <React.Fragment>
+    return <>
         <div className="title">
             <h2>Digit Recognition</h2>
             <p className="ml-desktop-only">
@@ -123,5 +123,5 @@ export default () => {
         <p className="ml-mobile-only blurb-bottom">
             <Blurb mobile />
         </p>
-    </React.Fragment>
+    </>
 }

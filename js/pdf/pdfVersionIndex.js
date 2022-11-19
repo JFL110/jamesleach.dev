@@ -39,7 +39,7 @@ const SkillItem = ({ title }) => <Card>
     </Card.Body>
 </Card>
 
-const Header = () => <React.Fragment>
+const Header = () => <>
     <div className="pdf-head">
         <div className="name-heading-container">
             <h1 className="name-heading">{Text.name}</h1>
@@ -63,7 +63,7 @@ const Header = () => <React.Fragment>
         </div>
     </div >
     <hr />
-</React.Fragment>
+</>
 
 const HobbyItem = ({
     subTitle,
@@ -83,7 +83,7 @@ const HobbyItem = ({
     </Card>
     </div>
 
-const TechItems = () => <React.Fragment>
+const TechItems = () => <>
     <div className="skill-card-container skill-card-container-one">
         <div className="skill-card-group">
             <SkillItem title="Java" />
@@ -114,14 +114,14 @@ const TechItems = () => <React.Fragment>
     <div className="skill-card-container skill-card-container-two">
         <div className="skill-card-group hobby-card-group">
             <HobbyItem
-                subTitle={<React.Fragment>Car mechanics, <br />home improvement, inventing</React.Fragment>}
+                subTitle={<>Car mechanics, <br />home improvement, inventing</>}
                 icon={faTools} />
             <HobbyItem
-                subTitle={<React.Fragment> Hiking, camping <br />running </React.Fragment>}
+                subTitle={<> Hiking, camping <br />running </>}
                 icon={faMountain} />
         </div>
     </div>
-</React.Fragment>
+</>
 
 render(
     <main>
