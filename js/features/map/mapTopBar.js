@@ -12,11 +12,28 @@ const topBarText = points => {
         return "Loading..."
     }
 
-    if(!points.value?.updatedTime){
+    if (!points.value?.updatedTime) {
         return "Updated some time ago"
     }
- 
-    return `Updated ${timeSinceString(new Date(points.value.updatedTime))} ago`;
+
+    return `Updated ${timeSinceString(new Date(points.value.updatedTime * 1000))} ago`;
+}
+
+const numberWithCommas = (x) => x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+const VisitedSquaresLink = ({ points }) => {
+    const globalSquares = points?.value?.globalSquares;
+    if (globalSquares == null) {
+        return <></>
+    }
+    return <>
+        <h2 className="top-bar-text top-bar-text-right noselect">
+            {numberWithCommas(globalSquares.totalVisitedSquares)}/{numberWithCommas(globalSquares.totalCountrySquares)}
+        </h2>
+        <h4 className="top-bar-subtitle top-bar-subtitle-right noselect">
+            Squares Visited
+        </h4>
+    </>
 }
 
 const TopBarComponent = ({
@@ -24,11 +41,12 @@ const TopBarComponent = ({
 }) => <div className="map-top-bar">
         <div>
             <div className="top-bar-left">
-                <h2 className="top-bar-text noselect">Where are they?</h2>
+                <h2 className="top-bar-text noselect">Travel History</h2>
+                <h4 className="top-bar-subtitle noselect">
+                    {topBarText(points)}
+                </h4>
             </div>
-            <div className="top-bar-right">
-                <h2 className="top-bar-text noselect">{topBarText(points)}</h2>
-            </div>
+            <VisitedSquaresLink points={points} />
         </div>
     </div>;
 

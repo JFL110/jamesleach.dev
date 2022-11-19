@@ -36,24 +36,24 @@ const PhotoLightbox = ({
     const onModalClose = () => setCurrentLightBoxPhoto(null);
 
     return <Modal
-    show={currentLightBoxPhoto != null}
-    onHide={onModalClose}
-    keyboard={false}
-    dialogClassName='modal-content-only'
-    centered
->
-    <AwesomeSlider
-        bullets={false}
-        selected={currentLightBoxPhoto?.index}
-        onTransitionStart={() => keyPressReady = false}
-        onTransitionEnd={lb => {
-            keyPressReady = true;
-            (lb.currentIndex != currentLightBoxPhoto?.index) && onChange(orderedPhotos[lb.currentIndex])
-        }}
+        show={currentLightBoxPhoto != null}
+        onHide={onModalClose}
+        keyboard={false}
+        dialogClassName='modal-content-only'
+        centered
     >
-        {orderedPhotos.map(photo => <div key={photo.index} data-src={photo.url} />)}
-    </AwesomeSlider>
-</Modal>
+        <AwesomeSlider
+            bullets={false}
+            selected={currentLightBoxPhoto?.index}
+            onTransitionStart={() => keyPressReady = false}
+            onTransitionEnd={lb => {
+                keyPressReady = true;
+                (lb.currentIndex != currentLightBoxPhoto?.index) && onChange(orderedPhotos[lb.currentIndex])
+            }}
+        >
+            {orderedPhotos.map(photo => <div key={photo.index} data-src={photo.url} />)}
+        </AwesomeSlider>
+    </Modal>
 }
 
 export default PhotoLightbox

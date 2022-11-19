@@ -46,10 +46,27 @@
 .top-bar-text {
 	display: inline-block;
 	margin-bottom: 0;
+	margin-top: 0.25em;
 	font-size: 1.7rem;
 	@media (max-width: 800px) {
 		font-size: 1rem;
 	}
+}
+
+.top-bar-text-right {
+	inline-size: max-content;
+}
+
+.top-bar-subtitle {
+	margin-top: 0.25em;
+	font-size: 1rem;
+	@media (max-width: 800px) {
+		font-size: 0.5rem;
+	}
+}
+
+.top-bar-subtitle-right {
+	text-align: right;
 }
 
 .leaflet-bar a,
@@ -58,7 +75,7 @@
 	height: 35px;
 	line-height: 35px;
 }
-.leaflet-top .leaflet-control {
+.leaflet-top {
 	margin-top: 20px;
 }
 
@@ -87,7 +104,7 @@
 	min-height: calc(100% - 1em) !important ;
 }
 
-.modal-content { 
+.modal-content {
 	background-color: unset !important;
 }
 
@@ -128,7 +145,36 @@
 		}
 	}
 
-	.awssld__controls__arrow-left:before, .awssld__controls__arrow-left:after, .awssld__controls__arrow-right:before, .awssld__controls__arrow-right:after{
-		background-color : #DDD !important;
+	.awssld__controls__arrow-left:before,
+	.awssld__controls__arrow-left:after,
+	.awssld__controls__arrow-right:before,
+	.awssld__controls__arrow-right:after {
+		background-color: #ddd !important;
+	}
+}
+
+.brand-banner {
+	$banner-height: 2em;
+	position: absolute;
+	left: 0;
+	height: $banner-height;
+	line-height: $banner-height;
+	top: calc(100vh - #{$banner-height});
+	z-index: 999999;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: #111;
+	border-top-right-radius: 20px;
+
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+		&:active {
+			text-decoration: underline;
+		}
 	}
 }
