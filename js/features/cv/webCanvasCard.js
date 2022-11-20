@@ -27,7 +27,7 @@ export default () => {
                         <p>
                             This is a small demonstration of building a functional websocket application without huge amounts of code,
                             made possible with Spring. The app communicates with a React frontend to send and receive messages as a user draws
-                            on a canvas. Changes are propagated to all users, showing updates in real time.
+                            on a canvas. Changes are propagated to all users, showing updates in real-time.
                         </p>
                         <p>
                             Continuous integration is used to build, test and deploy the app automatically to AWS ECS.
