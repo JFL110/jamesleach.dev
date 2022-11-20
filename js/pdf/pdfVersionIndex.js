@@ -87,8 +87,9 @@ const TechItems = () => <>
     <div className="skill-card-container skill-card-container-one">
         <div className="skill-card-group">
             <SkillItem title="Java" />
+            <SkillItem title="Kotlin" />
             <SkillItem title="AWS" />
-            <SkillItem title="Oracle + MySQL" />
+            <SkillItem title="MySQL" />
             <SkillItem title="NoSQL" />
             <SkillItem title="Hibernate" />
             <SkillItem title="JDBC" />
@@ -96,7 +97,6 @@ const TechItems = () => <>
             <SkillItem title="Docker" />
             <SkillItem title="JUnit" />
             <SkillItem title="Gradle" />
-            <SkillItem title="C#" />
             <SkillItem title="REST" />
             <SkillItem title="TDD" />
             <SkillItem title="Integration testing" />
@@ -105,6 +105,7 @@ const TechItems = () => <>
             <SkillItem title="Agile" />
             <SkillItem title="Training" />
             <SkillItem title="Javascript" />
+            <SkillItem title="Typescript" />
             <SkillItem title="HTML5" />
             <SkillItem title="S/CSS" />
             <SkillItem title="React + Redux" />
@@ -134,6 +135,8 @@ render(
             <div className="body-column-one">
 
                 <h3>Development experience</h3>
+
+                <TimelineItem {...Text.zephr} />
 
                 <TimelineItem {...Text.lumin} />
 

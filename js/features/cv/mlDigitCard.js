@@ -26,7 +26,7 @@ export default () => {
                     </Card.Subtitle>
                     <h6>
                         <p>
-                            The simple feed forward network is trained on the MNIST dataset of 60,000 hand-drawn images of the digits zero to nine,
+                            The simple feed-forward network is trained on the MNIST dataset of 60,000 hand-drawn images of the digits zero to nine,
                             commonly regarded as the &apos;hello world&apos; dataset of machine learning.
                         </p>
                         <p>
@@ -34,7 +34,7 @@ export default () => {
                         </p>
                         <p>
                             A separate Spring Boot REST application reads the serialized network and uses it to classify images input as pixel arrays sent from a React frontend.
-                            Github Actions is used to test and package the REST application as a Docker image and deploy it as an AWS Elastic Container Service.
+                            GitHub Actions is used to test and package the REST application as a Docker image and deploy it as an AWS Elastic Container Service.
                         </p>
                     </h6>
                     <h6>

@@ -30,7 +30,7 @@ export default () => {
                     </Card.Subtitle>
                     <h6>
                         <p>
-                            This project was originally designed to keep friends and family update with my live location while traveling.
+                            This project was originally designed to keep friends and family updated with my live location while travelling.
                             Since then, it has been converted into a static view of my location history. The data is anonymised by chunking the globe into
                             fixed-size latitude and longitude increments and the concept of time and frequency.
                         </p>

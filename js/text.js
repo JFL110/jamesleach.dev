@@ -82,7 +82,7 @@ export default ({
                 Developing and supporting AWS applications with a startup whose clients aid consumers in legal disputes with utility providers.
             </p>
             <p>
-                Designing and implementing a restack of a Ruby-on Rails system to Java and React using an agile and reversible approach to
+                Designing and implementing a restack of a Ruby-on-Rails system to Java and React using an agile and reversible approach to
                 eliminate disruption to business operations.
             </p>
             <p>
@@ -91,7 +91,7 @@ export default ({
                 standards and archetypes used by multiple teams and contractors.
             </p>
             <p>
-                Setup CI and CD pipelines and AWS monitoring systems including Lambdas to send alerts to Microsoft Teams.
+                Set up CI and CD pipelines and AWS monitoring systems including Lambdas to send alerts to Microsoft Teams.
             </p>
         </>
     },
@@ -102,8 +102,8 @@ export default ({
         subTitle: "Senior Full Stack Engineer",
         content: <>
             <p>
-                Building a globally distributed, performance intesive application which orchistrates dynamic content delivery,
-                paywalls and user management for a number of well known online publishers.
+                Building a globally distributed, performance-intensive application that orchestrates dynamic content delivery,
+                paywalls and user management for a number of well-known online publishers.
             </p>
             <p>
                 Introduced new working practices to make sprints more agile and better align product and engineering teams, with
@@ -156,13 +156,13 @@ export default ({
     webIntro: <>
         <p>
             I have been developing my coding skills ever since my first website at age eleven.
-            I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation.
+            I take pride in writing clean, well-tested code and love taking on a challenge from design to implementation.
             I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done.
         </p>
         <p>
-            In my recent roles I have enjoyed taking on ownership over design and delivery. 
-            I belive that an agile approach, realistic goals and involving engineers early-on leads to
-            features that are released on time and provide real value for clients and users.
+            In my recent roles, I have enjoyed taking on ownership of delivery.
+            I believe that an agile approach, realistic goals and involving engineers early on leads
+            to features that are released on time and provide real value for clients and users.
         </p>
 
         <p>Take a look at some of my <a href="#demos" className="text-link">demo projects</a>.</p>
