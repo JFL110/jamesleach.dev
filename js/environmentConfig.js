@@ -8,7 +8,7 @@ const configs = {
         digitRecognitionApiBase: "https://o4zjbqbsp5.execute-api.eu-west-2.amazonaws.com/main/staging/8081"
     },
     production: {
-        digitRecognitionApiBase: "https://o4zjbqbsp5.execute-api.eu-west-2.amazonaws.com/main/staging/8091"
+        digitRecognitionApiBase: "https://o4zjbqbsp5.execute-api.eu-west-2.amazonaws.com/main/production/8091"
     }
 }
 
