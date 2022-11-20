@@ -23,7 +23,7 @@ export default () => {
                 />
                 <div className='card-content'>
                     <Card.Title>
-                        My travel map
+                        Travel map
                     </Card.Title>
                     <Card.Subtitle>
                         Map showing anonymised location history data and photos.
