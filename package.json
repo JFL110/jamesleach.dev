@@ -6,7 +6,7 @@
   "scripts": {
     "eslint": "npx eslint ./js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "webpack-dev-server -w --env.NODE_ENV=development",
+    "start": "webpack-dev-server -w --env.NODE_ENV=development",
     "build:staging": "webpack --mode=production --env.NODE_ENV=staging",
     "build:production": "webpack --mode=production --env.NODE_ENV=production"
   },
