@@ -102,11 +102,11 @@ export default ({
         subTitle: "Senior Full Stack Engineer",
         content: <>
             <p>
-                Building a globally distributed, performance intesive application which orchistrates dynamic content delivery, 
+                Building a globally distributed, performance intesive application which orchistrates dynamic content delivery,
                 paywalls and user management for a number of well known online publishers.
             </p>
             <p>
-                Introduced new working practices to make Sprints more agile and better align product and engineering teams, with
+                Introduced new working practices to make sprints more agile and better align product and engineering teams, with
                 instant improvements to velocity and feature quality.
             </p>
             <p>
@@ -159,16 +159,10 @@ export default ({
             I take pride in writing clean, well-tested code and love taking on a challenge through design to implementation.
             I enjoy training others and am known for having the knowledge, approachability and practical attitude to help everyone get the job done.
         </p>
-
-        <p>Recent professional projects range from educational platforms to financial administration systems used to
-            manage millions of contracts across the globe.
-
-            In the latter, I specialised in Java and SQL based Extract Transform Load processes handling gigabytes of financial data in real time.
-            I advanced the framework, trained and supervised developers to use it, and so cut the time to create new features.
-
-            I also improved throughput and stability by optimising queries, database structure and tackling concurrency based issues.
-
-            During my time on the project, both client satisfaction and sales of new enhancements greatly improved.
+        <p>
+            In my recent roles I have enjoyed taking on ownership over design and delivery. 
+            I belive that an agile approach, realistic goals and involving engineers early-on leads to
+            features that are released on time and provide real value for clients and users.
         </p>
 
         <p>Take a look at some of my <a href="#demos" className="text-link">demo projects</a>.</p>

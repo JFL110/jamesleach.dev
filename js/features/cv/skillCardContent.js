@@ -13,6 +13,7 @@ import mysqlLogo from './icons/mysql.png'
 import seleniumLogo from './icons/selenium.png'
 import reactLogo from './icons/react.png'
 import springLogo from './icons/spring.png'
+import typescriptLogo from './icons/typescript.png'
 
 const frontEndBadge = {
     text: "front end",
@@ -42,9 +43,13 @@ export default () =>
             badge={backEndBadge}
             iconSrc={kotlinLogo} />
         <SkillCard
-            title="Javascript / Typescript"
+            title="Javascript"
             badge={frontEndBadge}
             iconSrc={javascriptLogo} />
+        <SkillCard
+            title="Typescript"
+            badge={frontEndBadge}
+            iconSrc={typescriptLogo} />
         <SkillCard
             title="AWS"
             badge={backEndBadge}
@@ -73,7 +78,7 @@ export default () =>
             title="NoSQL"
             badge={backEndBadge}
             iconSrc={dynamoDbLogo} />
-         <SkillCard
+        <SkillCard
             title="Selenium"
             badge={testingBadge}
             iconSrc={seleniumLogo} />
