@@ -5,6 +5,7 @@
 $link-color: black;
 $left-width: 350px;
 $left-width-big-screen: 375px;
+$left-width-subpage: 230px;
 $trailing-timline-height: 50px;
 $item-line-distance: 30px;
 
@@ -73,6 +74,11 @@ body {
 	}
 }
 
+.left-desktop-subpage {
+	width: $left-width-subpage;
+	min-width: $left-width-subpage;
+}
+
 .left {
 	h1,
 	h2,
@@ -94,19 +100,23 @@ body {
 	}
 }
 
+.right-table-cell {
+	display: table-cell;
+	margin-left: $left-width;
+}
+
 .right {
 	background-color: $right-bg-color;
-	margin-left: $left-width;
 	height: 100%;
 	padding: 5em 4em 4em 4em;
-	display: table-cell;
+
 	@media (max-width: $mobile-screen) {
 		padding: 1em;
 		display: block;
 		margin-left: 0;
 		height: unset;
 	}
-	@media (max-width: $small-desktop-screen) {
+	@media (max-width: $small-desktop-screen) and (min-width: $mobile-screen) {
 		padding: 3em 1em 4em 1em;
 	}
 
@@ -279,8 +289,8 @@ a {
 	}
 
 	@media (max-width: $mobile-screen) {
-		margin-left: -1em;
-		margin-right: -1em;
+		margin-left: -0.5em;
+		margin-right: -0.5em;
 		border-radius: 0;
 	}
 
@@ -414,19 +424,62 @@ a {
 	margin-right: auto;
 }
 
+.avatar-small {
+	width: 80px !important;
+	height: 80px !important;
+	float: left;
+
+	@media (max-width: $small-mobile-screen) {
+		width: 40px !important;
+		height: 40px !important;
+	}
+}
+
 .name-heading {
 	color: white !important;
 	margin-top: 0.5em;
 	display: inline-block;
 	font-weight: 600;
+	text-align: center;
+	width: 100%;
 }
 
-.title-heading {
-	margin-top: 0.5em;
+.name-heading-subpage {
+	font-size: 1.25em;
+}
+
+.subpage-mobile-nav {
+	display: flex;
+	margin-left: 100px;
+	justify-content: space-around;
+	height: 80px;
+
+	a {
+		margin-top: auto;
+		margin-bottom: auto;
+		display: block;
+	}
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.subpage-nav {
+	margin-top: 1.5em;
+	color: white;
+	list-style-type: none;
+	padding-left: 5px;
+	svg {
+		margin-right: 0.5em;
+	}
+	a {
+		text-decoration: none;
+	}
 }
 
 .side-heading {
-	margin-top: 3em;
+	margin-top: 2.5em;
 	margin-bottom: 1.5em;
 	display: inline-block;
 	font-weight: 600;
@@ -441,6 +494,7 @@ a {
 	white-space: nowrap;
 	margin-bottom: 1em;
 	display: block;
+	margin-left: 0.25em;
 
 	svg {
 		margin-right: 0.7em;
@@ -452,6 +506,7 @@ a {
 }
 
 .top-mobile {
+	text-align: center;
 	@media (min-width: $mobile-screen) {
 		display: none;
 	}
@@ -463,8 +518,6 @@ a {
 	}
 
 	@media (min-width: $small-mobile-screen) and (max-width: $mobile-screen) {
-		text-align: center;
-
 		.avatar {
 			width: 350px;
 			height: 350px;
@@ -472,11 +525,102 @@ a {
 	}
 }
 
+.top-mobile-subpage {
+	padding: 0.5em 1.2em !important;
+	height: 100px;
+
+	@media (max-width: $small-mobile-screen) {
+		height: 60px;
+	}
+
+	.name-heading {
+		width: unset;
+		margin-top: 0;
+		margin-bottom: 0;
+		line-height: 80px;
+
+		@media (max-width: $small-mobile-screen) {
+			font-size: 25px;
+			line-height: 40px;
+		}
+
+		@media (max-width: 300px) {
+			font-size: 15px;
+		}
+	}
+}
+
+.mobile-nav-icon {
+	height: 80px;
+	transition: all 0.5s ease;
+	color: aliceblue;
+
+	@media (max-width: $small-mobile-screen) {
+		height: 40px;
+	}
+}
+
+.mobile-nav-open-icon {
+	transform: rotate(0.5turn);
+}
+
+.mobile-nav-icon-container {
+	float: right;
+	height: 80px;
+
+	@media (max-width: $small-mobile-screen) {
+		height: 40px;
+		scale: 0.7;
+	}
+}
+
+.mobile-nav-menu {
+	min-height: 100px;
+	height: fit-content;
+	overflow: hidden;
+	width: 100%;
+	position: absolute;
+	top: 100px;
+	left: 0;
+	background-color: wheat;
+	transition: 0.2s linear;
+	padding: 20px;
+	display: flex;
+	justify-content: space-around;
+	z-index: 9999999;
+	gap: 30px;
+	flex-wrap: wrap;
+	opacity: 1;
+
+	@media (max-width: $small-mobile-screen) {
+		top: 60px;
+	}
+
+	@media (max-width: 747px) {
+		min-height: 125px;
+	}
+
+	a {
+		display: block;
+		flex-grow: 1;
+		flex-basis: 0;
+	}
+}
+
+.mobile-nav-menu-hidden {
+	min-height: 0px;
+	height: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	opacity: 0;
+}
+
 .mobile-only {
 	@media (min-width: $mobile-screen) {
 		display: none;
 	}
 }
+
 .desktop-heading {
 	text-align: center;
 	@media (max-width: $mobile-screen) {

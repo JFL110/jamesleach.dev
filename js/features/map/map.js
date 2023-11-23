@@ -10,7 +10,6 @@ import './leaflet.css'
 import './map.scss'
 import { PhotoMarker } from './photoMarker';
 import PhotoLightbox from './photoLightbox.js';
-import MapBottomBar from './mapBottomBar';
 
 
 const SimpleMap = ({
@@ -58,7 +57,7 @@ const SimpleMap = ({
             preferCanvas={true}
             center={[centre.latitude, centre.longitude]}
             zoom={defaultZoom}
-            minZoom={2}
+            minZoom={3}
             maxZoom={14}
             attributionControl={true}
             zoomControl={true}
@@ -90,7 +89,6 @@ const SimpleMap = ({
                 points.value?.squareCollection && <MapSquaresLayer squareCollection={points.value.squareCollection} />
             }
         </LeafletMap >
-        {!isMiniMap && <MapBottomBar />}
     </>
 }
 

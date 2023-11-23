@@ -5,13 +5,14 @@ import TopBar from './mapTopBar'
 import MapLazy from './mapLazy'
 
 import './map.scss'
+import SubPageWrapper from '../subPageWrapper'
 
-const MapPage = () => <main >
-    <TopBar />
+const MapPage = () => <SubPageWrapper noPadding tableCell={false}>
     <div className="map-container">
-        <MapLazy loadingComponent={<Loading className="maxi-map" />} />
+        <TopBar />
+        <MapLazy loadingComponent={<Loading className="maxi-map-loader" />} />
     </div>
-</main >
+</SubPageWrapper>
 
 export default createPage({
     paths: ['/travel-map', '/where-are-they'],

@@ -30,7 +30,7 @@ const VisitedSquaresLink = ({ points }) => {
         <h2 className="top-bar-text top-bar-text-right noselect">
             {numberWithCommas(globalSquares.totalVisitedSquares)}/{numberWithCommas(globalSquares.totalCountrySquares)}
         </h2>
-        <h4 className="top-bar-subtitle top-bar-subtitle-right noselect">
+        <h4 className="top-bar-subtitle noselect">
             Squares Visited
         </h4>
     </>
