@@ -6,7 +6,9 @@ import SubPageWrapper from '../subPageWrapper'
 const MlDigitPage = React.lazy(() => import('./mlDigitComponent'));
 const MlDigtPageLazy = () =>
     <Suspense fallback={<Loading pageLoader />}>
-        <SubPageWrapper><MlDigitPage /></SubPageWrapper>
+        <SubPageWrapper>
+            <MlDigitPage />
+        </SubPageWrapper>
     </Suspense >
 
 export default createPage({

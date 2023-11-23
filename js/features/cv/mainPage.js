@@ -44,7 +44,7 @@ const MainPage = () => <main >
 </main >
 
 export default createPage({
-    paths: ["/", "/cv"],
+    paths: ["/", "/cv", "/cv/blank"],
     is404: true,
     component: <MainPage />,
     meta : {

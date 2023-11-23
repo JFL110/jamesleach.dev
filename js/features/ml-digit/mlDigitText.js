@@ -11,7 +11,7 @@ export const Blurb = ({ mobile }) => <>
     a  neural network trained on the dataset implemented using Java with <a href="https://deeplearning4j.org/">Deeplearning4j</a>.
     {!mobile &&
         <>
-            Try drawing a digit <b>slowly</b> on the canvas.
+            &nbsp;Try drawing a digit <b>slowly</b> on the canvas.
         </>}
 </>;
 

@@ -1,31 +1,47 @@
-import React from 'react'
-import { Container, Row } from 'react-bootstrap';
-import PushLink from './pushLink'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons/faHome'
-import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons/faLongArrowAltRight'
+import React, { useState } from 'react'
+import Avatar from './avatar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleChevronDown } from '@fortawesome/free-solid-svg-icons';
+import classNames from 'classnames';
+import SubPageNav from './subPageNav';
 
-import './subPage.scss'
+export default ({ children, noPadding = false, tableCell = true }) => {
+    const [navOpen, setNavOpen] = useState(false)
+    const toggleMenu = () => {
+        setNavOpen(!navOpen);
+    }
 
-export default ({ children }) =>
-    <main>
-        <div className="outer-wrapper">
-            <div>
-                <Container>
-                    <Row>
-                        <div className="sub-page-breadcrumb">
-                            <span>
-                                <PushLink dest='./'>
-                                    <FontAwesomeIcon icon={faHome} /> jamesleach.dev
-                                </PushLink>
-                            </span>
-                            <span>
-                                <FontAwesomeIcon icon={faLongArrowAltRight} />
-                            </span>
-                        </div>
-                    </Row>
-                    {children}
-                </Container>
+    return (
+        <main>
+            <div className="left-placeholder" />
+            <div className="left left-desktop">
+                <Avatar />
+                <h1 className="name-heading">James Leach</h1>
+                <br />
+                <br />
+                <SubPageNav />
             </div>
-        </div>
-    </main>
+            <div className="left top-mobile top-mobile-subpage">
+                <div>
+                    <Avatar small />
+                    <div>
+                        <h1 className="name-heading">James Leach</h1>
+                        <div className="mobile-nav-icon-container">
+                            <FontAwesomeIcon
+                                size="2x"
+                                className={classNames("mobile-nav-icon", navOpen && 'mobile-nav-open-icon')}
+                                icon={faCircleChevronDown}
+                                onClick={toggleMenu}
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className={classNames('mobile-nav-menu', !navOpen && 'mobile-nav-menu-hidden')}>
+                    <SubPageNav mobile />
+                </div>
+            </div>
+            <div className={classNames('right', noPadding && 'no-padding', tableCell && 'right-table-cell')}>
+                {children}
+            </div>
+        </main>)
+}

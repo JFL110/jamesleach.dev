@@ -1,10 +1,10 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
-import { faPaintBrush } from '@fortawesome/free-solid-svg-icons/faPaintBrush'
 import MiniCanvasLazy, { miniCanvasPlaceholder } from './miniCanvasLazy'
 import LoadOnVisible from './loadOnVisibleOrDelay'
 import { Button, Card } from 'react-bootstrap';
+import { faPaintBrush } from '@fortawesome/free-solid-svg-icons'
 
 export default () => {
     return <Card className='webcanvas-card  project-card'>

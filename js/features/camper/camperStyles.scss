@@ -23,12 +23,6 @@ a {
     margin-bottom: 1em;
 }
 
-.outer-wrapper {
-    & > div {
-        background-color: $right-bg-color;
-    }
-}
-
 .camper-breadcrumb {
     & > span {
         margin-right: 1em;
