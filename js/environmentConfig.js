@@ -5,10 +5,10 @@ const configs = {
         digitRecognitionApiBase: "http://localhost:8081"
     },
     staging: {
-        digitRecognitionApiBase: "https://o4zjbqbsp5.execute-api.eu-west-2.amazonaws.com/main/staging/8081"
+        digitRecognitionApiBase: "https://9nrda6g9s8.execute-api.eu-west-2.amazonaws.com/main/production/8081"
     },
     production: {
-        digitRecognitionApiBase: "https://o4zjbqbsp5.execute-api.eu-west-2.amazonaws.com/main/production/8091"
+        digitRecognitionApiBase: "https://9nrda6g9s8.execute-api.eu-west-2.amazonaws.com/main/production/8081"
     }
 }
 
