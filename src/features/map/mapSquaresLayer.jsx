@@ -20,12 +20,17 @@ const squareToMarker = (latitudeIncrement, longitudeIncrement, square) => {
     />
 }
 
-export const MapSquaresLayer = ({ squareCollection }) => (
-    <>
-        {
-            squareCollection
-                .flatMap(s => s.squares
-                    .map(square => squareToMarker(s.latitudeIncrement, s.longitudeIncrement, square)))
-        }
-    </>
-);
+export const MapSquaresLayer = ({ squareCollection }) => {
+    const deDuped = [...new Set(squareCollection.flatMap(s => s.squares.map(e => JSON.stringify({
+        latitudeIncrement: s.latitudeIncrement,
+        longitudeIncrement: s.longitudeIncrement, 
+        square: e
+    }))))]
+    return (
+        <>
+            {
+                deDuped.map(JSON.parse).map(e => squareToMarker(e.latitudeIncrement, e.longitudeIncrement, e.square))
+            }
+        </>
+    );
+}

@@ -9,7 +9,7 @@ import { MapSquaresLayer } from './mapSquaresLayer';
 import './leaflet.css'
 import './map.scss'
 import { PhotoMarker } from './photoMarker';
-import PhotoLightbox from './photoLightbox.js';
+import PhotoLightbox from './photoLightbox';
 
 
 const SimpleMap = ({

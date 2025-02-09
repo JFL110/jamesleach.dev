@@ -11,10 +11,7 @@ export default () => {
         <Card.Body>
             <div>
                 <div className='project-card-img' >
-                    <LoadOnVisible
-                        placeholder={miniCanvasPlaceholder}
-                        componentFunc={() => <MiniCanvasLazy />}
-                    />
+                    <MiniCanvasLazy />
                 </div>
                 <div className='card-content'>
                     <Card.Title>

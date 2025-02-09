@@ -5,12 +5,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [20.17.0]
 
     steps:
     - uses: actions/checkout@v2
@@ -18,6 +16,5 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npx eslint ./js/
-    - run: npm run build:staging
+    - run: npm i
+    - run: npm run build

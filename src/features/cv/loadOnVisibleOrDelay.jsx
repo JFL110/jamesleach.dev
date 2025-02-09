@@ -13,7 +13,7 @@ export default ({
     // Queue a trigger to load it anyway after a delay
     useEffect(() => { setTimeout(() => setTriggered(true), showAfterDelayMs) }, []);
 
-    return <VisibilitySensor partialVisibility onChange={onVisibilityChange} offset={{ top: 200 }}>
+    return <VisibilitySensor partialVisibility onChange={onVisibilityChange} offset={{ top: 0 }}>
         {(isVisible) => ((isVisible.isVisible || triggered) ? componentFunc() : placeholder)}
     </VisibilitySensor>
 }

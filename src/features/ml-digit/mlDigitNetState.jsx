@@ -1,5 +1,4 @@
 import { createNetOpState, createEndpoint } from 'repileux'
-import environmentConfig from '../../environmentConfig'
 
 /**
  * POST to the /classify-digit endpoint, passing pixel data and
@@ -12,7 +11,7 @@ export default createNetOpState({
         headers: () => ({
             'Content-Type': 'application/json'
         }),
-        uri: `${environmentConfig.digitRecognitionApiBase}/classify-digit`,
+        uri: `/api/ml-digit/classify-digit`,
     }),
     ignoreConcurrent: true,
     persistInLocalStorage: false,
