@@ -115,6 +115,7 @@ body {
 		display: block;
 		margin-left: 0;
 		height: unset;
+		width: 100vw;
 	}
 	@media (max-width: $small-desktop-screen) and (min-width: $mobile-screen) {
 		padding: 3em 1em 4em 1em;
