@@ -4,7 +4,7 @@ import Loading from '../loading'
 import SubPageWrapper from '../subPageWrapper'
 import '../../common.scss'
 
-const CamperPage = React.lazy(() => import('./camperPageComponet'));
+const CamperPage = React.lazy(() => import('./camperPageComponent'));
 const CamperPageLazy = () => <Suspense fallback={<Loading pageLoader />}>
     <SubPageWrapper><CamperPage /></SubPageWrapper>
 </Suspense>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope'
-import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons/faFilePdf'
 import { faPrint } from '@fortawesome/free-solid-svg-icons/faPrint'
 
@@ -15,13 +14,6 @@ const pdfBlackAndWhitePath = './static/james-leach-cv-bw.pdf?' + new Date().getT
 
 const HeadingInfo = () => {
 
-    const [phoneNumberShown, setPhoneNumberShown] = useState(false);
-
-    const showPhoneNumber = e => {
-        e.preventDefault();
-        setPhoneNumberShown(true);
-    }
-
     const doPrint = e => {
         e.preventDefault();
         printJS(pdfBlackAndWhitePath);
@@ -34,9 +26,6 @@ const HeadingInfo = () => {
         <h5 className="side-heading">Get in touch</h5>
 
         <a className="side-item-container" href="mailto:contact@jamesleach.dev"><FontAwesomeIcon icon={faEnvelope} />contact@jamesleach.dev</a>
-        {phoneNumberShown ?
-            <a className="side-item-container" href="tel:+44-7946-496-228"> <FontAwesomeIcon icon={faPhone} />+44 7946 496228</a> :
-            <a className="side-item-container" href="blank" onClick={showPhoneNumber}> <FontAwesomeIcon icon={faPhone} />+44 **** ******</a>}
         <a className="side-item-container" target="_blank" rel="noreferrer" href="https://github.com/JFL110"> <FontAwesomeIcon icon={faGithub} />JFL110</a>
 
         <h5 className="side-heading">Take away</h5>
