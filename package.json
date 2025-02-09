@@ -19,7 +19,6 @@
     "array-merge-by-key": "^1.0.1",
     "chart.js": "^2.9.4",
     "classnames": "^2.2.6",
-    "fslightbox-react": "^1.5.0",
     "immutability-helper": "^3.0.1",
     "immutable": "^4.0.0-rc.12",
     "leaflet": "^1.7.1",
