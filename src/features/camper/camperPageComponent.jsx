@@ -20,6 +20,7 @@ import camperAfterNano from './camperImages/truck-after-2.nano.jpg'
 import "./camperStyles.scss"
 import 'react-bootstrap-toggle/dist/bootstrap2-toggle.css'
 
+window.global = window;
 const loadedImageMarkers = {};
 
 const MainImage = ({ image, caption, className, onClick }) =>
